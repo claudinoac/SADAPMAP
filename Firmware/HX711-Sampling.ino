@@ -4,7 +4,7 @@
 // HX711.PD_SCK	- pin #A0
 
 HX711 channelA(A1, A0,32);		//Instancia um objeto da classe HX711 vinculado ao canal A 
-HX711 channelB(A1, A0,128);    //Instancia um objeto da classe HX711 vinculado ao canal B
+HX711 channelB(A1, A0,128);    		//Instancia um objeto da classe HX711 vinculado ao canal B
 void setup() {
   Serial.begin(115200); //Inicia a Serial com taxa de tranferência de 115200 bps
 
