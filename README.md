@@ -6,8 +6,8 @@
 <h4> Biblioteca HX711 do Arduino (https://github.com/bogde/HX711) </h4>
 <h4> Bibliotecas Python: </h4>
 <ul> 
-	<li> * Matplotlib: https://matplotlib.org/ </li>
-	<li> * Numpy: http://www.numpy.org/ </li>
-	<li> * PySerial: https://github.com/pyserial/pyserial </li>
+	<li>  Matplotlib: https://matplotlib.org/ </li>
+	<li>  Numpy: http://www.numpy.org/ </li>
+	<li>  PySerial: https://github.com/pyserial/pyserial </li>
 </ul>
 
