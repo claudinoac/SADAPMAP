@@ -1,5 +1,5 @@
 # <h1> PowerPlot </h1>
-<h2> Plotagem de gráficos de potência em tempo real </h2>
+<h2> Plotagem de gráficos de temperatura em tempo real </h2>
 
 <h3> Pré Requisitos de Instalação: </h3> 
 
