@@ -10,32 +10,28 @@ win = pg.GraphicsWindow()
 p1 = win.addPlot()
 curve1 = p1.plot()
 
-readData = [0]
 y1=[]
 x1=[]
-tim=[]
-dt=0
-t=time.time()
 indx = 0
 
+
 def update():
-    global curve1, indx, y1,x1,t,dt
-    dt=time.time()-t
+    global curve1, indx, y1,x1
     while (ser.inWaiting() == 0):
         pass
     readData= float(ser.readline())
-    print(readData)
     y1.append(readData)
-    x1.append(dt)
-    if indx>50:
-       y1.pop(0)
-       x1.pop(0)
-       indx=0
+    print(readData)
+    indx+=1
+    if len(y1)>99:
+       del y1[0]
+       indx=100
     else:
-       indx+=1
+        x1.append(indx)
 
     curve1.setData(x1,y1)
     p1.setXRange(0, 100, padding=0)
+    p1.setYRange(0,1023,padding=0)
     app.processEvents()
 
 timer = QtCore.QTimer()
