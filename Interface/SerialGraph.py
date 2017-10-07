@@ -3,7 +3,7 @@ import pyqtgraph as pg
 import serial
 import time
 
-ser = serial.Serial('/dev/ttyUSB0', 115200)  #Inicialização da Serial com baudrate 115200bps
+ser = serial.Serial('/dev/ttyACM0', 115200)  #Inicialização da Serial com baudrate 115200bps
 ser.setDTR(False)                            #Reset do arduino para reinicio da leitura
 time.sleep(0.022)
 ser.setDTR(True)
@@ -11,15 +11,22 @@ ser.setDTR(True)
 ser.readline()                              #Primeiro valor da serial sai com lixo
 
 app = QtGui.QApplication([])
-win = pg.GraphicsWindow()
-p1 = win.addPlot()
-curve1 = p1.plot()
-
+layout = pg.GraphicsLayout()
+scene=QtGui.QGraphicsScene()
+view=QtGui.QGraphicsView(scene)
+scene.addItem(layout)
+p1 = layout.addPlot()
+curve1 = p1.plot(pen='r')
+view.show()
+view.setFixedSize(690,550)
+layout.setPreferredSize(640,500)
 y1 = []                                     #Inicialização da lista dinâmica dos valores de y
 x1 = []                                     #Inicialização da lista dinâmica dos valores de x
-
-x_max = 50                                  #Variável que define o tamanho do eixo
+x_max = 100                                  #Variável que define o tamanho do eixo
 indx = 0                                    #Variável auxiliar de contagem
+
+p1.setYRange(0, 1023, padding=0)        #Define os limites do gráfico
+p1.setXRange(0, x_max, padding=0)
 
 
 
@@ -37,10 +44,9 @@ def update():                               #Método para atualizar os arrays co
         x1.append(indx)                     #Vai adicionando valores de 0 a x_max no eixo x até que a lista x lote e tenha mesmo tamanho da lista y
 
     curve1.setData(x1, y1)                  #Atualiza os dados da curva
-    p1.setYRange(0, 1023, padding=0)        #Define os limites do gráfico
-    p1.setXRange(0, max_x, padding=0)
 
-    app.processEvents()                     #
+
+    #app.processEvents()                     #
 
 timer = QtCore.QTimer()                     #
 timer.timeout.connect(update)               #
@@ -51,5 +57,3 @@ if __name__ == '__main__':                  #
     import sys
     if (sys.flags.interactive != 1) or not hasattr(QtCore, 'PYQT_'):   #
         QtGui.QApplication.instance().exec_()                          #
-
-
