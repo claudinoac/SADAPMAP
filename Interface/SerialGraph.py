@@ -2,7 +2,7 @@ from PyQt5 import QtGui, QtCore, QtWidgets       #importação de classes
 import pyqtgraph as pg
 import serial
 import time
-from mainwindow import Ui_MainWindow
+from CalibracaoP import Ui_MainWindow
 
 ser = serial.Serial('/dev/ttyUSB0', 115200)  #Inicialização da Serial com baudrate 115200bps
 ser.setDTR(False)                            #Reset do arduino para reinicio da leitura
@@ -34,8 +34,8 @@ curve6 = p1.plot(pen='m',name="Sensor 6")
 curve7 = p1.plot(pen='c',name="Sensor 7")
 curve8 = p1.plot(name="Sensor 8")
 
-window.CentralGraph.setFixedSize(690,550)
-layout.setPreferredSize(640,500)
+#window.CentralGraph.setFixedSize(690,550)
+layout.setPreferredSize(700,450)
 y1 = []                                     #Inicialização da lista dinâmica dos valores de y
 y2 = []
 y3 = []
