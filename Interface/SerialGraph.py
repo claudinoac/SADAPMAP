@@ -35,7 +35,7 @@ curve7 = p1.plot(pen='c',name="Sensor 7")
 curve8 = p1.plot(name="Sensor 8")
 
 #window.CentralGraph.setFixedSize(690,550)
-layout.setPreferredSize(700,450)
+layout.setPreferredSize(900,550)
 y1 = []                                     #Inicialização da lista dinâmica dos valores de y
 y2 = []
 y3 = []
@@ -51,7 +51,8 @@ indx = 0                                    #Variável auxiliar de contagem
 p1.setYRange(0, 5, padding=0)              #Define os limites do gráfico
 p1.setXRange(0, x_max, padding=0)
 p1.setLabel("bottom","Tempo",'s')
-p1.setLabel("left","Tensão",'V')
+p1.setLabel("left","Força",'Tonf')
+p1.setLabel("right","Tensão no Calibrante",'V')
 
 dialog.showMaximized()
 
@@ -88,7 +89,8 @@ def update():                               #Método para atualizar os arrays co
         indx = x_max                        #impede indx de divergir
     else:
         x1.append(indx)                     #Vai adicionando valores de 0 a x_max no eixo x até que a lista x lote e tenha mesmo tamanho da lista y
-    window.ForceDisp.setText(readData)
+    window.forcaLabel.setText(dado[0])
+    window.calibranteLabel.setText(dado[1])
     curve1.setData(x1,y1)                   #Atualiza os dados da curva
     curve2.setData(x1,y2)
     curve3.setData(x1,y3)

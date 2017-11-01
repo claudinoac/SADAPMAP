@@ -17,29 +17,39 @@
    </size>
   </property>
   <property name="windowTitle">
-   <string>SADAMAP - Análise de Dados </string>
+   <string>SADAMAP - Análise de Dados: Etapa 1 - Calibração de Pressão</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">background-color:rgb(86, 86, 86);
+color: rgb(255,255,255);</string>
   </property>
   <widget class="QWidget" name="centralWidget">
    <property name="autoFillBackground">
-    <bool>true</bool>
+    <bool>false</bool>
    </property>
    <widget class="QGraphicsView" name="CentralGraph">
     <property name="geometry">
      <rect>
-      <x>410</x>
-      <y>30</y>
-      <width>921</width>
-      <height>571</height>
+      <x>420</x>
+      <y>10</y>
+      <width>931</width>
+      <height>621</height>
      </rect>
     </property>
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+      <horstretch>0</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
+    </property>
    </widget>
-   <widget class="QGroupBox" name="groupBox">
+   <widget class="QGroupBox" name="escalaBox">
     <property name="geometry">
      <rect>
-      <x>40</x>
-      <y>30</y>
-      <width>161</width>
-      <height>121</height>
+      <x>20</x>
+      <y>10</y>
+      <width>391</width>
+      <height>231</height>
      </rect>
     </property>
     <property name="toolTip">
@@ -52,10 +62,15 @@
      <string notr="true"/>
     </property>
     <property name="autoFillBackground">
-     <bool>true</bool>
+     <bool>false</bool>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(86, 86, 86);
+border:1px solid rgb(194, 8, 6);
+color: rgb(255, 255, 255);</string>
     </property>
     <property name="title">
-     <string>Escalas</string>
+     <string>Escalas de Visualização (Range)</string>
     </property>
     <property name="flat">
      <bool>false</bool>
@@ -63,31 +78,522 @@
     <property name="checkable">
      <bool>false</bool>
     </property>
-    <widget class="QLabel" name="label">
+    <widget class="QGroupBox" name="forcaBox">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>30</y>
+       <width>181</width>
+       <height>101</height>
+      </rect>
+     </property>
+     <property name="title">
+      <string>Força</string>
+     </property>
+     <widget class="QLineEdit" name="f_max">
+      <property name="geometry">
+       <rect>
+        <x>80</x>
+        <y>30</y>
+        <width>61</width>
+        <height>21</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QLabel" name="f_max_label">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>30</y>
+        <width>57</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">border: rgb(255,255,255)</string>
+      </property>
+      <property name="text">
+       <string>Máximo:</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="f_min_label">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>60</y>
+        <width>57</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">border:rgb(255,255,255)</string>
+      </property>
+      <property name="text">
+       <string>Mínimo:</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="f_min">
+      <property name="geometry">
+       <rect>
+        <x>80</x>
+        <y>60</y>
+        <width>61</width>
+        <height>21</height>
+       </rect>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QGroupBox" name="pressaoBox">
+     <property name="geometry">
+      <rect>
+       <x>200</x>
+       <y>30</y>
+       <width>181</width>
+       <height>101</height>
+      </rect>
+     </property>
+     <property name="title">
+      <string>Tensão no Calibrante</string>
+     </property>
+     <widget class="QLineEdit" name="p_max">
+      <property name="geometry">
+       <rect>
+        <x>80</x>
+        <y>30</y>
+        <width>61</width>
+        <height>21</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QLabel" name="p_max_label">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>30</y>
+        <width>57</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">border: rgb(255,255,255)</string>
+      </property>
+      <property name="text">
+       <string>Máximo:</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="p_min_label">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>60</y>
+        <width>57</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">border: rgb(255,255,255)</string>
+      </property>
+      <property name="text">
+       <string>Mínimo:</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="p_min">
+      <property name="geometry">
+       <rect>
+        <x>80</x>
+        <y>60</y>
+        <width>61</width>
+        <height>21</height>
+       </rect>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QGroupBox" name="forcaBox_2">
+     <property name="geometry">
+      <rect>
+       <x>100</x>
+       <y>140</y>
+       <width>171</width>
+       <height>81</height>
+      </rect>
+     </property>
+     <property name="title">
+      <string>Tempo</string>
+     </property>
+     <widget class="QLineEdit" name="f_max_2">
+      <property name="geometry">
+       <rect>
+        <x>100</x>
+        <y>30</y>
+        <width>61</width>
+        <height>21</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QLabel" name="f_max_label_2">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>30</y>
+        <width>81</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">border: rgb(255,255,255)</string>
+      </property>
+      <property name="text">
+       <string>Intervalo (s):</string>
+      </property>
+     </widget>
+    </widget>
+   </widget>
+   <widget class="QGroupBox" name="amostragemBox">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>250</y>
+      <width>181</width>
+      <height>71</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border:1px solid rgb(255, 83, 0);
+color: rgb(255,255,255);</string>
+    </property>
+    <property name="title">
+     <string>Amostragem</string>
+    </property>
+    <widget class="QComboBox" name="amostragemCBox">
+     <property name="geometry">
+      <rect>
+       <x>50</x>
+       <y>30</y>
+       <width>101</width>
+       <height>27</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border-color: rgb(255,255,255);
+background-color: rgb(169, 169, 169);
+</string>
+     </property>
+     <item>
+      <property name="text">
+       <string>100 mseg</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>200 mseg</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>500 mseg</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>1 seg</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>1.5 seg</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>2 seg</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>2.5 seg</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>5 seg</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>10 seg</string>
+      </property>
+     </item>
+    </widget>
+   </widget>
+   <widget class="QGroupBox" name="cronometroBox">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>330</y>
+      <width>381</width>
+      <height>171</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border:1px solid rgb(123, 0, 129);</string>
+    </property>
+    <property name="title">
+     <string>Timer</string>
+    </property>
+    <widget class="QPushButton" name="timerButton">
+     <property name="geometry">
+      <rect>
+       <x>140</x>
+       <y>130</y>
+       <width>61</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Opções</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="stopTimerButton">
+     <property name="geometry">
+      <rect>
+       <x>140</x>
+       <y>30</y>
+       <width>61</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Iniciar</string>
+     </property>
+    </widget>
+    <widget class="QGroupBox" name="groupBox_2">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>30</y>
+       <width>120</width>
+       <height>131</height>
+      </rect>
+     </property>
+     <property name="title">
+      <string>Cronômetro</string>
+     </property>
+     <widget class="QLabel" name="cronometroLabel">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>60</y>
+        <width>81</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>10.2674 s</string>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QGroupBox" name="groupBox_3">
+     <property name="geometry">
+      <rect>
+       <x>220</x>
+       <y>10</y>
+       <width>151</width>
+       <height>71</height>
+      </rect>
+     </property>
+     <property name="title">
+      <string>Horário de Início</string>
+     </property>
+     <widget class="QLabel" name="label">
+      <property name="geometry">
+       <rect>
+        <x>30</x>
+        <y>30</y>
+        <width>91</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">font: 14pt &quot;Noto Serif&quot;;</string>
+      </property>
+      <property name="text">
+       <string>16:30:15</string>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QGroupBox" name="groupBox_4">
+     <property name="geometry">
+      <rect>
+       <x>220</x>
+       <y>90</y>
+       <width>151</width>
+       <height>71</height>
+      </rect>
+     </property>
+     <property name="title">
+      <string>Horário Atual</string>
+     </property>
+     <widget class="QLabel" name="label_2">
+      <property name="geometry">
+       <rect>
+        <x>30</x>
+        <y>30</y>
+        <width>91</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">font: 14pt &quot;Noto Serif&quot;;</string>
+      </property>
+      <property name="text">
+       <string>17:05:56</string>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QPushButton" name="stopTimerButton_2">
+     <property name="geometry">
+      <rect>
+       <x>140</x>
+       <y>80</y>
+       <width>61</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Parar</string>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QGroupBox" name="groupBox">
+    <property name="geometry">
+     <rect>
+      <x>210</x>
+      <y>250</y>
+      <width>191</width>
+      <height>71</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border: 1px solid rgb(27, 144, 0);</string>
+    </property>
+    <property name="title">
+     <string>Prensa</string>
+    </property>
+    <widget class="QLineEdit" name="lineEdit">
+     <property name="geometry">
+      <rect>
+       <x>50</x>
+       <y>20</y>
+       <width>111</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">font: 12pt &quot;Noto Serif&quot;;</string>
+     </property>
+     <property name="text">
+      <string>Pr 400 Tonf</string>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QGroupBox" name="groupBox_5">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>510</y>
+      <width>381</width>
+      <height>111</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border: 1px solid rgb(26, 149, 172)</string>
+    </property>
+    <property name="title">
+     <string>Valores Absolutos</string>
+    </property>
+    <widget class="QGroupBox" name="groupBox_6">
      <property name="geometry">
       <rect>
        <x>20</x>
        <y>30</y>
-       <width>57</width>
-       <height>17</height>
+       <width>161</width>
+       <height>71</height>
       </rect>
      </property>
-     <property name="text">
-      <string>TextLabel</string>
+     <property name="title">
+      <string>Força</string>
      </property>
+     <widget class="QLabel" name="forcaLabel">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>30</y>
+        <width>121</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">font: 14pt &quot;Noto Serif&quot;;</string>
+      </property>
+      <property name="text">
+       <string>-42.679 Tonf</string>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QGroupBox" name="groupBox_7">
+     <property name="geometry">
+      <rect>
+       <x>200</x>
+       <y>30</y>
+       <width>161</width>
+       <height>71</height>
+      </rect>
+     </property>
+     <property name="title">
+      <string>Tensão no Calibrante</string>
+     </property>
+     <widget class="QLabel" name="calibranteLabel">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>30</y>
+        <width>131</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">font: 14pt &quot;Noto Serif&quot;;</string>
+      </property>
+      <property name="text">
+       <string>-23.804 mV</string>
+      </property>
+     </widget>
     </widget>
    </widget>
-   <widget class="QLabel" name="ForceDisp">
+   <widget class="QLabel" name="label_5">
     <property name="geometry">
      <rect>
-      <x>60</x>
-      <y>210</y>
-      <width>57</width>
-      <height>17</height>
+      <x>20</x>
+      <y>630</y>
+      <width>111</width>
+      <height>16</height>
      </rect>
     </property>
     <property name="text">
-     <string>TextLabel</string>
+     <string>Arquivo Salvo em:</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_6">
+    <property name="geometry">
+     <rect>
+      <x>140</x>
+      <y>630</y>
+      <width>241</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>/home/LAPMA/Pressao/1025565.pre</string>
     </property>
    </widget>
   </widget>
@@ -119,14 +625,6 @@
    <addaction name="Menuzinho"/>
    <addaction name="menuEtapa"/>
   </widget>
-  <widget class="QToolBar" name="mainToolBar">
-   <attribute name="toolBarArea">
-    <enum>TopToolBarArea</enum>
-   </attribute>
-   <attribute name="toolBarBreak">
-    <bool>false</bool>
-   </attribute>
-  </widget>
   <widget class="QStatusBar" name="statusBar"/>
   <action name="actionCalibra_o_P">
    <property name="text">
@@ -146,6 +644,9 @@
   <action name="actionAbrir">
    <property name="text">
     <string>Abrir</string>
+   </property>
+   <property name="iconVisibleInMenu">
+    <bool>true</bool>
    </property>
   </action>
   <action name="actionSalvar">
