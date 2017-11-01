@@ -49,7 +49,7 @@ color: rgb(255,255,255);</string>
       <x>20</x>
       <y>10</y>
       <width>391</width>
-      <height>231</height>
+      <height>201</height>
      </rect>
     </property>
     <property name="toolTip">
@@ -78,7 +78,7 @@ color: rgb(255, 255, 255);</string>
     <property name="checkable">
      <bool>false</bool>
     </property>
-    <widget class="QGroupBox" name="forcaBox">
+    <widget class="QGroupBox" name="tempScaleBox">
      <property name="geometry">
       <rect>
        <x>10</x>
@@ -90,7 +90,7 @@ color: rgb(255, 255, 255);</string>
      <property name="title">
       <string>Temperatura</string>
      </property>
-     <widget class="QLineEdit" name="f_max">
+     <widget class="QLineEdit" name="t_max">
       <property name="geometry">
        <rect>
         <x>80</x>
@@ -100,7 +100,7 @@ color: rgb(255, 255, 255);</string>
        </rect>
       </property>
      </widget>
-     <widget class="QLabel" name="f_max_label">
+     <widget class="QLabel" name="t_max_label">
       <property name="geometry">
        <rect>
         <x>20</x>
@@ -116,7 +116,7 @@ color: rgb(255, 255, 255);</string>
        <string>Máximo:</string>
       </property>
      </widget>
-     <widget class="QLabel" name="f_min_label">
+     <widget class="QLabel" name="t_min_label">
       <property name="geometry">
        <rect>
         <x>20</x>
@@ -132,7 +132,7 @@ color: rgb(255, 255, 255);</string>
        <string>Mínimo:</string>
       </property>
      </widget>
-     <widget class="QLineEdit" name="f_min">
+     <widget class="QLineEdit" name="t_min">
       <property name="geometry">
        <rect>
         <x>80</x>
@@ -208,14 +208,18 @@ color: rgb(255, 255, 255);</string>
       </property>
      </widget>
     </widget>
-    <widget class="QGroupBox" name="forcaBox_2">
+    <widget class="QGroupBox" name="timeDispGBox">
      <property name="geometry">
       <rect>
        <x>100</x>
        <y>140</y>
        <width>171</width>
-       <height>81</height>
+       <height>51</height>
       </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">
+</string>
      </property>
      <property name="title">
       <string>Tempo</string>
@@ -224,7 +228,7 @@ color: rgb(255, 255, 255);</string>
       <property name="geometry">
        <rect>
         <x>100</x>
-        <y>30</y>
+        <y>20</y>
         <width>61</width>
         <height>21</height>
        </rect>
@@ -234,13 +238,14 @@ color: rgb(255, 255, 255);</string>
       <property name="geometry">
        <rect>
         <x>10</x>
-        <y>30</y>
+        <y>20</y>
         <width>81</width>
         <height>21</height>
        </rect>
       </property>
       <property name="styleSheet">
-       <string notr="true">border: rgb(255,255,255)</string>
+       <string notr="true">border: rgb(255,255,255);
+font: bold 9pt ;</string>
       </property>
       <property name="text">
        <string>Intervalo (s):</string>
@@ -252,7 +257,7 @@ color: rgb(255, 255, 255);</string>
     <property name="geometry">
      <rect>
       <x>20</x>
-      <y>250</y>
+      <y>220</y>
       <width>181</width>
       <height>71</height>
      </rect>
@@ -329,7 +334,7 @@ background-color: rgb(169, 169, 169);
     <property name="geometry">
      <rect>
       <x>20</x>
-      <y>330</y>
+      <y>300</y>
       <width>381</width>
       <height>171</height>
      </rect>
@@ -340,7 +345,7 @@ background-color: rgb(169, 169, 169);
     <property name="title">
      <string>Timer</string>
     </property>
-    <widget class="QPushButton" name="timerButton">
+    <widget class="QPushButton" name="timerOptButton">
      <property name="geometry">
       <rect>
        <x>140</x>
@@ -353,7 +358,7 @@ background-color: rgb(169, 169, 169);
       <string>Opções</string>
      </property>
     </widget>
-    <widget class="QPushButton" name="stopTimerButton">
+    <widget class="QPushButton" name="startTimerButton">
      <property name="geometry">
       <rect>
        <x>140</x>
@@ -366,7 +371,7 @@ background-color: rgb(169, 169, 169);
       <string>Iniciar</string>
      </property>
     </widget>
-    <widget class="QGroupBox" name="groupBox_2">
+    <widget class="QGroupBox" name="cronomGBox">
      <property name="geometry">
       <rect>
        <x>10</x>
@@ -392,7 +397,7 @@ background-color: rgb(169, 169, 169);
       </property>
      </widget>
     </widget>
-    <widget class="QGroupBox" name="groupBox_3">
+    <widget class="QGroupBox" name="horaInicGBox">
      <property name="geometry">
       <rect>
        <x>220</x>
@@ -404,7 +409,7 @@ background-color: rgb(169, 169, 169);
      <property name="title">
       <string>Horário de Início</string>
      </property>
-     <widget class="QLabel" name="label">
+     <widget class="QLabel" name="horaInicLabel">
       <property name="geometry">
        <rect>
         <x>30</x>
@@ -421,7 +426,7 @@ background-color: rgb(169, 169, 169);
       </property>
      </widget>
     </widget>
-    <widget class="QGroupBox" name="groupBox_4">
+    <widget class="QGroupBox" name="horaAtualGBox">
      <property name="geometry">
       <rect>
        <x>220</x>
@@ -433,7 +438,7 @@ background-color: rgb(169, 169, 169);
      <property name="title">
       <string>Horário Atual</string>
      </property>
-     <widget class="QLabel" name="label_2">
+     <widget class="QLabel" name="horaAtualLabel">
       <property name="geometry">
        <rect>
         <x>30</x>
@@ -450,7 +455,7 @@ background-color: rgb(169, 169, 169);
       </property>
      </widget>
     </widget>
-    <widget class="QPushButton" name="stopTimerButton_2">
+    <widget class="QPushButton" name="stopTimerButton">
      <property name="geometry">
       <rect>
        <x>140</x>
@@ -464,11 +469,11 @@ background-color: rgb(169, 169, 169);
      </property>
     </widget>
    </widget>
-   <widget class="QGroupBox" name="groupBox">
+   <widget class="QGroupBox" name="prensaGBox">
     <property name="geometry">
      <rect>
       <x>210</x>
-      <y>250</y>
+      <y>220</y>
       <width>191</width>
       <height>71</height>
      </rect>
@@ -479,7 +484,7 @@ background-color: rgb(169, 169, 169);
     <property name="title">
      <string>Prensa</string>
     </property>
-    <widget class="QLineEdit" name="lineEdit">
+    <widget class="QLineEdit" name="prensaName">
      <property name="geometry">
       <rect>
        <x>50</x>
@@ -496,11 +501,11 @@ background-color: rgb(169, 169, 169);
      </property>
     </widget>
    </widget>
-   <widget class="QGroupBox" name="groupBox_5">
+   <widget class="QGroupBox" name="absoluteValueGBox">
     <property name="geometry">
      <rect>
       <x>20</x>
-      <y>510</y>
+      <y>480</y>
       <width>381</width>
       <height>111</height>
      </rect>
@@ -511,7 +516,7 @@ background-color: rgb(169, 169, 169);
     <property name="title">
      <string>Valores Absolutos</string>
     </property>
-    <widget class="QGroupBox" name="groupBox_6">
+    <widget class="QGroupBox" name="tempGBox">
      <property name="geometry">
       <rect>
        <x>20</x>
@@ -523,7 +528,7 @@ background-color: rgb(169, 169, 169);
      <property name="title">
       <string>Temperatura</string>
      </property>
-     <widget class="QLabel" name="forcaLabel">
+     <widget class="QLabel" name="tempLabel">
       <property name="geometry">
        <rect>
         <x>20</x>
@@ -540,7 +545,7 @@ background-color: rgb(169, 169, 169);
       </property>
      </widget>
     </widget>
-    <widget class="QGroupBox" name="groupBox_7">
+    <widget class="QGroupBox" name="powerGBox">
      <property name="geometry">
       <rect>
        <x>200</x>
@@ -552,7 +557,7 @@ background-color: rgb(169, 169, 169);
      <property name="title">
       <string>Potência</string>
      </property>
-     <widget class="QLabel" name="calibranteLabel">
+     <widget class="QLabel" name="potenciaLabel">
       <property name="geometry">
        <rect>
         <x>20</x>
@@ -570,7 +575,7 @@ background-color: rgb(169, 169, 169);
      </widget>
     </widget>
    </widget>
-   <widget class="QLabel" name="label_5">
+   <widget class="QLabel" name="saveFileStaticLabel">
     <property name="geometry">
      <rect>
       <x>20</x>
@@ -583,7 +588,7 @@ background-color: rgb(169, 169, 169);
      <string>Arquivo Salvo em:</string>
     </property>
    </widget>
-   <widget class="QLabel" name="label_6">
+   <widget class="QLabel" name="saveFileDLabel">
     <property name="geometry">
      <rect>
       <x>140</x>
