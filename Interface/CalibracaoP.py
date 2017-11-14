@@ -2,7 +2,7 @@
 
 # Form implementation generated from reading ui file 'Resources/CalibracaoP.ui'
 #
-# Created: Fri Nov 10 15:32:01 2017
+# Created: Tue Nov 14 12:27:19 2017
 #      by: PyQt5 UI code generator 5.2.1
 #
 # WARNING! All changes made in this file will be lost!
@@ -11,6 +11,7 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
+        self.MainWindow=MainWindow
         MainWindow.setObjectName("MainWindow")
         MainWindow.resize(1366, 695)
         MainWindow.setMinimumSize(QtCore.QSize(817, 0))
@@ -41,9 +42,12 @@ class Ui_MainWindow(object):
         self.escalaBox.setObjectName("escalaBox")
         self.forcaBox = QtWidgets.QGroupBox(self.escalaBox)
         self.forcaBox.setGeometry(QtCore.QRect(10, 30, 181, 101))
+        self.forcaBox.setStyleSheet("background-color:rgb(53, 53, 53)")
         self.forcaBox.setObjectName("forcaBox")
         self.f_max = QtWidgets.QLineEdit(self.forcaBox)
         self.f_max.setGeometry(QtCore.QRect(80, 30, 61, 21))
+        self.f_max.setStyleSheet("color:rgb(0,0,0);\n"
+"background-color: rgb(158, 151, 151);")
         self.f_max.setObjectName("f_max")
         self.f_max_label = QtWidgets.QLabel(self.forcaBox)
         self.f_max_label.setGeometry(QtCore.QRect(20, 30, 57, 21))
@@ -55,12 +59,17 @@ class Ui_MainWindow(object):
         self.f_min_label.setObjectName("f_min_label")
         self.f_min = QtWidgets.QLineEdit(self.forcaBox)
         self.f_min.setGeometry(QtCore.QRect(80, 60, 61, 21))
+        self.f_min.setStyleSheet("color:rgb(0,0,0);\n"
+"background-color: rgb(158, 151, 151);")
         self.f_min.setObjectName("f_min")
         self.pressaoBox = QtWidgets.QGroupBox(self.escalaBox)
         self.pressaoBox.setGeometry(QtCore.QRect(200, 30, 181, 101))
+        self.pressaoBox.setStyleSheet("background-color:rgb(53, 53, 53)")
         self.pressaoBox.setObjectName("pressaoBox")
         self.p_max = QtWidgets.QLineEdit(self.pressaoBox)
         self.p_max.setGeometry(QtCore.QRect(80, 30, 61, 21))
+        self.p_max.setStyleSheet("color:rgb(0,0,0);\n"
+"background-color: rgb(158, 151, 151);")
         self.p_max.setObjectName("p_max")
         self.p_max_label = QtWidgets.QLabel(self.pressaoBox)
         self.p_max_label.setGeometry(QtCore.QRect(20, 30, 57, 21))
@@ -72,26 +81,33 @@ class Ui_MainWindow(object):
         self.p_min_label.setObjectName("p_min_label")
         self.p_min = QtWidgets.QLineEdit(self.pressaoBox)
         self.p_min.setGeometry(QtCore.QRect(80, 60, 61, 21))
+        self.p_min.setStyleSheet("color:rgb(0,0,0);\n"
+"background-color: rgb(158, 151, 151);")
         self.p_min.setObjectName("p_min")
-        self.forcaBox_2 = QtWidgets.QGroupBox(self.escalaBox)
-        self.forcaBox_2.setGeometry(QtCore.QRect(100, 140, 171, 81))
-        self.forcaBox_2.setObjectName("forcaBox_2")
-        self.f_max_2 = QtWidgets.QLineEdit(self.forcaBox_2)
-        self.f_max_2.setGeometry(QtCore.QRect(100, 30, 61, 21))
-        self.f_max_2.setObjectName("f_max_2")
-        self.f_max_label_2 = QtWidgets.QLabel(self.forcaBox_2)
-        self.f_max_label_2.setGeometry(QtCore.QRect(10, 30, 81, 21))
-        self.f_max_label_2.setStyleSheet("border: rgb(255,255,255)")
-        self.f_max_label_2.setObjectName("f_max_label_2")
+        self.tempoGBox = QtWidgets.QGroupBox(self.escalaBox)
+        self.tempoGBox.setGeometry(QtCore.QRect(100, 140, 171, 81))
+        self.tempoGBox.setStyleSheet("background-color:rgb(53, 53, 53)")
+        self.tempoGBox.setObjectName("tempoGBox")
+        self.t_max = QtWidgets.QLineEdit(self.tempoGBox)
+        self.t_max.setGeometry(QtCore.QRect(100, 30, 61, 21))
+        self.t_max.setStyleSheet("color:rgb(0,0,0);\n"
+"background-color: rgb(158, 151, 151);")
+        self.t_max.setObjectName("t_max")
+        self.t_max_label = QtWidgets.QLabel(self.tempoGBox)
+        self.t_max_label.setGeometry(QtCore.QRect(10, 30, 81, 21))
+        self.t_max_label.setStyleSheet("border: rgb(255,255,255)")
+        self.t_max_label.setObjectName("t_max_label")
         self.amostragemBox = QtWidgets.QGroupBox(self.centralWidget)
         self.amostragemBox.setGeometry(QtCore.QRect(20, 250, 181, 71))
-        self.amostragemBox.setStyleSheet("border:1px solid rgb(255, 83, 0);\n"
+        self.amostragemBox.setStyleSheet("background-color:rgb(53, 53, 53);\n"
+"border:1px solid rgb(255, 83, 0);\n"
 "color: rgb(255,255,255);")
         self.amostragemBox.setObjectName("amostragemBox")
         self.amostragemCBox = QtWidgets.QComboBox(self.amostragemBox)
         self.amostragemCBox.setGeometry(QtCore.QRect(50, 30, 101, 27))
-        self.amostragemCBox.setStyleSheet("border-color: rgb(255,255,255);\n"
+        self.amostragemCBox.setStyleSheet("border-color: rgb(0,0,0);\n"
 "background-color: rgb(169, 169, 169);\n"
+"\n"
 "")
         self.amostragemCBox.setObjectName("amostragemCBox")
         self.amostragemCBox.addItem("")
@@ -109,40 +125,56 @@ class Ui_MainWindow(object):
         self.cronometroBox.setObjectName("cronometroBox")
         self.timerOptionButton = QtWidgets.QPushButton(self.cronometroBox)
         self.timerOptionButton.setGeometry(QtCore.QRect(140, 130, 61, 31))
+        self.timerOptionButton.setStyleSheet("background-color:rgb(53, 53, 53)")
         self.timerOptionButton.setObjectName("timerOptionButton")
         self.initTimerButton = QtWidgets.QPushButton(self.cronometroBox)
         self.initTimerButton.setGeometry(QtCore.QRect(140, 30, 61, 31))
+        self.initTimerButton.setStyleSheet("background-color:rgb(53, 53, 53)")
         self.initTimerButton.setObjectName("initTimerButton")
         self.cronometroGBox = QtWidgets.QGroupBox(self.cronometroBox)
         self.cronometroGBox.setGeometry(QtCore.QRect(10, 30, 120, 131))
+        self.cronometroGBox.setStyleSheet("background-color:rgb(53, 53, 53)")
         self.cronometroGBox.setObjectName("cronometroGBox")
         self.cronometroLabel = QtWidgets.QLabel(self.cronometroGBox)
         self.cronometroLabel.setGeometry(QtCore.QRect(20, 60, 81, 31))
+        self.cronometroLabel.setStyleSheet("background-color: rgb(158, 151, 151);\n"
+"color:rgb(0, 0, 0);\n"
+"font: 75 12pt \"Noto Serif\";")
         self.cronometroLabel.setObjectName("cronometroLabel")
         self.horaInicGBox = QtWidgets.QGroupBox(self.cronometroBox)
         self.horaInicGBox.setGeometry(QtCore.QRect(220, 10, 151, 71))
+        self.horaInicGBox.setStyleSheet("background-color:rgb(53, 53, 53)")
         self.horaInicGBox.setObjectName("horaInicGBox")
         self.horaInicLabel = QtWidgets.QLabel(self.horaInicGBox)
         self.horaInicLabel.setGeometry(QtCore.QRect(30, 30, 91, 31))
-        self.horaInicLabel.setStyleSheet("font: 14pt \"Noto Serif\";")
+        self.horaInicLabel.setStyleSheet("background-color: rgb(158, 151, 151);\n"
+"color:rgb(0, 0, 0);\n"
+"font: 14pt \"Noto Serif\";")
         self.horaInicLabel.setObjectName("horaInicLabel")
         self.horaAtualGBox = QtWidgets.QGroupBox(self.cronometroBox)
         self.horaAtualGBox.setGeometry(QtCore.QRect(220, 90, 151, 71))
+        self.horaAtualGBox.setStyleSheet("background-color:rgb(53, 53, 53)")
         self.horaAtualGBox.setObjectName("horaAtualGBox")
         self.horaAtualLabel = QtWidgets.QLabel(self.horaAtualGBox)
         self.horaAtualLabel.setGeometry(QtCore.QRect(30, 30, 91, 31))
-        self.horaAtualLabel.setStyleSheet("font: 14pt \"Noto Serif\";")
+        self.horaAtualLabel.setStyleSheet("background-color: rgb(158, 151, 151);\n"
+"color:rgb(0, 0, 0);\n"
+"font: 14pt \"Noto Serif\";")
         self.horaAtualLabel.setObjectName("horaAtualLabel")
         self.stopTimerButton = QtWidgets.QPushButton(self.cronometroBox)
         self.stopTimerButton.setGeometry(QtCore.QRect(140, 80, 61, 31))
+        self.stopTimerButton.setStyleSheet("background-color:rgb(53, 53, 53)")
         self.stopTimerButton.setObjectName("stopTimerButton")
         self.prensaNameGBox = QtWidgets.QGroupBox(self.centralWidget)
         self.prensaNameGBox.setGeometry(QtCore.QRect(210, 250, 191, 71))
-        self.prensaNameGBox.setStyleSheet("border: 1px solid rgb(27, 144, 0);")
+        self.prensaNameGBox.setStyleSheet("border: 1px solid rgb(27, 144, 0);\n"
+"background-color:rgb(53, 53, 53)")
         self.prensaNameGBox.setObjectName("prensaNameGBox")
         self.prensaName = QtWidgets.QLineEdit(self.prensaNameGBox)
         self.prensaName.setGeometry(QtCore.QRect(50, 20, 111, 31))
-        self.prensaName.setStyleSheet("font: 12pt \"Noto Serif\";")
+        self.prensaName.setStyleSheet("font: 12pt \"Noto Serif\";\n"
+"color:rgb(0,0,0);\n"
+"background-color: rgb(158, 151, 151);")
         self.prensaName.setObjectName("prensaName")
         self.valAbsolGBox = QtWidgets.QGroupBox(self.centralWidget)
         self.valAbsolGBox.setGeometry(QtCore.QRect(20, 510, 381, 111))
@@ -150,17 +182,23 @@ class Ui_MainWindow(object):
         self.valAbsolGBox.setObjectName("valAbsolGBox")
         self.forcaGBox = QtWidgets.QGroupBox(self.valAbsolGBox)
         self.forcaGBox.setGeometry(QtCore.QRect(20, 30, 161, 71))
+        self.forcaGBox.setStyleSheet("background-color:rgb(53, 53, 53)")
         self.forcaGBox.setObjectName("forcaGBox")
         self.forcaLabel = QtWidgets.QLabel(self.forcaGBox)
         self.forcaLabel.setGeometry(QtCore.QRect(20, 30, 121, 31))
-        self.forcaLabel.setStyleSheet("font: 14pt \"Noto Serif\";")
+        self.forcaLabel.setStyleSheet("background-color: rgb(158, 151, 151);\n"
+"color:rgb(0, 0, 0);\n"
+"font: 14pt \"Noto Serif\";")
         self.forcaLabel.setObjectName("forcaLabel")
         self.calibranteGBox = QtWidgets.QGroupBox(self.valAbsolGBox)
         self.calibranteGBox.setGeometry(QtCore.QRect(200, 30, 161, 71))
+        self.calibranteGBox.setStyleSheet("background-color:rgb(53, 53, 53)")
         self.calibranteGBox.setObjectName("calibranteGBox")
         self.calibranteLabel = QtWidgets.QLabel(self.calibranteGBox)
         self.calibranteLabel.setGeometry(QtCore.QRect(20, 30, 131, 31))
-        self.calibranteLabel.setStyleSheet("font: 14pt \"Noto Serif\";")
+        self.calibranteLabel.setStyleSheet("background-color: rgb(158, 151, 151);\n"
+"color:rgb(0, 0, 0);\n"
+"font: 14pt \"Noto Serif\";")
         self.calibranteLabel.setObjectName("calibranteLabel")
         self.arquivoSalvoLabel = QtWidgets.QLabel(self.centralWidget)
         self.arquivoSalvoLabel.setGeometry(QtCore.QRect(20, 630, 111, 16))
@@ -176,6 +214,8 @@ class Ui_MainWindow(object):
         self.menuArquivo.setObjectName("menuArquivo")
         self.menuEtapa = QtWidgets.QMenu(self.menuBar)
         self.menuEtapa.setObjectName("menuEtapa")
+        self.menuPorta = QtWidgets.QMenu(self.menuBar)
+        self.menuPorta.setObjectName("menuPorta")
         MainWindow.setMenuBar(self.menuBar)
         self.menuStatusBar = QtWidgets.QStatusBar(MainWindow)
         self.menuStatusBar.setObjectName("menuStatusBar")
@@ -197,6 +237,8 @@ class Ui_MainWindow(object):
         self.botaoSalvar.setObjectName("botaoSalvar")
         self.botaoSalvarComo = QtWidgets.QAction(MainWindow)
         self.botaoSalvarComo.setObjectName("botaoSalvarComo")
+        self.selectPortaUSB = QtWidgets.QAction(MainWindow)
+        self.selectPortaUSB.setObjectName("selectPortaUSB")
         self.menuArquivo.addAction(self.botaoAbrir)
         self.menuArquivo.addAction(self.botaoSalvar)
         self.menuArquivo.addAction(self.botaoSalvarComo)
@@ -205,6 +247,7 @@ class Ui_MainWindow(object):
         self.menuEtapa.addAction(self.alternaProc)
         self.menuBar.addAction(self.menuArquivo.menuAction())
         self.menuBar.addAction(self.menuEtapa.menuAction())
+        self.menuBar.addAction(self.menuPorta.menuAction())
 
         self.retranslateUi(MainWindow)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
@@ -220,8 +263,8 @@ class Ui_MainWindow(object):
         self.pressaoBox.setTitle(_translate("MainWindow", "Tensão no Calibrante"))
         self.p_max_label.setText(_translate("MainWindow", "Máximo:"))
         self.p_min_label.setText(_translate("MainWindow", "Mínimo:"))
-        self.forcaBox_2.setTitle(_translate("MainWindow", "Tempo"))
-        self.f_max_label_2.setText(_translate("MainWindow", "Intervalo (s):"))
+        self.tempoGBox.setTitle(_translate("MainWindow", "Tempo"))
+        self.t_max_label.setText(_translate("MainWindow", "Intervalo (s):"))
         self.amostragemBox.setTitle(_translate("MainWindow", "Amostragem"))
         self.amostragemCBox.setItemText(0, _translate("MainWindow", "100 mseg"))
         self.amostragemCBox.setItemText(1, _translate("MainWindow", "200 mseg"))
@@ -253,6 +296,7 @@ class Ui_MainWindow(object):
         self.arqSalvoLabel.setText(_translate("MainWindow", "/home/LAPMA/Pressao/1025565.pre"))
         self.menuArquivo.setTitle(_translate("MainWindow", "Arquivo"))
         self.menuEtapa.setTitle(_translate("MainWindow", "Etapa"))
+        self.menuPorta.setTitle(_translate("MainWindow", "Porta"))
         self.alternaCalibraP.setText(_translate("MainWindow", "Calibração P"))
         self.alternaCalibraT.setText(_translate("MainWindow", "Calibração T"))
         self.alternaProc.setText(_translate("MainWindow", "Processamento"))
@@ -261,7 +305,15 @@ class Ui_MainWindow(object):
         self.actionSalvar_Como.setText(_translate("MainWindow", "Salvar Como"))
         self.botaoSalvar.setText(_translate("MainWindow", "Salvar"))
         self.botaoSalvarComo.setText(_translate("MainWindow", "Salvar Como"))
+        self.selectPortaUSB.setText(_translate("MainWindow", "Selecionar porta USB"))
 
     def sceneSelector(self, scene):
         self.CentralGraph.setScene(scene)
         self.CentralGraph.setBackgroundBrush(QtCore.Qt.black)
+
+    def serialListPanel(self, seriaList):
+        self.usb=[]
+        for i in range(0, len(seriaList)):
+            self.usb.append(QtWidgets.QAction(self.MainWindow))
+            self.usb[i].setText(seriaList[i].device)
+            self.menuPorta.addAction(self.usb[i])
