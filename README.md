@@ -9,5 +9,6 @@
 	<li>  PyQtGraph: http://www.pyqtgraph.org/ </li>
 	<li>  Numpy: http://www.numpy.org/ </li>
 	<li>  PySerial: https://github.com/pyserial/pyserial </li>
+	<li>  PyQt5: https://www.riverbankcomputing.com/software/pyqt/download5
 </ul>
 
