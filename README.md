@@ -3,6 +3,10 @@
 
 <h3> Pré Requisitos de Instalação: </h3> 
 
+<h4> Python 3.2+: </h4>
+<ul> 
+	<li> https://www.python.org/downloads/ </li>
+</ul>
 <h4>  </h4>
 <h4> Bibliotecas Python: </h4>
 <ul> 
