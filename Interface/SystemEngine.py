@@ -14,8 +14,7 @@ class SystemEngine(object):
         self.app = QtWidgets.QApplication(sys.argv)
         self.dialog = QtWidgets.QMainWindow()
         self.ser1 = SerialManager()
-        print(self.ser1.portList[0])
-        self.ser1.startPort(str(self.ser1.portList[1].device),115200)
+        self.ser1.startPort(str(self.ser1.portList[0].device), 115200)
         self.uiCalibra1 = Ui_MainWindow()
         self.uiCalibra1.setupUi(self.dialog)
         self.uiCalibra1.serialListPanel(self.ser1.portList)
@@ -28,13 +27,28 @@ class SystemEngine(object):
         self.x_scale=100
 
 
+
     def updateData(self):
 
-        readData = self.ser1.read()  # Lê o dado da serial
-        readData = readData.decode('utf8')
-        dado = readData.split(' ', 8)
-        self.x_scale=int(self.uiCalibra1.t_max.text())
-        if(self.x_scale != self.prev_x_scale):
-            self.layout.setGraphScale(int(self.x_scale),32700)
-        self.prev_x_scale = self.x_scale
-        self.layout.updateGraph(float(dado[0]),float(dado[1]))
+        if(self.uiCalibra1.usb[0].isChecked()==True):
+            readData = self.ser1.read()  # Lê o dado da serial
+            readData = readData.decode('utf8')
+            dado = readData.split(' ', 3)
+            print(dado)
+            try:
+                self.x_scale=int(self.uiCalibra1.t_max.text())
+            except ValueError:
+                 self.x_scale=100
+
+            if(self.x_scale != self.prev_x_scale):
+                try:
+                        self.layout.setGraphScale(int(self.x_scale),32700)
+                except:
+                    print("Err0r")
+            self.prev_x_scale = self.x_scale
+            self.uiCalibra1.forcaLabel.setText(str(dado[0])+" Tonf")
+            self.uiCalibra1.calibranteLabel.setText(str(dado[1].split()[0])+" mV")
+            self.layout.updateGraph(float(dado[0]),float(dado[1]))
+
+        else:
+            pass

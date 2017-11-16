@@ -316,4 +316,5 @@ class Ui_MainWindow(object):
         for i in range(0, len(seriaList)):
             self.usb.append(QtWidgets.QAction(self.MainWindow))
             self.usb[i].setText(seriaList[i].device)
+            self.usb[i].setCheckable(True)
             self.menuPorta.addAction(self.usb[i])

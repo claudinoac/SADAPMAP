@@ -27,7 +27,7 @@ class Graph(pyqtgraph.GraphicsLayout):
 
 
     def updateGraph(self,y1,y2):
-        print(time.time()-self.timeant)
+        #print(time.time()-self.timeant)
         self.y1.append(y1)
         self.y2.append(y2)
         if len(self.y1)>self.x_range+1:
@@ -50,6 +50,7 @@ class Graph(pyqtgraph.GraphicsLayout):
 
         if(y_range==0):
             y_range=1
+
         self.x_range=x_range
         self.y_range=y_range
         self.x1=[]

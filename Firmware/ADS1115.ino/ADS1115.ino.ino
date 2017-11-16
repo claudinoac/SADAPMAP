@@ -21,16 +21,16 @@ void loop(void)
 {
   adc0 = ads0.readADC_SingleEnded(0);
   adc1 = ads0.readADC_SingleEnded(1);
-  adc2 = ads0.readADC_SingleEnded(2);
+  /*adc2 = ads0.readADC_SingleEnded(2);
   adc3 = ads0.readADC_SingleEnded(3);
   adc4 = ads1.readADC_SingleEnded(0);
   adc5 = ads1.readADC_SingleEnded(1);
   adc6 = ads1.readADC_SingleEnded(2);
-  adc7 = ads1.readADC_SingleEnded(3);
+  adc7 = ads1.readADC_SingleEnded(3);*/
   Serial.print(adc0);
   Serial.print(" ");
   Serial.print(adc1);
-  Serial.print(" ");
+  /*Serial.print(" ");
   Serial.print(adc2);
   Serial.print(" ");
   Serial.print(adc3);
@@ -43,7 +43,7 @@ void loop(void)
   Serial.print(" ");
   Serial.print(adc7);
   Serial.print(" ");
-  Serial.print(millis());
+  Serial.print(millis());*/
   Serial.print("\n");
   while(millis()%100!=0);
  

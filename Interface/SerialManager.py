@@ -1,9 +1,8 @@
 import serial
 import serial.tools.list_ports
 import time
-
-
 class SerialManager(object):
+
     def __init__(self):
         self.portList = serial.tools.list_ports.comports()
         self.portNum=len(self.portList)
