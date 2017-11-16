@@ -18,7 +18,7 @@ class SystemEngine(object):
         self.uiCalibra1 = Ui_MainWindow()
         self.uiCalibra1.setupUi(self.dialog)
         self.uiCalibra1.serialListPanel(self.ser1.portList)
-        self.layout = Graph(100, 37500, 900, 600, 'r','g')
+        self.layout = Graph(100, 30000, 900, 500, 'r','g',"Força","Tensão no Calibrante")
         self.scene = QtGui.QGraphicsScene()
         self.scene.addItem(self.layout)
         self.uiCalibra1.sceneSelector(self.scene)
@@ -34,17 +34,14 @@ class SystemEngine(object):
             readData = self.ser1.read()  # Lê o dado da serial
             readData = readData.decode('utf8')
             dado = readData.split(' ', 3)
-            print(dado)
             try:
                 self.x_scale=int(self.uiCalibra1.t_max.text())
             except ValueError:
                  self.x_scale=100
 
             if(self.x_scale != self.prev_x_scale):
-                try:
-                        self.layout.setGraphScale(int(self.x_scale),32700)
-                except:
-                    print("Err0r")
+                self.layout.setGraphScale(int(self.x_scale),32700)
+
             self.prev_x_scale = self.x_scale
             self.uiCalibra1.forcaLabel.setText(str(dado[0])+" Tonf")
             self.uiCalibra1.calibranteLabel.setText(str(dado[1].split()[0])+" mV")

@@ -5,7 +5,7 @@ class Graph(pyqtgraph.GraphicsLayout):
 
     index=1
 
-    def __init__(self,x_range,y_range,x_size,y_size,color1,color2):
+    def __init__(self,x_range,y_range,x_size,y_size,color1,color2,name1,name2):
         super(Graph,self).__init__()
         self.x_range = x_range
         self.y_range = y_range
@@ -13,10 +13,14 @@ class Graph(pyqtgraph.GraphicsLayout):
         self.y_size = y_size
         self.color1 = color1
         self.color2 = color2
-
+        self.name1=name1
+        self.name2=name2
         self.p1 = self.addPlot()
-        self.curve1 = self.p1.plot(pen=color1)
-        self.curve2 = self.p1.plot(pen=color2)
+        self.p1.addLegend()
+        self.curve1 = self.p1.plot(pen=color1,name=self.name1)
+        self.curve2 = self.p1.plot(pen=color2,name=self.name2)
+        self.p1.showGrid(True, True)
+
         self.setPreferredSize(self.x_size,self.y_size)
         self.p1.setXRange(0,self.x_range,padding=0)
         self.p1.setYRange(0, self.y_range, padding=0)
@@ -57,9 +61,11 @@ class Graph(pyqtgraph.GraphicsLayout):
         self.y1=[]
         self.y2=[]
         self.index=0
-        self.clear()
+        self.removeItem(self.p1)
         self.p1=self.addPlot()
         self.p1.setXRange(0, self.x_range, padding=0)
         self.p1.setYRange(0, self.y_range, padding=0)
-        self.curve1=self.p1.plot(pen=self.color1)
-        self.curve2 = self.p1.plot(pen=self.color2)
+        self.p1.addLegend()
+        self.curve1=self.p1.plot(pen=self.color1,name=self.name1)
+        self.curve2 = self.p1.plot(pen=self.color2,name=self.name2)
+        self.p1.showGrid(True,True)
