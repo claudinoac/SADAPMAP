@@ -701,9 +701,15 @@ font: 14pt &quot;Noto Serif&quot;;</string>
      <string>Porta</string>
     </property>
    </widget>
+   <widget class="QMenu" name="menuPlay_Pause">
+    <property name="title">
+     <string>Play/Pause</string>
+    </property>
+   </widget>
    <addaction name="menuArquivo"/>
    <addaction name="menuEtapa"/>
    <addaction name="menuPorta"/>
+   <addaction name="menuPlay_Pause"/>
   </widget>
   <widget class="QStatusBar" name="menuStatusBar"/>
   <action name="alternaCalibraP">

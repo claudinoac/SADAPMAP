@@ -2,7 +2,7 @@
 
 # Form implementation generated from reading ui file 'Resources/CalibracaoP.ui'
 #
-# Created: Tue Nov 14 12:27:19 2017
+# Created: Fri Nov 17 19:18:18 2017
 #      by: PyQt5 UI code generator 5.2.1
 #
 # WARNING! All changes made in this file will be lost!
@@ -216,6 +216,8 @@ class Ui_MainWindow(object):
         self.menuEtapa.setObjectName("menuEtapa")
         self.menuPorta = QtWidgets.QMenu(self.menuBar)
         self.menuPorta.setObjectName("menuPorta")
+        self.menuPlay_Pause = QtWidgets.QAction(MainWindow)
+        self.menuPlay_Pause.setObjectName("menuPlay_Pause")
         MainWindow.setMenuBar(self.menuBar)
         self.menuStatusBar = QtWidgets.QStatusBar(MainWindow)
         self.menuStatusBar.setObjectName("menuStatusBar")
@@ -248,7 +250,9 @@ class Ui_MainWindow(object):
         self.menuBar.addAction(self.menuArquivo.menuAction())
         self.menuBar.addAction(self.menuEtapa.menuAction())
         self.menuBar.addAction(self.menuPorta.menuAction())
-
+        self.menuBar.addAction(self.menuPlay_Pause)
+        self.menuPlay_Pause.setCheckable(True)
+        self.menuPlay_Pause.toggled.connect(self.playPauseButtonAnimation)
         self.retranslateUi(MainWindow)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
 
@@ -297,6 +301,7 @@ class Ui_MainWindow(object):
         self.menuArquivo.setTitle(_translate("MainWindow", "Arquivo"))
         self.menuEtapa.setTitle(_translate("MainWindow", "Etapa"))
         self.menuPorta.setTitle(_translate("MainWindow", "Porta"))
+        self.menuPlay_Pause.setText(_translate("MainWindow", "Play"))
         self.alternaCalibraP.setText(_translate("MainWindow", "Calibração P"))
         self.alternaCalibraT.setText(_translate("MainWindow", "Calibração T"))
         self.alternaProc.setText(_translate("MainWindow", "Processamento"))
@@ -310,11 +315,19 @@ class Ui_MainWindow(object):
     def sceneSelector(self, scene):
         self.CentralGraph.setScene(scene)
         self.CentralGraph.setBackgroundBrush(QtCore.Qt.black)
+        self.CentralGraph.setInteractive(False)
 
     def serialListPanel(self, seriaList):
-        self.usb=[]
+        self.usb = []
         for i in range(0, len(seriaList)):
             self.usb.append(QtWidgets.QAction(self.MainWindow))
             self.usb[i].setText(seriaList[i].device)
             self.usb[i].setCheckable(True)
             self.menuPorta.addAction(self.usb[i])
+
+    def playPauseButtonAnimation(self):
+        if(self.menuPlay_Pause.text()=="Play"):
+            self.menuPlay_Pause.setText("Pause")
+
+        else:
+            self.menuPlay_Pause.setText("Play")

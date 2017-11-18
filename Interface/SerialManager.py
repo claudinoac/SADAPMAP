@@ -19,4 +19,5 @@ class SerialManager(object):
     def read(self):
         if(self.ser.inWaiting()==0):
             pass
+        self.ser.flushInput()
         return self.ser.readline()
