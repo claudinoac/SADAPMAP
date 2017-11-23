@@ -20,7 +20,7 @@
    <string>SADAMAP - Análise de Dados: Etapa 1 - Calibração de Pressão</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">background-color:rgb(86, 86, 86);
+   <string notr="true">background-color:rgb(53, 53, 53);
 color: rgb(255,255,255);</string>
   </property>
   <widget class="QWidget" name="centralWidget">
@@ -42,8 +42,20 @@ color: rgb(255,255,255);</string>
       <verstretch>0</verstretch>
      </sizepolicy>
     </property>
+    <property name="verticalScrollBarPolicy">
+     <enum>Qt::ScrollBarAlwaysOff</enum>
+    </property>
+    <property name="horizontalScrollBarPolicy">
+     <enum>Qt::ScrollBarAlwaysOff</enum>
+    </property>
+    <property name="sizeAdjustPolicy">
+     <enum>QAbstractScrollArea::AdjustToContents</enum>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignBottom|Qt::AlignHCenter</set>
+    </property>
    </widget>
-   <widget class="QGroupBox" name="escalaBox">
+   <widget class="QGroupBox" name="scaleBox">
     <property name="geometry">
      <rect>
       <x>20</x>
@@ -78,7 +90,7 @@ color: rgb(255, 255, 255);</string>
     <property name="checkable">
      <bool>false</bool>
     </property>
-    <widget class="QGroupBox" name="forcaBox">
+    <widget class="QGroupBox" name="forceBox">
      <property name="geometry">
       <rect>
        <x>10</x>
@@ -103,11 +115,11 @@ color: rgb(255, 255, 255);</string>
        </rect>
       </property>
       <property name="styleSheet">
-       <string notr="true">color:rgb(0,0,0);
-background-color: rgb(158, 151, 151);</string>
+       <string notr="true">background-color: rgb(80,80,80);
+color:rgb(255,255,255);</string>
       </property>
       <property name="text">
-       <string>100</string>
+       <string>32700</string>
       </property>
      </widget>
      <widget class="QLabel" name="f_max_label">
@@ -152,12 +164,15 @@ background-color: rgb(158, 151, 151);</string>
        </rect>
       </property>
       <property name="styleSheet">
-       <string notr="true">color:rgb(0,0,0);
-background-color: rgb(158, 151, 151);</string>
+       <string notr="true">background-color: rgb(80,80,80);
+color:rgb(255,255,255);</string>
+      </property>
+      <property name="text">
+       <string>0</string>
       </property>
      </widget>
     </widget>
-    <widget class="QGroupBox" name="pressaoBox">
+    <widget class="QGroupBox" name="pressureBox">
      <property name="geometry">
       <rect>
        <x>200</x>
@@ -182,8 +197,11 @@ background-color: rgb(158, 151, 151);</string>
        </rect>
       </property>
       <property name="styleSheet">
-       <string notr="true">color:rgb(0,0,0);
-background-color: rgb(158, 151, 151);</string>
+       <string notr="true">background-color: rgb(80,80,80);
+color:rgb(255,255,255);</string>
+      </property>
+      <property name="text">
+       <string>32700</string>
       </property>
      </widget>
      <widget class="QLabel" name="p_max_label">
@@ -228,17 +246,20 @@ background-color: rgb(158, 151, 151);</string>
        </rect>
       </property>
       <property name="styleSheet">
-       <string notr="true">color:rgb(0,0,0);
-background-color: rgb(158, 151, 151);</string>
+       <string notr="true">background-color: rgb(80,80,80);
+color:rgb(255,255,255);</string>
+      </property>
+      <property name="text">
+       <string>0</string>
       </property>
      </widget>
     </widget>
-    <widget class="QGroupBox" name="tempoGBox">
+    <widget class="QGroupBox" name="timeGBox">
      <property name="geometry">
       <rect>
-       <x>100</x>
+       <x>90</x>
        <y>140</y>
-       <width>171</width>
+       <width>211</width>
        <height>81</height>
       </rect>
      </property>
@@ -251,15 +272,18 @@ background-color: rgb(158, 151, 151);</string>
      <widget class="QLineEdit" name="t_max">
       <property name="geometry">
        <rect>
-        <x>100</x>
+        <x>140</x>
         <y>30</y>
         <width>61</width>
         <height>21</height>
        </rect>
       </property>
       <property name="styleSheet">
-       <string notr="true">color:rgb(0,0,0);
-background-color: rgb(158, 151, 151);</string>
+       <string notr="true">background-color: rgb(80,80,80);
+color:rgb(255,255,255);</string>
+      </property>
+      <property name="text">
+       <string>100</string>
       </property>
      </widget>
      <widget class="QLabel" name="t_max_label">
@@ -267,7 +291,7 @@ background-color: rgb(158, 151, 151);</string>
        <rect>
         <x>10</x>
         <y>30</y>
-        <width>81</width>
+        <width>131</width>
         <height>21</height>
        </rect>
       </property>
@@ -275,12 +299,12 @@ background-color: rgb(158, 151, 151);</string>
        <string notr="true">border: rgb(255,255,255)</string>
       </property>
       <property name="text">
-       <string>Intervalo (s):</string>
+       <string>Intervalo (amostras):</string>
       </property>
      </widget>
     </widget>
    </widget>
-   <widget class="QGroupBox" name="amostragemBox">
+   <widget class="QGroupBox" name="samplingBox">
     <property name="geometry">
      <rect>
       <x>20</x>
@@ -290,27 +314,24 @@ background-color: rgb(158, 151, 151);</string>
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color:rgb(53, 53, 53);
-border:1px solid rgb(255, 83, 0);
-color: rgb(255,255,255);</string>
+     <string notr="true">background-color: rgb(86, 86, 86);
+border: 1px solid rgb(255, 75, 0);
+color: rgb(255, 255, 255);</string>
     </property>
     <property name="title">
      <string>Amostragem</string>
     </property>
-    <widget class="QComboBox" name="amostragemCBox">
+    <widget class="QComboBox" name="samplingCBox">
      <property name="geometry">
       <rect>
-       <x>50</x>
+       <x>40</x>
        <y>30</y>
        <width>101</width>
        <height>27</height>
       </rect>
      </property>
      <property name="styleSheet">
-      <string notr="true">border-color: rgb(0,0,0);
-background-color: rgb(169, 169, 169);
-
-</string>
+      <string notr="true">background-color:rgb(53, 53, 53)</string>
      </property>
      <item>
       <property name="text">
@@ -359,42 +380,27 @@ background-color: rgb(169, 169, 169);
      </item>
     </widget>
    </widget>
-   <widget class="QGroupBox" name="cronometroBox">
+   <widget class="QGroupBox" name="currentTimeBox">
     <property name="geometry">
      <rect>
       <x>20</x>
       <y>330</y>
-      <width>381</width>
+      <width>391</width>
       <height>171</height>
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">border:1px solid rgb(123, 0, 129);</string>
+     <string notr="true">border:1px solid rgb(123, 0, 129);
+background-color: rgb(86, 86, 86);</string>
     </property>
     <property name="title">
      <string>Timer</string>
     </property>
-    <widget class="QPushButton" name="timerOptionButton">
+    <widget class="QPushButton" name="startTimerButton">
      <property name="geometry">
       <rect>
-       <x>140</x>
-       <y>130</y>
-       <width>61</width>
-       <height>31</height>
-      </rect>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">background-color:rgb(53, 53, 53)</string>
-     </property>
-     <property name="text">
-      <string>Opções</string>
-     </property>
-    </widget>
-    <widget class="QPushButton" name="initTimerButton">
-     <property name="geometry">
-      <rect>
-       <x>140</x>
-       <y>30</y>
+       <x>150</x>
+       <y>20</y>
        <width>61</width>
        <height>31</height>
       </rect>
@@ -406,7 +412,7 @@ background-color: rgb(169, 169, 169);
       <string>Iniciar</string>
      </property>
     </widget>
-    <widget class="QGroupBox" name="cronometroGBox">
+    <widget class="QGroupBox" name="screenTimerGBox">
      <property name="geometry">
       <rect>
        <x>10</x>
@@ -421,29 +427,29 @@ background-color: rgb(169, 169, 169);
      <property name="title">
       <string>Cronômetro</string>
      </property>
-     <widget class="QLabel" name="cronometroLabel">
+     <widget class="QLabel" name="screenTimerLabel">
       <property name="geometry">
        <rect>
-        <x>20</x>
+        <x>10</x>
         <y>60</y>
-        <width>81</width>
+        <width>101</width>
         <height>31</height>
        </rect>
       </property>
       <property name="styleSheet">
-       <string notr="true">background-color: rgb(158, 151, 151);
-color:rgb(0, 0, 0);
+       <string notr="true">background-color: rgb(80,80,80);
+color:rgb(255,255,255);
 font: 75 12pt &quot;Noto Serif&quot;;</string>
       </property>
       <property name="text">
-       <string>10.2674 s</string>
+       <string>0 seg</string>
       </property>
      </widget>
     </widget>
-    <widget class="QGroupBox" name="horaInicGBox">
+    <widget class="QGroupBox" name="startTimeGBox">
      <property name="geometry">
       <rect>
-       <x>220</x>
+       <x>230</x>
        <y>10</y>
        <width>151</width>
        <height>71</height>
@@ -455,7 +461,7 @@ font: 75 12pt &quot;Noto Serif&quot;;</string>
      <property name="title">
       <string>Horário de Início</string>
      </property>
-     <widget class="QLabel" name="horaInicLabel">
+     <widget class="QLabel" name="startTimeLabel">
       <property name="geometry">
        <rect>
         <x>30</x>
@@ -465,19 +471,21 @@ font: 75 12pt &quot;Noto Serif&quot;;</string>
        </rect>
       </property>
       <property name="styleSheet">
-       <string notr="true">background-color: rgb(158, 151, 151);
-color:rgb(0, 0, 0);
+       <string notr="true">background-color: rgb(80,80,80);
+color:rgb(255,255,255);
 font: 14pt &quot;Noto Serif&quot;;</string>
       </property>
       <property name="text">
-       <string>16:30:15</string>
+       <string>00:00:00</string>
       </property>
      </widget>
+     <zorder>startTimeLabel</zorder>
+     <zorder>samplingCBox</zorder>
     </widget>
-    <widget class="QGroupBox" name="horaAtualGBox">
+    <widget class="QGroupBox" name="currentTimeGBox">
      <property name="geometry">
       <rect>
-       <x>220</x>
+       <x>230</x>
        <y>90</y>
        <width>151</width>
        <height>71</height>
@@ -489,7 +497,7 @@ font: 14pt &quot;Noto Serif&quot;;</string>
      <property name="title">
       <string>Horário Atual</string>
      </property>
-     <widget class="QLabel" name="horaAtualLabel">
+     <widget class="QLabel" name="currentTimeLabel">
       <property name="geometry">
        <rect>
         <x>30</x>
@@ -499,20 +507,20 @@ font: 14pt &quot;Noto Serif&quot;;</string>
        </rect>
       </property>
       <property name="styleSheet">
-       <string notr="true">background-color: rgb(158, 151, 151);
-color:rgb(0, 0, 0);
+       <string notr="true">background-color: rgb(80,80,80);
+color:rgb(255,255,255);
 font: 14pt &quot;Noto Serif&quot;;</string>
       </property>
       <property name="text">
-       <string>17:05:56</string>
+       <string>00:00:00</string>
       </property>
      </widget>
     </widget>
     <widget class="QPushButton" name="stopTimerButton">
      <property name="geometry">
       <rect>
-       <x>140</x>
-       <y>80</y>
+       <x>150</x>
+       <y>120</y>
        <width>61</width>
        <height>31</height>
       </rect>
@@ -524,11 +532,27 @@ font: 14pt &quot;Noto Serif&quot;;</string>
       <string>Parar</string>
      </property>
     </widget>
+    <widget class="QPushButton" name="pauseTimerButton">
+     <property name="geometry">
+      <rect>
+       <x>150</x>
+       <y>70</y>
+       <width>61</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color:rgb(53, 53, 53)</string>
+     </property>
+     <property name="text">
+      <string>Pausar</string>
+     </property>
+    </widget>
    </widget>
-   <widget class="QGroupBox" name="prensaNameGBox">
+   <widget class="QGroupBox" name="pressNameGBox">
     <property name="geometry">
      <rect>
-      <x>210</x>
+      <x>220</x>
       <y>250</y>
       <width>191</width>
       <height>71</height>
@@ -536,46 +560,47 @@ font: 14pt &quot;Noto Serif&quot;;</string>
     </property>
     <property name="styleSheet">
      <string notr="true">border: 1px solid rgb(27, 144, 0);
-background-color:rgb(53, 53, 53)</string>
+background-color: rgb(86, 86, 86);</string>
     </property>
     <property name="title">
      <string>Prensa</string>
     </property>
-    <widget class="QLineEdit" name="prensaName">
+    <widget class="QLineEdit" name="pressName">
      <property name="geometry">
       <rect>
        <x>50</x>
        <y>20</y>
        <width>111</width>
-       <height>31</height>
+       <height>41</height>
       </rect>
      </property>
      <property name="styleSheet">
       <string notr="true">font: 12pt &quot;Noto Serif&quot;;
-color:rgb(0,0,0);
-background-color: rgb(158, 151, 151);</string>
+background-color:rgb(53, 53, 53);
+color:rgb(255,255,255);</string>
      </property>
      <property name="text">
       <string>Pr 400 Tonf</string>
      </property>
     </widget>
    </widget>
-   <widget class="QGroupBox" name="valAbsolGBox">
+   <widget class="QGroupBox" name="absValGBox">
     <property name="geometry">
      <rect>
       <x>20</x>
       <y>510</y>
-      <width>381</width>
+      <width>391</width>
       <height>111</height>
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">border: 1px solid rgb(26, 149, 172)</string>
+     <string notr="true">border: 1px solid rgb(26, 149, 172);
+background-color: rgb(86, 86, 86);</string>
     </property>
     <property name="title">
      <string>Valores Absolutos</string>
     </property>
-    <widget class="QGroupBox" name="forcaGBox">
+    <widget class="QGroupBox" name="forceGBox">
      <property name="geometry">
       <rect>
        <x>20</x>
@@ -590,7 +615,7 @@ background-color: rgb(158, 151, 151);</string>
      <property name="title">
       <string>Força</string>
      </property>
-     <widget class="QLabel" name="forcaLabel">
+     <widget class="QLabel" name="forceLabel">
       <property name="geometry">
        <rect>
         <x>20</x>
@@ -600,19 +625,19 @@ background-color: rgb(158, 151, 151);</string>
        </rect>
       </property>
       <property name="styleSheet">
-       <string notr="true">background-color: rgb(158, 151, 151);
-color:rgb(0, 0, 0);
+       <string notr="true">background-color: rgb(80,80,80);
+color:rgb(255,255,255);
 font: 14pt &quot;Noto Serif&quot;;</string>
       </property>
       <property name="text">
-       <string>-42.679 Tonf</string>
+       <string>0 Tonf</string>
       </property>
      </widget>
     </widget>
-    <widget class="QGroupBox" name="calibranteGBox">
+    <widget class="QGroupBox" name="calibratorGBox">
      <property name="geometry">
       <rect>
-       <x>200</x>
+       <x>220</x>
        <y>30</y>
        <width>161</width>
        <height>71</height>
@@ -624,7 +649,7 @@ font: 14pt &quot;Noto Serif&quot;;</string>
      <property name="title">
       <string>Tensão no Calibrante</string>
      </property>
-     <widget class="QLabel" name="calibranteLabel">
+     <widget class="QLabel" name="calibratorLabel">
       <property name="geometry">
        <rect>
         <x>20</x>
@@ -634,12 +659,12 @@ font: 14pt &quot;Noto Serif&quot;;</string>
        </rect>
       </property>
       <property name="styleSheet">
-       <string notr="true">background-color: rgb(158, 151, 151);
-color:rgb(0, 0, 0);
+       <string notr="true">background-color: rgb(80,80,80);
+color:rgb(255,255,255);
 font: 14pt &quot;Noto Serif&quot;;</string>
       </property>
       <property name="text">
-       <string>-23.804 mV</string>
+       <string>0 mV</string>
       </property>
      </widget>
     </widget>
@@ -701,15 +726,9 @@ font: 14pt &quot;Noto Serif&quot;;</string>
      <string>Porta</string>
     </property>
    </widget>
-   <widget class="QMenu" name="menuPlay_Pause">
-    <property name="title">
-     <string>Play/Pause</string>
-    </property>
-   </widget>
    <addaction name="menuArquivo"/>
    <addaction name="menuEtapa"/>
    <addaction name="menuPorta"/>
-   <addaction name="menuPlay_Pause"/>
   </widget>
   <widget class="QStatusBar" name="menuStatusBar"/>
   <action name="alternaCalibraP">
