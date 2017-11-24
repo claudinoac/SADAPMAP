@@ -52,7 +52,7 @@ color: rgb(255,255,255);</string>
      <enum>QAbstractScrollArea::AdjustToContents</enum>
     </property>
     <property name="alignment">
-     <set>Qt::AlignBottom|Qt::AlignHCenter</set>
+     <set>Qt::AlignBottom|Qt::AlignJustify</set>
     </property>
    </widget>
    <widget class="QGroupBox" name="scaleBox">
@@ -479,8 +479,6 @@ font: 14pt &quot;Noto Serif&quot;;</string>
        <string>00:00:00</string>
       </property>
      </widget>
-     <zorder>startTimeLabel</zorder>
-     <zorder>samplingCBox</zorder>
     </widget>
     <widget class="QGroupBox" name="currentTimeGBox">
      <property name="geometry">

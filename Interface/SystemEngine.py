@@ -6,7 +6,8 @@ from pyqtgraph import GraphicsLayout
 from SerialManager import SerialManager
 from CalibracaoP import Ui_MainWindow
 from Graph import Graph
-
+import numpy as np
+from math import sin,log
 
 class SystemEngine(object):
 
@@ -28,16 +29,29 @@ class SystemEngine(object):
         self.y2_max=10000
         self.layout=GraphicsLayout()
 
-        self.graph = self.graph = Graph(self.x_scale, self.y1_min, self.y1_max, self.y2_min, self.y2_max, 770, 550, 'r', 'g', "Força", "Tensão no Calibrante")
+        self.updateTimer()
+        self.graph = Graph(self.time[0]/1000,self.x_scale, self.y1_min, self.y1_max, self.y2_min, self.y2_max, 800, 500, 'r', 'g', "Força", "Tensão no Calibrante")
+
         self.layout.addItem(self.graph.axis2,row=1,col=3,rowspan=1,colspan=1)
         self.layout.addItem(self.graph.axis1,row=1,col=1,rowspan=1,colspan=1)
         self.layout.addItem(self.graph.axisTime,row=2,col=2,rowspan=1,colspan=1)
         self.layout.addItem(self.graph,row=1,col=2,rowspan=1,colspan=1)
+        self.layout.setMinimumSize(500, 600)
+        self.layout.setMaximumSize(500,600)
+
+
+
+
 
         self.scene = QtGui.QGraphicsScene()
+
         self.scene.addItem(self.layout)
-        self.layout.setMaximumSize(770,550)
+
+
+
+        #self.layout.setMaximumSize(770,550)
         self.scene.focusItem()
+
         self.uiCalibra1.sceneSelector(self.scene)
         self.dialog.showMaximized()
 
@@ -97,7 +111,7 @@ class SystemEngine(object):
             self.x_scale="1"
 
         self.layout.clear()
-        self.graph = Graph(self.x_scale, self.y1_min, self.y1_max, self.y2_min, self.y2_max, 770, 550, 'r', 'g', "Força", "Tensão no Calibrante")
+        self.graph = Graph(self.time[0]/1000,self.x_scale, self.y1_min, self.y1_max, self.y2_min, self.y2_max, 770, 550, 'r', 'g', "Força", "Tensão no Calibrante")
         self.layout.addItem(self.graph.axis2,row=1,col=3,rowspan=1,colspan=1)
         self.layout.addItem(self.graph.axis1,row=1,col=1,rowspan=1,colspan=1)
         self.layout.addItem(self.graph.axisTime,row=2,col=2,rowspan=1,colspan=1)

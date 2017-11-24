@@ -33,13 +33,10 @@ class Ui_MainWindow(object):
         self.CentralGraph.setVerticalScrollBarPolicy(QtCore.Qt.ScrollBarAlwaysOff)
         self.CentralGraph.setHorizontalScrollBarPolicy(QtCore.Qt.ScrollBarAlwaysOff)
         self.CentralGraph.setSizeAdjustPolicy(QtWidgets.QAbstractScrollArea.AdjustToContents)
-        self.CentralGraph.setAlignment(QtCore.Qt.AlignCenter)
+        self.CentralGraph.setAlignment(QtCore.Qt.AlignJustify)
         self.CentralGraph.setObjectName("CentralGraph")
         self.scaleBox = QtWidgets.QGroupBox(self.centralWidget)
         self.scaleBox.setGeometry(QtCore.QRect(20, 10, 391, 231))
-        self.scaleBox.setToolTip("")
-        self.scaleBox.setStatusTip("")
-        self.scaleBox.setWhatsThis("")
         self.scaleBox.setAutoFillBackground(False)
         self.scaleBox.setStyleSheet("background-color: rgb(86, 86, 86);\n"
                                     "border:1px solid rgb(194, 8, 6);\n"
@@ -283,6 +280,7 @@ class Ui_MainWindow(object):
         self.CentralGraph.setBackgroundBrush(QtCore.Qt.black)
         self.CentralGraph.setInteractive(False)
 
+
     def serialListPanel(self, seriaList):
         self.usb = []
         for i in range(0, len(seriaList)):
@@ -348,19 +346,19 @@ class Ui_MainWindow(object):
         MainWindow.setWindowTitle(
             _translate("MainWindow", "SADAMAP - Análise de Dados: Etapa 1 - Calibração de Pressão"))
         self.scaleBox.setTitle(_translate("MainWindow", "Escalas de Visualização (Range)"))
-        self.forceBox.setTitle(_translate("MainWindow", "Força"))
+        self.forceBox.setTitle(_translate("MainWindow", "Força (kN)"))
         self.f_max.setText(_translate("MainWindow", "32700"))
         self.f_max_label.setText(_translate("MainWindow", "Máximo:"))
         self.f_min_label.setText(_translate("MainWindow", "Mínimo:"))
         self.f_min.setText(_translate("MainWindow", "0"))
-        self.pressureBox.setTitle(_translate("MainWindow", "Tensão no Calibrante"))
+        self.pressureBox.setTitle(_translate("MainWindow", "Tensão no Calibrante (mV)"))
         self.p_max.setText(_translate("MainWindow", "32700"))
         self.p_max_label.setText(_translate("MainWindow", "Máximo:"))
         self.p_min_label.setText(_translate("MainWindow", "Mínimo:"))
         self.p_min.setText(_translate("MainWindow", "0"))
-        self.timeGBox.setTitle(_translate("MainWindow", "Tempo"))
+        self.timeGBox.setTitle(_translate("MainWindow", "Tempo (s)"))
         self.t_max.setText(_translate("MainWindow", "100"))
-        self.t_max_label.setText(_translate("MainWindow", "Intervalo (amostras):"))
+        self.t_max_label.setText(_translate("MainWindow", "Intervalo:"))
         self.samplingBox.setTitle(_translate("MainWindow", "Amostragem"))
         self.samplingCBox.setItemText(0, _translate("MainWindow", "100 mseg"))
         self.samplingCBox.setItemText(1, _translate("MainWindow", "200 mseg"))

@@ -5,9 +5,10 @@ import time
 class Graph(PlotItem):
     index = 0
 
-    def __init__(self, x_range, y1_min, y1_max, y2_min, y2_max, x_size, y_size, color1, color2, name1, name2):
+    def __init__(self,x_sampling, x_range, y1_min, y1_max, y2_min, y2_max, x_size, y_size, color1, color2, name1, name2):
         super(Graph, self).__init__()
-        self.x_range = x_range
+        self.x_sampling=1
+        self.x_range = x_range/x_sampling
         self.y1_min = y1_min
         self.y1_max = y1_max
         self.y2_min = y2_min
