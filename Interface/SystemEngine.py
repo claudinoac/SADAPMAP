@@ -4,7 +4,7 @@ import sys
 from PyQt5 import QtCore,QtGui,QtWidgets
 from pyqtgraph import GraphicsLayout
 from SerialManager import SerialManager
-from CalibracaoP import Ui_MainWindow
+from CalibracaoT import Ui_MainWindow
 from Graph import Graph
 import numpy as np
 from math import sin,log

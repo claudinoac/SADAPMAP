@@ -9,10 +9,12 @@
 
 from PyQt5 import QtCore, QtGui, QtWidgets
 from datetime import datetime
+from InterfaceTimer import InterfaceTimer
 import time
 
 
-class Ui_MainWindow(object):
+class Ui_MainWindow(InterfaceTimer):
+
     def setupUi(self, MainWindow):
         self.MainWindow = MainWindow
         MainWindow.setObjectName("MainWindow")
@@ -295,50 +297,6 @@ class Ui_MainWindow(object):
             self.startTimeLabel.setText(self.currentTimeLabel.text())
         else:
             self.menuPlay_Pause.setText("Play")
-
-    def startScreenTimer(self):
-        self.timeValue = 0
-        self.screenTimer = QtCore.QTimer()
-        self.screenTimer.timeout.connect(self.updateScreenTimer)
-        self.screenTimer.start(100)
-        self.startTimerButton.setText("Reiniciar")
-        self.pauseTimerButton.setText("Pausar")
-        self.screenTimerFlag = True
-
-    def playPauseScreenTimer(self):
-        self.startTimerButton.setText("Reiniciar")
-        if (self.pauseTimerButton == "Iniciar"):
-            self.startScreenTimer()
-        if (self.screenTimerFlag == True):
-            self.screenTimer.stop()
-            self.screenTimerFlag = False
-            self.pauseTimerButton.setText("Continuar")
-        else:
-            try:
-                self.screenTimer.start(100)
-                self.screenTimerFlag = True
-                self.pauseTimerButton.setText("Pausar")
-            except:
-                self.startScreenTimer()
-
-    def stopScreenTimer(self):
-        self.screenTimer.stop()
-        self.screenTimerLabel.setText("0.00 seg")
-        self.timeValue = 0
-        self.screenTimerFlag = False
-        self.startTimerButton.setText("Iniciar")
-        self.pauseTimerButton.setText("Iniciar")
-
-    def updateScreenTimer(self):
-        self.timeValue += 0.1
-        self.screenTimerLabel.setText("%.1f seg" % self.timeValue)
-
-    def updateCurrentTime(self):
-        self.currentTime = (str(datetime.now().time()))
-        self.currentTime = self.currentTime.split(":", 4)
-        self.currentTime[2] = self.currentTime[2].split(".", 3)
-        self.currentTimeLabel.setText("%s:%s:%s" % (self.currentTime[0], self.currentTime[1], self.currentTime[2][0]))
-
 
 
     def retranslateUi(self, MainWindow):

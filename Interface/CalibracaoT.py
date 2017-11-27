@@ -10,8 +10,9 @@
 from PyQt5 import QtCore, QtGui, QtWidgets
 from datetime import datetime
 import time
+from InterfaceTimer import InterfaceTimer
 
-class Ui_MainWindow(object):
+class Ui_MainWindow(InterfaceTimer):
     def setupUi(self, MainWindow):
         self.MainWindow=MainWindow
         MainWindow.setObjectName("MainWindow")
@@ -346,16 +347,8 @@ class Ui_MainWindow(object):
 
         self.menuPlay_Pause.toggled.connect(self.playPauseButtonAnimation)
 
-        self.pauseTimerButton.setText("Iniciar")
-        self.screenTimerFlag = False
-        self.startTimerButton.pressed.connect(self.startScreenTimer)
-        self.stopTimerButton.pressed.connect(self.stopScreenTimer)
-        self.pauseTimerButton.pressed.connect(self.playPauseScreenTimer)
-        self.currentTimer = QtCore.QTimer()
-        self.currentTimer.timeout.connect(self.updateCurrentTime)
-        self.currentTimer.start(500)
+        self.linkActions()
 
-        self.screenTimerFlag = False
         self.retranslateUi(MainWindow)
 
 
@@ -377,57 +370,11 @@ class Ui_MainWindow(object):
     def playPauseButtonAnimation(self):
         if (self.menuPlay_Pause.text() == "Play"):
             self.menuPlay_Pause.setText("Pause")
-            self.startTimeLabel.setText(self.currentTimeLabel.text())
+            self.startTimeLabel.setText(self.currentTimeLabel.text)
         else:
             self.menuPlay_Pause.setText("Play")
 
 
-    def startScreenTimer(self):
-        self.timeValue = 0
-        self.screenTimer = QtCore.QTimer()
-        self.screenTimer.timeout.connect(self.updateScreenTimer)
-        self.screenTimer.start(100)
-        self.startTimerButton.setText("Reiniciar")
-        self.pauseTimerButton.setText("Pausar")
-        self.screenTimerFlag = True
-
-
-    def playPauseScreenTimer(self):
-        self.startTimerButton.setText("Reiniciar")
-        if (self.pauseTimerButton == "Iniciar"):
-            self.startScreenTimer()
-        if (self.screenTimerFlag == True):
-            self.screenTimer.stop()
-            self.screenTimerFlag = False
-            self.pauseTimerButton.setText("Continuar")
-        else:
-            try:
-                self.screenTimer.start(100)
-                self.screenTimerFlag = True
-                self.pauseTimerButton.setText("Pausar")
-            except:
-                self.startScreenTimer()
-
-
-    def stopScreenTimer(self):
-        self.screenTimer.stop()
-        self.screenTimerLabel.setText("0.00 seg")
-        self.timeValue = 0
-        self.screenTimerFlag = False
-        self.startTimerButton.setText("Iniciar")
-        self.pauseTimerButton.setText("Iniciar")
-
-
-    def updateScreenTimer(self):
-        self.timeValue += 0.1
-        self.screenTimerLabel.setText("%.1f seg" % self.timeValue)
-
-
-    def updateCurrentTime(self):
-        self.currentTime = (str(datetime.now().time()))
-        self.currentTime = self.currentTime.split(":", 4)
-        self.currentTime[2] = self.currentTime[2].split(".", 3)
-        self.currentTimeLabel.setText("%s:%s:%s" % (self.currentTime[0], self.currentTime[1], self.currentTime[2][0]))
 
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
