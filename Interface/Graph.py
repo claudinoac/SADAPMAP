@@ -5,60 +5,72 @@ import time
 class Graph(PlotItem):
     index = 0
 
-    def __init__(self,x_sampling, x_range, y1_min, y1_max, y2_min, y2_max, x_size, y_size, color1, color2, name1, name2):
+    def __init__(self,x_sampling, x_range, n_axis, y_min, y_max, x_size, y_size, color, name,unit):
         super(Graph, self).__init__()
         self.x_sampling=1
         self.x_range = x_range/x_sampling
-        self.y1_min = y1_min
-        self.y1_max = y1_max
-        self.y2_min = y2_min
-        self.y2_max = y2_max
-        self.x_size = x_size
-        self.y_size = y_size
-        self.color1 = color1
-        self.color2 = color2
-        self.name1 = name1
-        self.name2 = name2
-        self.curve1 = self.plot(pen=color1, name=self.name1)
-        self.curve2 = self.plot(pen=color2, name=self.name2)
+
+        self.curve = []
+        self.axis = []
+        self.y=[]
+
+        self.curve.append(self.plot(pen=color[0], name=name[0]))
+        self.axis.append(AxisItem("left",color[0]))
+        self.axis[0].setLabel(name[0], unit[0])
+        self.axis[0].setRange(y_min[0], y_max[0])
+
+        y_axis = [0]
+        self.y.append(y_axis)
+
+
+        try:
+            for n in range(1,n_axis):
+                self.curve.append(self.plot(pen=color[n], name=name[n]))
+                self.axis.append(AxisItem("right",color[n]))
+                self.axis[n].setLabel(name[n],unit[n])
+                self.axis[n].setRange(y_min[n],y_max[n])
+                self.y.append(y_axis)
+                print(y_axis)
+        except Exception as e:
+            print(e)
 
         self.axisTime = AxisItem("bottom", 'w')
-        self.axis2 = AxisItem("right", color2)
-        self.axis1 = AxisItem("left", color1)
-        self.axis1.setLabel(self.name1,'Tonf')
-        self.axis2.setLabel(self.name2,'mV')
         self.axisTime.setLabel("Tempo", 's')
+        self.axisTime.setRange(0, x_range)
+        self.x=[]
+        self.x.append(0)
 
+        self.showAxis("left", False)
+        self.showAxis("bottom", False)
 
-        self.axisTime.setRange(0,x_range)
-        self.axis1.setRange(y1_min,y1_max)
-        self.axis2.setRange(y2_min,y2_max)
-        self.showAxis("left",False)
-        self.showAxis("bottom",False)
-
-        self.setMinimumSize(x_size,y_size)
+        self.setMinimumSize(x_size, y_size)
 
         self.setXRange(0, self.x_range, padding=0)
-        self.setYRange(min(self.y1_min,self.y2_min), max(self.y1_max,self.y2_max), padding=0)
-        self.x1 = []
-        self.y1 = []
-        self.y2 = []
+        self.setYRange(min(y_min), max(y_max), padding=0)
+
         self.timeant = time.time()
 
 
-
-    def updateGraph(self, y1, y2):
+    def updateGraph(self, y):
         # print(time.time()-self.timeant)
-        self.y1.append(y1)
-        self.y2.append(y2)
-        if len(self.y1) > self.x_range + 1:
-            self.y1.pop(0)
-            self.y2.pop(0)
+
+
+        for n in range(0,len(y)):
+            print(y[n])
+            print(self.y[n])
+            self.y[n].append(y[n])
+
+        if len(self.y[0]) > self.x_range+1 :
+            for n in range(0,len(y)):
+                self.y[n].pop(0)
             self.index = self.x_range
         else:
-            self.x1.append(self.index)
+            self.x.append(self.index)
+
         self.index = self.index + 1
 
-        self.curve1.setData(self.x1, self.y1)
-        self.curve2.setData(self.x1, self.y2)
-        #self.timeant = time.time()
+
+        for n in range(0,len(y)):
+            self.curve[0].setData(self.x, self.y[0])
+
+        self.timeant = time.time()

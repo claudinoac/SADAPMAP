@@ -473,29 +473,12 @@ border:1px solid rgb(123, 0, 129);</string>
     <property name="title">
      <string>Timer</string>
     </property>
-    <widget class="QPushButton" name="startTimerButton">
-     <property name="geometry">
-      <rect>
-       <x>170</x>
-       <y>30</y>
-       <width>51</width>
-       <height>31</height>
-      </rect>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">background-color:rgb(53, 53, 53);
-border: 1px solid rgb(44, 0, 47);</string>
-     </property>
-     <property name="text">
-      <string>Iniciar</string>
-     </property>
-    </widget>
     <widget class="QGroupBox" name="timerGBox">
      <property name="geometry">
       <rect>
        <x>10</x>
        <y>30</y>
-       <width>141</width>
+       <width>211</width>
        <height>71</height>
       </rect>
      </property>
@@ -521,14 +504,45 @@ border: 1px solid rgb(44, 0, 47);
 font: 75 12pt &quot;Noto Serif&quot;;</string>
       </property>
       <property name="text">
-       <string>10.2674 s</string>
+       <string>0.00 s</string>
       </property>
      </widget>
-     <zorder>timerLabel</zorder>
-     <zorder>startTimerButton</zorder>
-     <zorder>stopTimerButton</zorder>
+     <widget class="QPushButton" name="startTimerButton">
+      <property name="geometry">
+       <rect>
+        <x>130</x>
+        <y>10</y>
+        <width>51</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color:rgb(53, 53, 53);
+border: 1px solid rgb(44, 0, 47);</string>
+      </property>
+      <property name="text">
+       <string>Iniciar</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="stopTimerButton">
+      <property name="geometry">
+       <rect>
+        <x>130</x>
+        <y>40</y>
+        <width>51</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color:rgb(53, 53, 53);
+border: 1px solid rgb(44, 0, 47);</string>
+      </property>
+      <property name="text">
+       <string>Parar</string>
+      </property>
+     </widget>
     </widget>
-    <widget class="QGroupBox" name="currentTimeGBox">
+    <widget class="QGroupBox" name="startTimeGBox">
      <property name="geometry">
       <rect>
        <x>240</x>
@@ -543,7 +557,7 @@ font: 75 12pt &quot;Noto Serif&quot;;</string>
      <property name="title">
       <string>Horário de Início</string>
      </property>
-     <widget class="QLabel" name="currentTimeLabel">
+     <widget class="QLabel" name="startTimeLabel">
       <property name="geometry">
        <rect>
         <x>30</x>
@@ -562,7 +576,7 @@ font: 14pt &quot;Noto Serif&quot;;</string>
       </property>
      </widget>
     </widget>
-    <widget class="QGroupBox" name="horaAtualGBox">
+    <widget class="QGroupBox" name="currentTimeGBox">
      <property name="geometry">
       <rect>
        <x>240</x>
@@ -577,7 +591,7 @@ font: 14pt &quot;Noto Serif&quot;;</string>
      <property name="title">
       <string>Horário Atual</string>
      </property>
-     <widget class="QLabel" name="horaAtualLabel">
+     <widget class="QLabel" name="currentTimeLabel">
       <property name="geometry">
        <rect>
         <x>30</x>
@@ -596,29 +610,12 @@ font: 14pt &quot;Noto Serif&quot;;</string>
       </property>
      </widget>
     </widget>
-    <widget class="QPushButton" name="stopTimerButton">
-     <property name="geometry">
-      <rect>
-       <x>170</x>
-       <y>70</y>
-       <width>51</width>
-       <height>31</height>
-      </rect>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">background-color:rgb(53, 53, 53);
-border: 1px solid rgb(44, 0, 47);</string>
-     </property>
-     <property name="text">
-      <string>Parar</string>
-     </property>
-    </widget>
     <widget class="QGroupBox" name="regTimerGBox">
      <property name="geometry">
       <rect>
        <x>10</x>
        <y>120</y>
-       <width>141</width>
+       <width>211</width>
        <height>71</height>
       </rect>
      </property>
@@ -628,7 +625,24 @@ border: 1px solid rgb(44, 0, 47);</string>
      <property name="title">
       <string>Cont. Regressivo</string>
      </property>
-     <widget class="QLabel" name="regTimerLabel">
+     <widget class="QPushButton" name="startRegTimerButton">
+      <property name="geometry">
+       <rect>
+        <x>130</x>
+        <y>10</y>
+        <width>51</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">border: 1px solid rgb(255,255,255);
+background-color:rgb(53, 53, 53)</string>
+      </property>
+      <property name="text">
+       <string>Iniciar</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="regTimerLabel">
       <property name="geometry">
        <rect>
         <x>20</x>
@@ -643,35 +657,15 @@ border: 1px solid rgb(255,255,255);
 color:rgb(255,255,255);
 font: 75 12pt &quot;Noto Serif&quot;;</string>
       </property>
-      <property name="text">
-       <string>10.2674 s</string>
-      </property>
      </widget>
-    </widget>
-    <widget class="QPushButton" name="startRegTimerButton">
-     <property name="geometry">
-      <rect>
-       <x>170</x>
-       <y>120</y>
-       <width>51</width>
-       <height>31</height>
-      </rect>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">border: 1px solid rgb(255,255,255);
-background-color:rgb(53, 53, 53)</string>
-     </property>
-     <property name="text">
-      <string>Iniciar</string>
-     </property>
     </widget>
     <widget class="QPushButton" name="stopRegTimerButton">
      <property name="geometry">
       <rect>
-       <x>170</x>
+       <x>140</x>
        <y>160</y>
        <width>51</width>
-       <height>31</height>
+       <height>21</height>
       </rect>
      </property>
      <property name="styleSheet">
@@ -742,7 +736,7 @@ background-color:rgb(53, 53, 53)</string>
      </rect>
     </property>
     <property name="text">
-     <string>/home/LAPMA/Pressao/1025565.pre</string>
+     <string>/home/LAPMA/Pressao/1025565.temp</string>
     </property>
    </widget>
    <widget class="QGroupBox" name="ambientTempGBox">
@@ -900,16 +894,6 @@ font: 14pt &quot;Noto Serif&quot;;</string>
      </widget>
     </widget>
    </widget>
-   <zorder>CentralGraph</zorder>
-   <zorder>scaleBox</zorder>
-   <zorder>samplingBox</zorder>
-   <zorder>cronometroBox</zorder>
-   <zorder>prensaNameGBox</zorder>
-   <zorder>arquivoSalvoLabel</zorder>
-   <zorder>arqSalvoLabel</zorder>
-   <zorder>ambientTempGBox</zorder>
-   <zorder>amostragemBox_2</zorder>
-   <zorder>absolValGBox</zorder>
   </widget>
   <widget class="QStatusBar" name="menuStatusBar"/>
   <widget class="QMenuBar" name="menuBar">
@@ -921,15 +905,15 @@ font: 14pt &quot;Noto Serif&quot;;</string>
      <height>23</height>
     </rect>
    </property>
-   <widget class="QMenu" name="menuArquivo">
+   <widget class="QMenu" name="fileMenu">
     <property name="title">
      <string>Arquivo</string>
     </property>
-    <addaction name="botaoAbrir"/>
-    <addaction name="botaoSalvar"/>
-    <addaction name="botaoSalvarComo"/>
+    <addaction name="openButton"/>
+    <addaction name="saveButton"/>
+    <addaction name="saveAsButton"/>
    </widget>
-   <widget class="QMenu" name="menuEtapa">
+   <widget class="QMenu" name="stageMenu">
     <property name="title">
      <string>Etapa</string>
     </property>
@@ -937,32 +921,32 @@ font: 14pt &quot;Noto Serif&quot;;</string>
     <addaction name="alternaCalibraT"/>
     <addaction name="alternaProc"/>
    </widget>
-   <widget class="QMenu" name="menuPorta">
+   <widget class="QMenu" name="serialMenu">
     <property name="title">
      <string>Porta</string>
     </property>
    </widget>
-   <widget class="QMenu" name="menuPlay_Pause">
+   <widget class="QMenu" name="playPauseButton">
     <property name="title">
      <string>Iniciar/Pausar</string>
     </property>
    </widget>
-   <widget class="QMenu" name="menuTermopar">
+   <widget class="QMenu" name="ThermocoupleMenu">
     <property name="title">
      <string>Termopar</string>
     </property>
    </widget>
-   <widget class="QMenu" name="menuFinalizar">
+   <widget class="QMenu" name="finalizeButton">
     <property name="title">
      <string>Finalizar</string>
     </property>
    </widget>
-   <addaction name="menuArquivo"/>
-   <addaction name="menuEtapa"/>
-   <addaction name="menuPorta"/>
-   <addaction name="menuTermopar"/>
-   <addaction name="menuPlay_Pause"/>
-   <addaction name="menuFinalizar"/>
+   <addaction name="fileMenu"/>
+   <addaction name="stageMenu"/>
+   <addaction name="serialMenu"/>
+   <addaction name="ThermocoupleMenu"/>
+   <addaction name="playPauseButton"/>
+   <addaction name="finalizeButton"/>
   </widget>
   <action name="alternaCalibraP">
    <property name="text">
@@ -979,7 +963,7 @@ font: 14pt &quot;Noto Serif&quot;;</string>
     <string>Processamento</string>
    </property>
   </action>
-  <action name="botaoAbrir">
+  <action name="openButton">
    <property name="enabled">
     <bool>false</bool>
    </property>
@@ -1000,12 +984,12 @@ font: 14pt &quot;Noto Serif&quot;;</string>
     <string>Salvar Como</string>
    </property>
   </action>
-  <action name="botaoSalvar">
+  <action name="saveButton">
    <property name="text">
     <string>Salvar</string>
    </property>
   </action>
-  <action name="botaoSalvarComo">
+  <action name="saveAsButton">
    <property name="text">
     <string>Salvar Como</string>
    </property>

@@ -1,6 +1,7 @@
 import serial
 import serial.tools.list_ports
 import time
+from PyQt5 import QtWidgets
 
 class SerialManager(object):
 
@@ -22,3 +23,11 @@ class SerialManager(object):
             pass
         self.ser.flushInput()
         return self.ser.readline()
+
+    def serialListPanel(self, uiWindow):
+        uiWindow.usb = []
+        for i in range(0, len(self.portList)):
+            uiWindow.usb.append(QtWidgets.QAction(uiWindow.MainWindow))
+            uiWindow.usb[i].setText(self.portList[i].device)
+            uiWindow.usb[i].setCheckable(True)
+            uiWindow.serialMenu.addAction(uiWindow.usb[i])

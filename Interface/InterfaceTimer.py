@@ -1,42 +1,58 @@
 from datetime import datetime
-from PyQt5 import QtWidgets,QtCore
+from PyQt5 import QtWidgets,QtCore,QtGui
 
 class InterfaceTimer(object):
 
     def __init__(self):
         self.startTimerButton = QtWidgets.QPushButton()
-        self.pauseTimerButton = QtWidgets.QPushButton()
         self.stopTimerButton = QtWidgets.QPushButton()
         self.startRegTimerButton = QtWidgets.QPushButton()
         self.stopRegTimerButton = QtWidgets.QPushButton()
         self.regTimerLabel=QtWidgets.QLabel()
 
-        self.screenTimerLabel = QtWidgets.QLabel()
+        self.timerLabel = QtWidgets.QLabel()
         self.currentTimeLabel = QtWidgets.QLabel()
         self.currentTimer = QtCore.QTimer()
+        self.regTimer=QtCore.QTimer()
+        self.MainWindow=QtWidgets.QDialog()
 
-
-        self.regTimerLabel.setText("0 s")
+        self.regTimerLabel.setText("0.0 s")
+        self.timerLabel.setText("0.0 s")
         self.timeValue=0
-        self.regTimerValue=0
+        self.regTimerValue=1000
 
     def linkActions(self):
         self.startTimerButton.pressed.connect(self.startScreenTimer)
-        self.pauseTimerButton.pressed.connect(self.playPauseScreenTimer)
         self.stopTimerButton.pressed.connect(self.stopScreenTimer)
         self.currentTimer.timeout.connect(self.updateCurrentTime)
         self.startRegTimerButton.pressed.connect(self.startRegressiveTimer)
-        self.stopRegTimerButton.pressed.connect(self.startRegressiveTimer)
+        self.stopRegTimerButton.pressed.connect(self.stopRegressiveTimer)
         self.currentTimer.start(500)
         self.screenTimerFlag = False
 
     def startRegressiveTimer(self):
         try:
+            if(self.regTimerLabel.text().split(" ",3)[1]=="s"):
+                self.regTimerValue=self.regTimerLabel.text().split(" ",3)[0]
+
+            else:
+                self.regTimerValue=self.regTimerLabel.text()
+            print(self.regTimerValue)
+            self.regTimerValue=float(self.regTimerValue)
+
+        except(IndexError):
             self.regTimerValue=self.regTimerLabel.text()
-            self.regTimerValue.split(" ", 3)
-            self.regTimerValue=float(self.regTimerValue[0])
-        except(ValueError):
-            print(self.regTimerLabel.text)
+
+        except(ValueError,TypeError):
+            error=QtWidgets.QMessageBox(self.MainWindow)
+            error.setText("Valor Inválido! Definindo valor padrão de 1000 segundos")
+            error.setWindowTitle("ERRO!")
+            error.exec()
+            self.regTimerValue = 1000
+
+        print(self.regTimerValue)
+        self.regTimerValue = float(self.regTimerValue)
+
 
         self.regTimer=QtCore.QTimer()
         self.regTimer.timeout.connect(self.updateRegTimer)
@@ -55,53 +71,39 @@ class InterfaceTimer(object):
         self.regTimer.stop()
         self.startRegTimerButton.setText("Iniciar")
         self.startRegTimerButton.pressed.disconnect()
-        self.startRegTimerButton.pressed.connect(startRegressiveTimer)
+        self.startRegTimerButton.pressed.connect(self.startRegressiveTimer)
         self.regTimerLabel.setText("0.00 s")
 
     def updateRegTimer(self):
-        while(self.regTimerValue!=0):
+        if(self.regTimerValue>=0.1):
             self.regTimerValue -= 0.1
 
-        self.regTimerLabel.setText("%.1f seg"%self.regTimerValue)
+        self.regTimerLabel.setText("%.1f s"%self.regTimerValue)
 
     def startScreenTimer(self):
-        self.timeValue = 0
         self.screenTimer = QtCore.QTimer()
         self.screenTimer.timeout.connect(self.updateScreenTimer)
         self.screenTimer.start(100)
-        self.startTimerButton.setText("Reiniciar")
-        self.pauseTimerButton.setText("Pausar")
-        self.screenTimerFlag = True
+        self.startTimerButton.pressed.disconnect()
+        self.startTimerButton.pressed.connect(self.pauseScreenTimer)
+        self.startTimerButton.setText("Pausar")
 
-    def playPauseScreenTimer(self):
-        self.startTimerButton.setText("Reiniciar")
-        if (self.pauseTimerButton == "Iniciar"):
-            self.startScreenTimer()
-        if (self.screenTimerFlag == True):
-            self.screenTimer.stop()
-            self.screenTimerFlag = False
-            self.pauseTimerButton.setText("Continuar")
-        else:
-            try:
-                self.screenTimer.start(100)
-                self.screenTimerFlag = True
-                self.pauseTimerButton.setText("Pausar")
-            except:
-                self.startScreenTimer()
+    def pauseScreenTimer(self):
+        self.screenTimer.stop()
+        self.startTimerButton.setText("Continuar")
+        self.startTimerButton.pressed.disconnect()
+        self.startTimerButton.pressed.connect(self.startScreenTimer)
 
     def stopScreenTimer(self):
         self.screenTimer.stop()
-        self.screenTimerLabel.setText("0.00 seg")
+        self.timerLabel.setText("0.00 s")
         self.timeValue = 0
         self.screenTimerFlag = False
         self.startTimerButton.setText("Iniciar")
-        self.pauseTimerButton.setText("Iniciar")
-
-
 
     def updateScreenTimer(self):
         self.timeValue += 0.1
-        self.screenTimerLabel.setText("%.1f seg" % self.timeValue)
+        self.timerLabel.setText("%.1f s" % self.timeValue)
 
     def updateCurrentTime(self):
         self.currentTime = (str(datetime.now().time()))

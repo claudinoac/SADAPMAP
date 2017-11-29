@@ -2,19 +2,17 @@
 
 # Form implementation generated from reading ui file 'Resources/CalibracaoT.ui'
 #
-# Created: Fri Nov 24 19:35:13 2017
+# Created: Wed Nov 29 17:01:02 2017
 #      by: PyQt5 UI code generator 5.2.1
 #
 # WARNING! All changes made in this file will be lost!
 
 from PyQt5 import QtCore, QtGui, QtWidgets
-from datetime import datetime
-import time
 from InterfaceTimer import InterfaceTimer
 
 class Ui_MainWindow(InterfaceTimer):
     def setupUi(self, MainWindow):
-        self.MainWindow=MainWindow
+        self.MainWindow = MainWindow
         MainWindow.setObjectName("MainWindow")
         MainWindow.resize(1366, 695)
         MainWindow.setMinimumSize(QtCore.QSize(817, 0))
@@ -30,12 +28,7 @@ class Ui_MainWindow(InterfaceTimer):
         sizePolicy.setVerticalStretch(0)
         sizePolicy.setHeightForWidth(self.CentralGraph.sizePolicy().hasHeightForWidth())
         self.CentralGraph.setSizePolicy(sizePolicy)
-        self.CentralGraph.setVerticalScrollBarPolicy(QtCore.Qt.ScrollBarAlwaysOff)
-        self.CentralGraph.setHorizontalScrollBarPolicy(QtCore.Qt.ScrollBarAlwaysOff)
-        self.CentralGraph.setSizeAdjustPolicy(QtWidgets.QAbstractScrollArea.AdjustToContents)
-        self.CentralGraph.setAlignment(QtCore.Qt.AlignJustify)
         self.CentralGraph.setObjectName("CentralGraph")
-
         self.scaleBox = QtWidgets.QGroupBox(self.centralWidget)
         self.scaleBox.setGeometry(QtCore.QRect(10, 10, 401, 231))
         self.scaleBox.setToolTip("")
@@ -154,13 +147,8 @@ class Ui_MainWindow(InterfaceTimer):
         self.cronometroBox.setStyleSheet("background-color: rgb(86, 86, 86);\n"
 "border:1px solid rgb(123, 0, 129);")
         self.cronometroBox.setObjectName("cronometroBox")
-        self.startTimerButton = QtWidgets.QPushButton(self.cronometroBox)
-        self.startTimerButton.setGeometry(QtCore.QRect(170, 30, 51, 31))
-        self.startTimerButton.setStyleSheet("background-color:rgb(53, 53, 53);\n"
-"border: 1px solid rgb(44, 0, 47);")
-        self.startTimerButton.setObjectName("startTimerButton")
         self.timerGBox = QtWidgets.QGroupBox(self.cronometroBox)
-        self.timerGBox.setGeometry(QtCore.QRect(10, 30, 141, 71))
+        self.timerGBox.setGeometry(QtCore.QRect(10, 30, 211, 71))
         self.timerGBox.setStyleSheet("background-color:rgb(53, 53, 53)")
         self.timerGBox.setObjectName("timerGBox")
         self.timerLabel = QtWidgets.QLabel(self.timerGBox)
@@ -170,8 +158,28 @@ class Ui_MainWindow(InterfaceTimer):
 "border: 1px solid rgb(44, 0, 47);\n"
 "font: 75 12pt \"Noto Serif\";")
         self.timerLabel.setObjectName("timerLabel")
+        self.startTimerButton = QtWidgets.QPushButton(self.timerGBox)
+        self.startTimerButton.setGeometry(QtCore.QRect(130, 10, 51, 21))
+        self.startTimerButton.setStyleSheet("background-color:rgb(53, 53, 53);\n"
+"border: 1px solid rgb(44, 0, 47);")
+        self.startTimerButton.setObjectName("startTimerButton")
+        self.stopTimerButton = QtWidgets.QPushButton(self.timerGBox)
+        self.stopTimerButton.setGeometry(QtCore.QRect(130, 40, 51, 21))
+        self.stopTimerButton.setStyleSheet("background-color:rgb(53, 53, 53);\n"
+"border: 1px solid rgb(44, 0, 47);")
+        self.stopTimerButton.setObjectName("stopTimerButton")
+        self.startTimeGBox = QtWidgets.QGroupBox(self.cronometroBox)
+        self.startTimeGBox.setGeometry(QtCore.QRect(240, 30, 151, 71))
+        self.startTimeGBox.setStyleSheet("background-color:rgb(53, 53, 53)")
+        self.startTimeGBox.setObjectName("startTimeGBox")
+        self.startTimeLabel = QtWidgets.QLabel(self.startTimeGBox)
+        self.startTimeLabel.setGeometry(QtCore.QRect(30, 30, 91, 31))
+        self.startTimeLabel.setStyleSheet("background-color:rgb(80, 80,80);\n"
+"color:rgb(255,255,255);\n"
+"font: 14pt \"Noto Serif\";")
+        self.startTimeLabel.setObjectName("startTimeLabel")
         self.currentTimeGBox = QtWidgets.QGroupBox(self.cronometroBox)
-        self.currentTimeGBox.setGeometry(QtCore.QRect(240, 30, 151, 71))
+        self.currentTimeGBox.setGeometry(QtCore.QRect(240, 120, 151, 71))
         self.currentTimeGBox.setStyleSheet("background-color:rgb(53, 53, 53)")
         self.currentTimeGBox.setObjectName("currentTimeGBox")
         self.currentTimeLabel = QtWidgets.QLabel(self.currentTimeGBox)
@@ -180,39 +188,24 @@ class Ui_MainWindow(InterfaceTimer):
 "color:rgb(255,255,255);\n"
 "font: 14pt \"Noto Serif\";")
         self.currentTimeLabel.setObjectName("currentTimeLabel")
-        self.horaAtualGBox = QtWidgets.QGroupBox(self.cronometroBox)
-        self.horaAtualGBox.setGeometry(QtCore.QRect(240, 120, 151, 71))
-        self.horaAtualGBox.setStyleSheet("background-color:rgb(53, 53, 53)")
-        self.horaAtualGBox.setObjectName("horaAtualGBox")
-        self.horaAtualLabel = QtWidgets.QLabel(self.horaAtualGBox)
-        self.horaAtualLabel.setGeometry(QtCore.QRect(30, 30, 91, 31))
-        self.horaAtualLabel.setStyleSheet("background-color:rgb(80, 80,80);\n"
-"color:rgb(255,255,255);\n"
-"font: 14pt \"Noto Serif\";")
-        self.horaAtualLabel.setObjectName("horaAtualLabel")
-        self.stopTimerButton = QtWidgets.QPushButton(self.cronometroBox)
-        self.stopTimerButton.setGeometry(QtCore.QRect(170, 70, 51, 31))
-        self.stopTimerButton.setStyleSheet("background-color:rgb(53, 53, 53);\n"
-"border: 1px solid rgb(44, 0, 47);")
-        self.stopTimerButton.setObjectName("stopTimerButton")
         self.regTimerGBox = QtWidgets.QGroupBox(self.cronometroBox)
-        self.regTimerGBox.setGeometry(QtCore.QRect(10, 120, 141, 71))
+        self.regTimerGBox.setGeometry(QtCore.QRect(10, 120, 211, 71))
         self.regTimerGBox.setStyleSheet("background-color:rgb(53, 53, 53)")
         self.regTimerGBox.setObjectName("regTimerGBox")
-        self.regTimerLabel = QtWidgets.QLabel(self.regTimerGBox)
+        self.regTimerLabel = QtWidgets.QLineEdit(self.regTimerGBox)
         self.regTimerLabel.setGeometry(QtCore.QRect(20, 30, 81, 31))
         self.regTimerLabel.setStyleSheet("background-color: rgb(80,80,80);\n"
 "border: 1px solid rgb(255,255,255);\n"
 "color:rgb(255,255,255);\n"
 "font: 75 12pt \"Noto Serif\";")
         self.regTimerLabel.setObjectName("regTimerLabel")
-        self.startRegTimerButton = QtWidgets.QPushButton(self.cronometroBox)
-        self.startRegTimerButton.setGeometry(QtCore.QRect(170, 120, 51, 31))
+        self.startRegTimerButton = QtWidgets.QPushButton(self.regTimerGBox)
+        self.startRegTimerButton.setGeometry(QtCore.QRect(130, 10, 51, 21))
         self.startRegTimerButton.setStyleSheet("border: 1px solid rgb(255,255,255);\n"
 "background-color:rgb(53, 53, 53)")
         self.startRegTimerButton.setObjectName("startRegTimerButton")
         self.stopRegTimerButton = QtWidgets.QPushButton(self.cronometroBox)
-        self.stopRegTimerButton.setGeometry(QtCore.QRect(170, 160, 51, 31))
+        self.stopRegTimerButton.setGeometry(QtCore.QRect(140, 160, 51, 21))
         self.stopRegTimerButton.setStyleSheet("background-color:rgb(53, 53, 53);\n"
 "border: 1px solid rgb(255,255,255);")
         self.stopRegTimerButton.setObjectName("stopRegTimerButton")
@@ -288,18 +281,18 @@ class Ui_MainWindow(InterfaceTimer):
         self.menuBar = QtWidgets.QMenuBar(MainWindow)
         self.menuBar.setGeometry(QtCore.QRect(0, 0, 1366, 23))
         self.menuBar.setObjectName("menuBar")
-        self.menuArquivo = QtWidgets.QMenu(self.menuBar)
-        self.menuArquivo.setObjectName("menuArquivo")
-        self.menuEtapa = QtWidgets.QMenu(self.menuBar)
-        self.menuEtapa.setObjectName("menuEtapa")
-        self.menuPorta = QtWidgets.QMenu(self.menuBar)
-        self.menuPorta.setObjectName("menuPorta")
-        self.menuPlay_Pause = QtWidgets.QMenu(self.menuBar)
-        self.menuPlay_Pause.setObjectName("menuPlay_Pause")
-        self.menuTermopar = QtWidgets.QMenu(self.menuBar)
-        self.menuTermopar.setObjectName("menuTermopar")
-        self.menuFinalizar = QtWidgets.QMenu(self.menuBar)
-        self.menuFinalizar.setObjectName("menuFinalizar")
+        self.fileMenu = QtWidgets.QMenu(self.menuBar)
+        self.fileMenu.setObjectName("fileMenu")
+        self.stageMenu = QtWidgets.QMenu(self.menuBar)
+        self.stageMenu.setObjectName("stageMenu")
+        self.serialMenu = QtWidgets.QMenu(self.menuBar)
+        self.serialMenu.setObjectName("serialMenu")
+        self.playPauseButton = QtWidgets.QMenu(self.menuBar)
+        self.playPauseButton.setObjectName("playPauseButton")
+        self.ThermocoupleMenu = QtWidgets.QMenu(self.menuBar)
+        self.ThermocoupleMenu.setObjectName("ThermocoupleMenu")
+        self.finalizeButton = QtWidgets.QMenu(self.menuBar)
+        self.finalizeButton.setObjectName("finalizeButton")
         MainWindow.setMenuBar(self.menuBar)
         self.alternaCalibraP = QtWidgets.QAction(MainWindow)
         self.alternaCalibraP.setObjectName("alternaCalibraP")
@@ -307,78 +300,39 @@ class Ui_MainWindow(InterfaceTimer):
         self.alternaCalibraT.setObjectName("alternaCalibraT")
         self.alternaProc = QtWidgets.QAction(MainWindow)
         self.alternaProc.setObjectName("alternaProc")
-        self.botaoAbrir = QtWidgets.QAction(MainWindow)
-        self.botaoAbrir.setEnabled(False)
-        self.botaoAbrir.setIconVisibleInMenu(True)
-        self.botaoAbrir.setObjectName("botaoAbrir")
+        self.openButton = QtWidgets.QAction(MainWindow)
+        self.openButton.setEnabled(False)
+        self.openButton.setIconVisibleInMenu(True)
+        self.openButton.setObjectName("openButton")
         self.actionSalvar = QtWidgets.QAction(MainWindow)
         self.actionSalvar.setObjectName("actionSalvar")
         self.actionSalvar_Como = QtWidgets.QAction(MainWindow)
         self.actionSalvar_Como.setObjectName("actionSalvar_Como")
-        self.botaoSalvar = QtWidgets.QAction(MainWindow)
-        self.botaoSalvar.setObjectName("botaoSalvar")
-        self.botaoSalvarComo = QtWidgets.QAction(MainWindow)
-        self.botaoSalvarComo.setObjectName("botaoSalvarComo")
+        self.saveButton = QtWidgets.QAction(MainWindow)
+        self.saveButton.setObjectName("saveButton")
+        self.saveAsButton = QtWidgets.QAction(MainWindow)
+        self.saveAsButton.setObjectName("saveAsButton")
         self.selectPortaUSB = QtWidgets.QAction(MainWindow)
         self.selectPortaUSB.setObjectName("selectPortaUSB")
-        self.menuArquivo.addAction(self.botaoAbrir)
-        self.menuArquivo.addAction(self.botaoSalvar)
-        self.menuArquivo.addAction(self.botaoSalvarComo)
-        self.menuEtapa.addAction(self.alternaCalibraP)
-        self.menuEtapa.addAction(self.alternaCalibraT)
-        self.menuEtapa.addAction(self.alternaProc)
-        self.menuBar.addAction(self.menuArquivo.menuAction())
-        self.menuBar.addAction(self.menuEtapa.menuAction())
-        self.menuBar.addAction(self.menuPorta.menuAction())
-        self.menuBar.addAction(self.menuTermopar.menuAction())
-        self.menuBar.addAction(self.menuFinalizar.menuAction())
+        self.fileMenu.addAction(self.openButton)
+        self.fileMenu.addAction(self.saveButton)
+        self.fileMenu.addAction(self.saveAsButton)
+        self.stageMenu.addAction(self.alternaCalibraP)
+        self.stageMenu.addAction(self.alternaCalibraT)
+        self.stageMenu.addAction(self.alternaProc)
+        self.menuBar.addAction(self.fileMenu.menuAction())
+        self.menuBar.addAction(self.stageMenu.menuAction())
+        self.menuBar.addAction(self.serialMenu.menuAction())
+        self.menuBar.addAction(self.ThermocoupleMenu.menuAction())
+        self.menuBar.addAction(self.playPauseButton.menuAction())
+        self.menuBar.addAction(self.finalizeButton.menuAction())
 
         self.retranslateUi(MainWindow)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
 
-        self.pauseTimerButton = self.startRegTimerButton
-
-
-        self.menuPlay_Pause = QtWidgets.QAction(MainWindow)
-        self.menuPlay_Pause.setText("Play")
-        self.menuPlay_Pause.setObjectName("menuPlay_Pause")
-        self.menuBar.addAction(self.menuPlay_Pause)
-        self.menuPlay_Pause.setCheckable(True)
-
-        self.menuPlay_Pause.toggled.connect(self.playPauseButtonAnimation)
-
-        self.linkActions()
-
-        self.retranslateUi(MainWindow)
-
-
-    def sceneSelector(self, scene):
-        self.CentralGraph.setScene(scene)
-        self.CentralGraph.setBackgroundBrush(QtCore.Qt.black)
-        self.CentralGraph.setInteractive(False)
-
-
-    def serialListPanel(self, seriaList):
-        self.usb = []
-        for i in range(0, len(seriaList)):
-            self.usb.append(QtWidgets.QAction(self.MainWindow))
-            self.usb[i].setText(seriaList[i].device)
-            self.usb[i].setCheckable(True)
-            self.menuPorta.addAction(self.usb[i])
-
-
-    def playPauseButtonAnimation(self):
-        if (self.menuPlay_Pause.text() == "Play"):
-            self.menuPlay_Pause.setText("Pause")
-            self.startTimeLabel.setText(self.currentTimeLabel.text)
-        else:
-            self.menuPlay_Pause.setText("Play")
-
-
-
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
-        MainWindow.setWindowTitle(_translate("MainWindow", "SADAMAP - Análise de Dados: Etapa 2 - Calibração de Temperatura"))
+        MainWindow.setWindowTitle(_translate("MainWindow", "SADAMAP - Análise de Dados: Etapa 1 - Calibração de Pressão"))
         self.scaleBox.setTitle(_translate("MainWindow", "Escalas de Visualização (Range)"))
         self.tempBox.setTitle(_translate("MainWindow", "Temperatura (ºC)"))
         self.temp_max.setText(_translate("MainWindow", "1000"))
@@ -409,16 +363,16 @@ class Ui_MainWindow(InterfaceTimer):
         self.samplingCBox.setItemText(7, _translate("MainWindow", "5 seg"))
         self.samplingCBox.setItemText(8, _translate("MainWindow", "10 seg"))
         self.cronometroBox.setTitle(_translate("MainWindow", "Timer"))
-        self.startTimerButton.setText(_translate("MainWindow", "Iniciar"))
         self.timerGBox.setTitle(_translate("MainWindow", "Cronômetro"))
-        self.timerLabel.setText(_translate("MainWindow", "10.2674 s"))
-        self.currentTimeGBox.setTitle(_translate("MainWindow", "Horário de Início"))
-        self.currentTimeLabel.setText(_translate("MainWindow", "16:30:15"))
-        self.horaAtualGBox.setTitle(_translate("MainWindow", "Horário Atual"))
-        self.horaAtualLabel.setText(_translate("MainWindow", "17:05:56"))
+        self.timerLabel.setText(_translate("MainWindow", "0.00 s"))
+        self.startTimerButton.setText(_translate("MainWindow", "Iniciar"))
         self.stopTimerButton.setText(_translate("MainWindow", "Parar"))
+        self.startTimeGBox.setTitle(_translate("MainWindow", "Horário de Início"))
+        self.startTimeLabel.setText(_translate("MainWindow", "16:30:15"))
+        self.currentTimeGBox.setTitle(_translate("MainWindow", "Horário Atual"))
+        self.currentTimeLabel.setText(_translate("MainWindow", "17:05:56"))
         self.regTimerGBox.setTitle(_translate("MainWindow", "Cont. Regressivo"))
-        self.regTimerLabel.setText(_translate("MainWindow", "10.2674 s"))
+        self.regTimerLabel.setText(_translate("MainWindow", "0.00 s"))
         self.startRegTimerButton.setText(_translate("MainWindow", "Iniciar"))
         self.stopRegTimerButton.setText(_translate("MainWindow", "Parar"))
         self.prensaNameGBox.setTitle(_translate("MainWindow", "Prensa"))
@@ -434,19 +388,19 @@ class Ui_MainWindow(InterfaceTimer):
         self.powLabel.setText(_translate("MainWindow", "23.567 kW"))
         self.forceGBox.setTitle(_translate("MainWindow", "Força"))
         self.forceLabel.setText(_translate("MainWindow", "340.34 kN"))
-        self.menuArquivo.setTitle(_translate("MainWindow", "Arquivo"))
-        self.menuEtapa.setTitle(_translate("MainWindow", "Etapa"))
-        self.menuPorta.setTitle(_translate("MainWindow", "Porta"))
-       # self.menuPlay_Pause.setTitle(_translate("MainWindow", "Iniciar/Pausar"))
-        self.menuTermopar.setTitle(_translate("MainWindow", "Termopar"))
-        self.menuFinalizar.setTitle(_translate("MainWindow", "Finalizar"))
+        self.fileMenu.setTitle(_translate("MainWindow", "Arquivo"))
+        self.stageMenu.setTitle(_translate("MainWindow", "Etapa"))
+        self.serialMenu.setTitle(_translate("MainWindow", "Porta"))
+        self.playPauseButton.setTitle(_translate("MainWindow", "Iniciar/Pausar"))
+        self.ThermocoupleMenu.setTitle(_translate("MainWindow", "Termopar"))
+        self.finalizeButton.setTitle(_translate("MainWindow", "Finalizar"))
         self.alternaCalibraP.setText(_translate("MainWindow", "Calibração P"))
         self.alternaCalibraT.setText(_translate("MainWindow", "Calibração T"))
         self.alternaProc.setText(_translate("MainWindow", "Processamento"))
-        self.botaoAbrir.setText(_translate("MainWindow", "Abrir"))
+        self.openButton.setText(_translate("MainWindow", "Abrir"))
         self.actionSalvar.setText(_translate("MainWindow", "Salvar"))
         self.actionSalvar_Como.setText(_translate("MainWindow", "Salvar Como"))
-        self.botaoSalvar.setText(_translate("MainWindow", "Salvar"))
-        self.botaoSalvarComo.setText(_translate("MainWindow", "Salvar Como"))
+        self.saveButton.setText(_translate("MainWindow", "Salvar"))
+        self.saveAsButton.setText(_translate("MainWindow", "Salvar Como"))
         self.selectPortaUSB.setText(_translate("MainWindow", "Selecionar porta USB"))
 
