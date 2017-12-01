@@ -24,15 +24,27 @@ import numpy as np
 #                                                                                                           #
 #   Os arrays precisam manter-se com os mesmos tamanhos, e devem ter tamanhos limitados para não            #
 #   consumir muita memória.                                                                                 #
+#                                                                                                           #
+#   Como para ambas as curvas pode ser setada somente uma escala, para fazer com que cada uma possua        #
+#   sua própria escala, o plot tem uma escala definida pelo maior e menor valor de escala das curvas        #
+#   e então cada valor dado possui um offset e um fator de correção para correta visualização dos dados     #
+#   na tela.                                                                                                #
+#                                                                                                           #
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
 
 
 class Graph(PlotItem):      #Herança de pyqtgraph.PlotItem
 
-    index = 0 #Valor de índice para controle de tamanho dos arrays
+    index = 0           #Valor de índice para controle de tamanho dos arrays
+    offset = []         #Array com valores de offset para correta visualização das curvas
+    correctFactor = []  #Array com valores de fator de correção para correta visualização das curvas
 
     def __init__(self,x_sampling, x_range, n_axis, y_min, y_max, x_size, y_size, color, name,unit):  #Construtor da classe
         super(Graph, self).__init__()  #Instanciamento do construtor da classe mãe
+
+        for n in range(0,n_axis):
+            self.offset.append(min(y_min)-y_min[n])
+            self.correctFactor.append((max(y_max)+min(y_min))/(y_max[n]-y_min[n]))
 
         self.x_range = x_range/x_sampling  #Correção de escala coerente com a amostragem
         self.curve = []                    #Declaração do array de curvas
@@ -71,7 +83,8 @@ class Graph(PlotItem):      #Herança de pyqtgraph.PlotItem
     def updateGraph(self, y):
 
         for n in range(0,len(y)):
-            self.y[n]=np.append(self.y[n],float(y[n]))    #Cada valor contido no array y vai para seu respectivo array
+            self.y[n]=np.append(self.y[n],(float(y[n])+self.offset[n])*self.correctFactor[n])    #Cada valor contido no array y vai para seu respectivo array com sua respectiva escala
+            print(float(y[n]))
 
         if len(self.y[0]) > self.x_range:                 #Tamanho do array de tempo deve ser igual ao de cada curva
             for n in range(0,len(y)):                     #Quando o mesmo chega no valor máximo (definido pela escala+amostragem)
