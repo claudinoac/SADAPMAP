@@ -88,7 +88,7 @@ class Graph(PlotItem):      #Herança de pyqtgraph.PlotItem
 
         y_dim=len(y)
         
-        if(y_dim<self.n_axis and self.warningFlag==False):                                                                          #Emissão de aviso caso hajam menos dados que curvas
+        if(y_dim<self.n_axis and self.warningFlag==False):    #Emissão de aviso caso hajam menos dados que curvas
             error = QtWidgets.QMessageBox()
             error.setText("Array enviado possui %(a)d valores, necessário no mínimo %(b)d valores. Os %(c)dº primeiros gráficos "
                           "serão setados com os valores recebidos a partir de então" % {"a":len(y),"b":int(self.n_axis),"c":len(y)})
@@ -96,7 +96,7 @@ class Graph(PlotItem):      #Herança de pyqtgraph.PlotItem
             error.exec()
             self.warningFlag = True
 
-        if(y_dim>self.n_axis and self.warningFlag==False):                                                                          #Emissão de aviso caso hajam mais dados que curvas
+        if(y_dim>self.n_axis and self.warningFlag==False):    #Emissão de aviso caso hajam mais dados que curvas
             error = QtWidgets.QMessageBox()
             error.setText("Array enviado possui %(a)d valores, necessário no máximo %(b)d valores. Os gráficos serão atualizados "
                           "com os %(c)d primeiros valores recebidos" % {"a":len(y),"b":int(self.n_axis),"c":int(self.n_axis)})
