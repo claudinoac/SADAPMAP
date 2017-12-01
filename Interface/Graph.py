@@ -110,10 +110,10 @@ class Graph(PlotItem):      #Herança de pyqtgraph.PlotItem
             self.y[n]=np.append(self.y[n],(float(y[n])+self.offset[n])*self.correctFactor[n])    #Cada valor contido no array y vai para seu respectivo array com sua respectiva escala
 
 
-        if len(self.y[0]) > self.x_range:                 #Tamanho do array de tempo deve ser igual ao de cada curva
+        if len(self.y[0]) > self.x_range:                #Tamanho do array de tempo deve ser igual ao de cada curva
             for n in range(0,y_dim):                     #Quando o mesmo chega no valor máximo (definido pela escala+amostragem)
-                self.y[n] = np.delete(self.y[n], 0)       #O valor de índice 0 é removido para que um novo valor possa entrar no maior indice
-                self.index = self.x_range                     #Valor de índice quando chega no máximo, é mantido nele
+                self.y[n] = np.delete(self.y[n], 0)      #O valor de índice 0 é removido para que um novo valor possa entrar no maior indice
+                self.index = self.x_range                #Valor de índice quando chega no máximo, é mantido nele
         else:
             self.x.append(self.index)                     #Se o tamanho do array ainda não chegou ao seu máximo, então valores vão sendo adicionados no array de tempo
 
