@@ -43,6 +43,7 @@ class SystemEngine(object):
             self.layout.addItem(self.graph.axis[n],row=1,col=n+2,rowspan=1,colspan=1)
 
         self.layout.addItem(self.graph,row=1,col=2,rowspan=1,colspan=1)
+        self.layout.addItem(self.graph.axisTime,row=2,col=2,rowspan=1,colspan=1)
         self.layout.setMinimumSize(500, 600)
         self.layout.setMaximumSize(500,600)
 
@@ -112,13 +113,11 @@ class SystemEngine(object):
                 pass
             except IndexError:
                 print("Erro no Indice do Array Enviado pela Serial")
-
+            dado.pop(0)
             try:
-                print(dado)
+                #print(dado)
                 self.graph.updateGraph(dado)
 
-            except Exception as e:
-                print(e)
             except IndexError:
                 print("Erro: Array inválido")
                 print(dado)
@@ -130,25 +129,25 @@ class SystemEngine(object):
     def updateScale(self):
         try:
             self.x_scale = int(self.uiCalibra1.t_max.text())
-            self.y1_min = int(self.uiCalibra1.f_min.text())
-            self.y1_max   = int(self.uiCalibra1.f_max.text())
-            self.y2_min = int(self.uiCalibra1.p_min.text())
-            self.y2_max = int(self.uiCalibra1.p_max.text())
+            self.y_min[0] = int(self.uiCalibra1.f_min.text())
+            self.y_max[0]   = int(self.uiCalibra1.f_max.text())
+            self.y_min[1] = int(self.uiCalibra1.p_min.text())
+            self.y_max[1] = int(self.uiCalibra1.p_max.text())
         except ValueError:
             self.x_scale = 100
-            self.y1_min = 0
-            self.y1_max = 32700
-            self.y2_min = 0
-            self.y2_max = 10000
+            self.y_min[0] = 0
+            self.y_max[0] = 32700
+            self.y_min[0] = 0
+            self.y_max[0] = 10000
             print("Erro!: Campos de Escala Vazios")
 
         if(self.x_scale=="0"):
             self.x_scale="1"
 
         self.layout.clear()
-        self.graph = Graph(self.time[0]/1000,self.x_scale, self.y1_min, self.y1_max, self.y2_min, self.y2_max, 770, 550, 'r', 'g', "Força", "Tensão no Calibrante")
-        self.layout.addItem(self.graph.axis2,row=1,col=3,rowspan=1,colspan=1)
-        self.layout.addItem(self.graph.axis1,row=1,col=1,rowspan=1,colspan=1)
+        self.graph = Graph(self.time[0] / 1000, self.x_scale, self.nCurves, self.y_min, self.y_max, 800, 500,self.color, self.name, self.unit)
+        self.layout.addItem(self.graph.axis[1],row=1,col=3,rowspan=1,colspan=1)
+        self.layout.addItem(self.graph.axis[0],row=1,col=1,rowspan=1,colspan=1)
         self.layout.addItem(self.graph.axisTime,row=2,col=2,rowspan=1,colspan=1)
         self.layout.addItem(self.graph,row=1,col=2,rowspan=1,colspan=1)
         self.scene.focusItem()
