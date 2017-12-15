@@ -1,4 +1,4 @@
-update=Ter 05 Dez 2017 15:06:27 BRST
+update=Sex 15 Dez 2017 18:58:56 BRST
 version=1
 last_client=kicad
 [pcbnew]
@@ -117,3 +117,13 @@ LibName87=xilinx
 LibName88=Zilog
 [general]
 version=1
+[schematic_editor]
+version=1
+PageLayoutDescrFile=
+PlotDirectoryName=
+SubpartIdSeparator=0
+SubpartFirstId=65
+NetFmtName=
+SpiceForceRefPrefix=0
+SpiceUseNetNumbers=0
+LabSize=60
