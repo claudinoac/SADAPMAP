@@ -1,4 +1,4 @@
-update=Sex 15 Dez 2017 19:18:38 BRST
+update=Ter 02 Jan 2018 12:32:28 -02
 version=1
 last_client=kicad
 [pcbnew]
@@ -115,5 +115,15 @@ LibName85=w_vacuum
 LibName86=Xicor
 LibName87=xilinx
 LibName88=Zilog
+[schematic_editor]
+version=1
+PageLayoutDescrFile=
+PlotDirectoryName=
+SubpartIdSeparator=0
+SubpartFirstId=65
+NetFmtName=
+SpiceForceRefPrefix=0
+SpiceUseNetNumbers=0
+LabSize=60
 [general]
 version=1
