@@ -93,14 +93,14 @@ EELAYER END
 $Descr User 5846 8268
 encoding utf-8
 Sheet 1 1
-Title "ELECTRIC KETTLE CIRCUIT"
-Date "2017-12-17"
-Rev ""
-Comp "FEDERAL UNIVERSITY OF RIO GRANDE DO SUL"
-Comment1 "Gabriel Luis"
-Comment2 "Lucas Sessegolo"
-Comment3 "Alisson Claudino"
-Comment4 "Designed by:"
+Title "SADAMAP POWER SUPPLY"
+Date "2018-01-31"
+Rev "2"
+Comp "LAPMA/CTA - IF/UFRGS"
+Comment1 "All resistors are 1/4W"
+Comment2 "The transformer 12+12 should have 800mA minimum current"
+Comment3 "Designed by: Alisson Claudino"
+Comment4 ""
 $EndDescr
 $Comp
 L CONN_01X02 P1
@@ -341,7 +341,7 @@ U 1 1 5A4B869C
 P 1550 2700
 F 0 "U1" H 1350 2900 50  0000 C CNN
 F 1 "LM7808CT" H 1450 2900 50  0000 L CNN
-F 2 "Power_Integrations:TO-220" H 1550 2800 50  0000 C CIN
+F 2 "Power_Integrations:TO-220" H 1550 2800 50  0001 C CIN
 F 3 "" H 1550 2700 50  0000 C CNN
 	1    1550 2700
 	1    0    0    -1  
@@ -462,7 +462,7 @@ U 1 1 5A4BB509
 P 3550 2700
 F 0 "U3" H 3350 2500 50  0000 C CNN
 F 1 "LM7908CT" H 3450 2500 50  0000 L CNN
-F 2 "Power_Integrations:TO-220" H 3550 2600 50  0000 C CIN
+F 2 "Power_Integrations:TO-220" H 3550 2600 50  0001 C CIN
 F 3 "" H 3550 2700 50  0000 C CNN
 	1    3550 2700
 	-1   0    0    1   
