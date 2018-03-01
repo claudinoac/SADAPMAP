@@ -86,9 +86,9 @@
       (subtractmaskfromsilk false)
       (outputformat 4)
       (mirror false)
-      (drillshape 0)
+      (drillshape 1)
       (scaleselection 1)
-      (outputdirectory /home/alissomc/SADAMAP/Circuits/I_SOURCE/Gerbers/))
+      (outputdirectory /home/alissomc/SADAMAP/Circuits/I_SOURCE/))
   )
 
   (net 0 "")
