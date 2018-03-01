@@ -386,7 +386,7 @@ U 1 1 5A26E36E
 P 5200 3950
 F 0 "RV1" H 5200 3870 50  0000 C CNN
 F 1 "50k" H 5200 3950 50  0000 C CNN
-F 2 "Potentiometers:Potentiometer_Alps_RK163_Single_Vertical" H 5200 3950 50  0001 C CNN
+F 2 "Potentiometers:Potentiometer_Trimmer_Bourns_3296X" H 5200 3950 50  0001 C CNN
 F 3 "" H 5200 3950 50  0000 C CNN
 	1    5200 3950
 	1    0    0    -1  
