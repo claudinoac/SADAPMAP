@@ -137,15 +137,15 @@ hr{
 <body>
     <div id="main">
         <div id="TableId">
-            <div class="Header"><a href=""><h1>SADAMAP Data Acquisition Board BOM <br>Rev 1</h1></a> <div id="logo"></div></div>
+            <div class="Header"><a href="There's a saturation indicator for output higher than 5V"><h1>1x to 100x Precision Prog. Gain Generic Pre-Amplifier BOM <br>Rev 1</h1></a> <div id="logo"></div></div>
             <div id="BOMInfoID">
-                <strong>Date<h1> 2018-02-28</h1></strong>
+                <strong>Date<h1> 2018-05-22</h1></strong>
                 <strong>Company<h1> LAPMA/CTA - IF/UFRGS</h1></strong>
-                <strong>Comment 1<h1> Designed by Alisson Claudino</h1></strong>
-                <strong>Comment 2<h1> </h1></strong>
-                <strong>Comment 3<h1> </h1></strong>
-                <strong>Comment 4<h1> </h1></strong>
-                <strong>Total Parts<h1> 33 (Unique 11)</h1></strong>
+                <strong>Comment 1<h1> All resistors are 1/8W, except R16 and R17, 1W. The RX resistor is an optional attenuator</h1></strong>
+                <strong>Comment 2<h1> There's a saturation indicator for output higher than 5V</h1></strong>
+                <strong>Comment 3<h1> The gain adjust must be set for a range in 0 to 5V output voltage</h1></strong>
+                <strong>Comment 4<h1> Designed by Alisson Claudino</h1></strong>
+                <strong>Total Parts<h1> 49 (Unique 29)</h1></strong>
             </div>
 
             <div class="group_head"><div class="partRow"><div class='Head HeadRefTag'>Ref</div><div class='Head HeadQtyTag'>Qty</div><div class='Head HeadValueTag'>Value</div><div class='Head HeadFootprintTag'>Footprint</div></div></div>
@@ -158,30 +158,65 @@ hr{
 	<div class="partRow RowOddTag">
     <div class="column HeadRefTag">C1 </div>
     <div class="column HeadQtyTag">1</div>
-    <div class="column HeadValueTag">22u</div>
-    <div class="column HeadFootprintTag"></div>
+    <div class="column HeadValueTag">470n</div>
+    <div class="column HeadFootprintTag">Capacitors_THT:C_Rect_L7.0mm_W2.5mm_P5.00mm</div>
     
 </div>
 <div class="partRow RowEvenTag">
-    <div class="column HeadRefTag">C2 C5 C3 C4 C7 C6 C8 C9 </div>
-    <div class="column HeadQtyTag">8</div>
+    <div class="column HeadRefTag">C2 </div>
+    <div class="column HeadQtyTag">1</div>
+    <div class="column HeadValueTag">220n</div>
+    <div class="column HeadFootprintTag">Capacitors_THT:C_Rect_L7.0mm_W2.5mm_P5.00mm</div>
+    
+</div>
+<div class="partRow RowOddTag">
+    <div class="column HeadRefTag">C4 C5 C3 C6 C8 C7 </div>
+    <div class="column HeadQtyTag">6</div>
     <div class="column HeadValueTag">100n</div>
-    <div class="column HeadFootprintTag"></div>
+    <div class="column HeadFootprintTag">Capacitors_THT:C_Rect_L7.0mm_W2.5mm_P5.00mm</div>
+    
+</div>
+<div class="partRow RowEvenTag">
+    <div class="column HeadRefTag">C10 C11 </div>
+    <div class="column HeadQtyTag">2</div>
+    <div class="column HeadValueTag">22u</div>
+    <div class="column HeadFootprintTag">Capacitors_THT:CP_Radial_D5.0mm_P2.50mm</div>
+    
+</div>
+<div class="partRow RowOddTag">
+    <div class="column HeadRefTag">C9 </div>
+    <div class="column HeadQtyTag">1</div>
+    <div class="column HeadValueTag">10u</div>
+    <div class="column HeadFootprintTag">Capacitors_THT:CP_Radial_D5.0mm_P2.50mm</div>
     
 </div>
 
 </div>
 <hr>
-<div class="group group_title group_J">
-[J] -
+<div class="group group_title group_D">
+[D] -
 </div>
 <hr>
 <div class="group">
-	<div class="partRow RowOddTag">
-    <div class="column HeadRefTag">J1 </div>
+	<div class="partRow RowEvenTag">
+    <div class="column HeadRefTag">D1 D2 D4 D6 </div>
+    <div class="column HeadQtyTag">4</div>
+    <div class="column HeadValueTag">5V1</div>
+    <div class="column HeadFootprintTag">Diodes_THT:D_DO-41_SOD81_P7.62mm_Horizontal</div>
+    
+</div>
+<div class="partRow RowOddTag">
+    <div class="column HeadRefTag">D3 </div>
     <div class="column HeadQtyTag">1</div>
-    <div class="column HeadValueTag">Arduino_Nano_Header</div>
-    <div class="column HeadFootprintTag"></div>
+    <div class="column HeadValueTag">1N4148</div>
+    <div class="column HeadFootprintTag">Diodes_THT:D_DO-35_SOD27_P7.62mm_Horizontal</div>
+    
+</div>
+<div class="partRow RowEvenTag">
+    <div class="column HeadRefTag">D5 </div>
+    <div class="column HeadQtyTag">1</div>
+    <div class="column HeadValueTag">SATURATION_LED</div>
+    <div class="column HeadFootprintTag">LEDs:LED_D5.0mm</div>
     
 </div>
 
@@ -192,39 +227,32 @@ hr{
 </div>
 <hr>
 <div class="group">
-	<div class="partRow RowEvenTag">
+	<div class="partRow RowOddTag">
     <div class="column HeadRefTag">P1 </div>
     <div class="column HeadQtyTag">1</div>
+    <div class="column HeadValueTag">INPUT</div>
+    <div class="column HeadFootprintTag">Connect:bornier2</div>
+    
+</div>
+<div class="partRow RowEvenTag">
+    <div class="column HeadRefTag">P4 </div>
+    <div class="column HeadQtyTag">1</div>
     <div class="column HeadValueTag">POWER</div>
-    <div class="column HeadFootprintTag"></div>
+    <div class="column HeadFootprintTag">Connectors:bornier3</div>
     
 </div>
 <div class="partRow RowOddTag">
-    <div class="column HeadRefTag">P2 P5 P3 P4 P6 P7 P8 P9 </div>
-    <div class="column HeadQtyTag">8</div>
-    <div class="column HeadValueTag">BNC</div>
-    <div class="column HeadFootprintTag"></div>
+    <div class="column HeadRefTag">P3 </div>
+    <div class="column HeadQtyTag">1</div>
+    <div class="column HeadValueTag">CONTROL_IN</div>
+    <div class="column HeadFootprintTag">w_conn_kk100:kk100_22-23-2051</div>
     
 </div>
 <div class="partRow RowEvenTag">
-    <div class="column HeadRefTag">P10 </div>
+    <div class="column HeadRefTag">P2 </div>
     <div class="column HeadQtyTag">1</div>
-    <div class="column HeadValueTag">ARDUINO_DIGITAL_PINS</div>
-    <div class="column HeadFootprintTag"></div>
-    
-</div>
-<div class="partRow RowOddTag">
-    <div class="column HeadRefTag">P11 </div>
-    <div class="column HeadQtyTag">1</div>
-    <div class="column HeadValueTag">ARDUINO_ADC</div>
-    <div class="column HeadFootprintTag"></div>
-    
-</div>
-<div class="partRow RowEvenTag">
-    <div class="column HeadRefTag">P12 </div>
-    <div class="column HeadQtyTag">1</div>
-    <div class="column HeadValueTag">+3.3V</div>
-    <div class="column HeadFootprintTag"></div>
+    <div class="column HeadValueTag">OUTPUT</div>
+    <div class="column HeadFootprintTag">Connect:bornier2</div>
     
 </div>
 
@@ -236,17 +264,109 @@ hr{
 <hr>
 <div class="group">
 	<div class="partRow RowOddTag">
-    <div class="column HeadRefTag">R1 </div>
-    <div class="column HeadQtyTag">1</div>
-    <div class="column HeadValueTag">10R</div>
-    <div class="column HeadFootprintTag"></div>
+    <div class="column HeadRefTag">R1 R5 R4 R10 R11 </div>
+    <div class="column HeadQtyTag">5</div>
+    <div class="column HeadValueTag">100k</div>
+    <div class="column HeadFootprintTag">w_pth_resistors:RC03</div>
     
 </div>
 <div class="partRow RowEvenTag">
-    <div class="column HeadRefTag">R2 R5 R3 R4 R7 R6 R8 R9 </div>
-    <div class="column HeadQtyTag">8</div>
-    <div class="column HeadValueTag">47k</div>
-    <div class="column HeadFootprintTag"></div>
+    <div class="column HeadRefTag">R2 R14 </div>
+    <div class="column HeadQtyTag">2</div>
+    <div class="column HeadValueTag">1k</div>
+    <div class="column HeadFootprintTag">w_pth_resistors:RC03</div>
+    
+</div>
+<div class="partRow RowOddTag">
+    <div class="column HeadRefTag">R3 </div>
+    <div class="column HeadQtyTag">1</div>
+    <div class="column HeadValueTag">22k</div>
+    <div class="column HeadFootprintTag">w_pth_resistors:RC03</div>
+    
+</div>
+<div class="partRow RowEvenTag">
+    <div class="column HeadRefTag">R8 R15 R12 R24 </div>
+    <div class="column HeadQtyTag">4</div>
+    <div class="column HeadValueTag">2k7</div>
+    <div class="column HeadFootprintTag">w_pth_resistors:RC03</div>
+    
+</div>
+<div class="partRow RowOddTag">
+    <div class="column HeadRefTag">R6 </div>
+    <div class="column HeadQtyTag">1</div>
+    <div class="column HeadValueTag">3k3</div>
+    <div class="column HeadFootprintTag">w_pth_resistors:RC03</div>
+    
+</div>
+<div class="partRow RowEvenTag">
+    <div class="column HeadRefTag">R7 </div>
+    <div class="column HeadQtyTag">1</div>
+    <div class="column HeadValueTag">5k6</div>
+    <div class="column HeadFootprintTag">w_pth_resistors:RC03</div>
+    
+</div>
+<div class="partRow RowOddTag">
+    <div class="column HeadRefTag">R9 </div>
+    <div class="column HeadQtyTag">1</div>
+    <div class="column HeadValueTag">27k</div>
+    <div class="column HeadFootprintTag">w_pth_resistors:RC03</div>
+    
+</div>
+<div class="partRow RowEvenTag">
+    <div class="column HeadRefTag">R16 R17 </div>
+    <div class="column HeadQtyTag">2</div>
+    <div class="column HeadValueTag">10</div>
+    <div class="column HeadFootprintTag">w_pth_resistors:RC03</div>
+    
+</div>
+<div class="partRow RowOddTag">
+    <div class="column HeadRefTag">R23 </div>
+    <div class="column HeadQtyTag">1</div>
+    <div class="column HeadValueTag">DNP</div>
+    <div class="column HeadFootprintTag">w_pth_resistors:RC03</div>
+    
+</div>
+<div class="partRow RowEvenTag">
+    <div class="column HeadRefTag">R22 </div>
+    <div class="column HeadQtyTag">1</div>
+    <div class="column HeadValueTag">820</div>
+    <div class="column HeadFootprintTag">w_pth_resistors:RC03</div>
+    
+</div>
+<div class="partRow RowOddTag">
+    <div class="column HeadRefTag">R13 </div>
+    <div class="column HeadQtyTag">1</div>
+    <div class="column HeadValueTag">10k</div>
+    <div class="column HeadFootprintTag">w_pth_resistors:RC03</div>
+    
+</div>
+<div class="partRow RowEvenTag">
+    <div class="column HeadRefTag">R18 R19 </div>
+    <div class="column HeadQtyTag">2</div>
+    <div class="column HeadValueTag">750</div>
+    <div class="column HeadFootprintTag">w_pth_resistors:RC03</div>
+    
+</div>
+<div class="partRow RowOddTag">
+    <div class="column HeadRefTag">R20 R21 </div>
+    <div class="column HeadQtyTag">2</div>
+    <div class="column HeadValueTag">150</div>
+    <div class="column HeadFootprintTag">w_pth_resistors:RC03</div>
+    
+</div>
+
+</div>
+<hr>
+<div class="group group_title group_RV">
+[RV] -
+</div>
+<hr>
+<div class="group">
+	<div class="partRow RowEvenTag">
+    <div class="column HeadRefTag">RV1 </div>
+    <div class="column HeadQtyTag">1</div>
+    <div class="column HeadValueTag">2k</div>
+    <div class="column HeadFootprintTag">Potentiometers:Potentiometer_Trimmer_Bourns_3296X</div>
     
 </div>
 
@@ -258,10 +378,24 @@ hr{
 <hr>
 <div class="group">
 	<div class="partRow RowOddTag">
-    <div class="column HeadRefTag">U1 U2 </div>
-    <div class="column HeadQtyTag">2</div>
-    <div class="column HeadValueTag">ADS1115</div>
-    <div class="column HeadFootprintTag"></div>
+    <div class="column HeadRefTag">U1 </div>
+    <div class="column HeadQtyTag">1</div>
+    <div class="column HeadValueTag">OPA277</div>
+    <div class="column HeadFootprintTag">Housings_DIP:DIP-8_W7.62mm_Socket_LongPads</div>
+    
+</div>
+<div class="partRow RowEvenTag">
+    <div class="column HeadRefTag">U2 </div>
+    <div class="column HeadQtyTag">1</div>
+    <div class="column HeadValueTag">LM393</div>
+    <div class="column HeadFootprintTag">Housings_DIP:DIP-8_W7.62mm_Socket_LongPads</div>
+    
+</div>
+<div class="partRow RowOddTag">
+    <div class="column HeadRefTag">U3 </div>
+    <div class="column HeadQtyTag">1</div>
+    <div class="column HeadValueTag">DG412xJ</div>
+    <div class="column HeadFootprintTag">Housings_DIP:DIP-16_W7.62mm_Socket_LongPads</div>
     
 </div>
 
@@ -269,7 +403,7 @@ hr{
 
             <hr>
 
-            <div class="group footer"><h1>BOM made with <a href="https://github.com/HashDefineElectronics/KiCad_BOM_Wizard">KICAD_BOM_WIZARD</a><br>(Generated Qua 28 Fev 2018 17:44:24 -03)</h1></div>
+            <div class="group footer"><h1>BOM made with <a href="https://github.com/HashDefineElectronics/KiCad_BOM_Wizard">KICAD_BOM_WIZARD</a><br>(Generated ter 22 mai 2018 15:19:13 -03)</h1></div>
         </div>
     </div>
 </body>
