@@ -5,8 +5,8 @@ EELAYER END
 $Descr User 8908 6299
 encoding utf-8
 Sheet 1 1
-Title "1x to 100x Precision Programmable Gain Pre-Amplifier for Generic Sensors "
-Date "2017-12-18"
+Title "1x to 100x Precision Prog. Gain Generic Pre-Amplifier"
+Date "2018-05-22"
 Rev "1"
 Comp "LAPMA/CTA - IF/UFRGS"
 Comment1 "All resistors are 1/8W, except R16 and R17, 1W. The RX resistor is an optional attenuator"
@@ -20,7 +20,7 @@ U 1 1 5A26C4F0
 P 4650 3600
 F 0 "P1" H 4800 3450 50  0000 C CNN
 F 1 "INPUT" H 4650 3750 50  0000 C CNN
-F 2 "Connectors:bnc-ci" H 4650 3600 50  0001 C CNN
+F 2 "Connect:bornier2" H 4650 3600 50  0001 C CNN
 F 3 "" H 4650 3600 50  0000 C CNN
 	1    4650 3600
 	-1   0    0    -1  
@@ -758,45 +758,45 @@ Wire Wire Line
 Wire Wire Line
 	5200 3000 5200 3050
 $Comp
-L Analog_Switch:DG412xJ U3
+L analog_switches:DG412xJ U3
 U 1 1 5AD0C3E7
 P 1200 2350
 F 0 "U3" H 1200 2617 50  0000 C CNN
 F 1 "DG412xJ" H 1200 2526 50  0000 C CNN
-F 2 "Package_DIP:DIP-16_W7.62mm" H 1200 2250 50  0001 C CNN
+F 2 "Housings_DIP:DIP-16_W7.62mm_Socket_LongPads" H 1200 2250 50  0001 C CNN
 F 3 "https://datasheets.maximintegrated.com/en/ds/DG411-DG413.pdf" H 1200 2350 50  0001 C CNN
 	1    1200 2350
 	-1   0    0    -1  
 $EndComp
 $Comp
-L Analog_Switch:DG412xJ U3
+L analog_switches:DG412xJ U3
 U 2 1 5AD0C511
 P 1200 3200
 F 0 "U3" H 1200 3467 50  0000 C CNN
 F 1 "DG412xJ" H 1200 3376 50  0000 C CNN
-F 2 "Package_DIP:DIP-16_W7.62mm" H 1200 3100 50  0001 C CNN
+F 2 "Housings_DIP:DIP-16_W7.62mm_Socket_LongPads" H 1200 3100 50  0001 C CNN
 F 3 "https://datasheets.maximintegrated.com/en/ds/DG411-DG413.pdf" H 1200 3200 50  0001 C CNN
 	2    1200 3200
 	-1   0    0    -1  
 $EndComp
 $Comp
-L Analog_Switch:DG412xJ U3
+L analog_switches:DG412xJ U3
 U 3 1 5AD0C60F
 P 1200 3850
 F 0 "U3" H 1200 4117 50  0000 C CNN
 F 1 "DG412xJ" H 1200 4026 50  0000 C CNN
-F 2 "Package_DIP:DIP-16_W7.62mm" H 1200 3750 50  0001 C CNN
+F 2 "Housings_DIP:DIP-16_W7.62mm_Socket_LongPads" H 1200 3750 50  0001 C CNN
 F 3 "https://datasheets.maximintegrated.com/en/ds/DG411-DG413.pdf" H 1200 3850 50  0001 C CNN
 	3    1200 3850
 	-1   0    0    -1  
 $EndComp
 $Comp
-L Analog_Switch:DG412xJ U3
+L analog_switches:DG412xJ U3
 U 4 1 5AD0C691
 P 1200 4500
 F 0 "U3" H 1200 4767 50  0000 C CNN
 F 1 "DG412xJ" H 1200 4676 50  0000 C CNN
-F 2 "Package_DIP:DIP-16_W7.62mm" H 1200 4400 50  0001 C CNN
+F 2 "Housings_DIP:DIP-16_W7.62mm_Socket_LongPads" H 1200 4400 50  0001 C CNN
 F 3 "https://datasheets.maximintegrated.com/en/ds/DG411-DG413.pdf" H 1200 4500 50  0001 C CNN
 	4    1200 4500
 	-1   0    0    -1  
@@ -946,12 +946,12 @@ F 3 "" H 1550 2650 50  0000 C CNN
 	0    -1   -1   0   
 $EndComp
 $Comp
-L Analog_Switch:DG412xJ U3
+L analog_switches:DG412xJ U3
 U 5 1 5AD72EF0
 P 3450 2000
 F 0 "U3" V 3133 2000 50  0000 C CNN
 F 1 "DG412xJ" V 3224 2000 50  0000 C CNN
-F 2 "Package_DIP:DIP-16_W7.62mm" H 3450 1900 50  0001 C CNN
+F 2 "Housings_DIP:DIP-16_W7.62mm_Socket_LongPads" H 3450 1900 50  0001 C CNN
 F 3 "https://datasheets.maximintegrated.com/en/ds/DG411-DG413.pdf" H 3450 2000 50  0001 C CNN
 	5    3450 2000
 	0    1    1    0   
@@ -968,12 +968,12 @@ F 3 "" H 2900 1950 50  0000 C CNN
 	-1   0    0    1   
 $EndComp
 $Comp
-L device:ZENERsmall D4
+L V_AMP:ZENERsmall D4
 U 1 1 5AD7344B
 P 4150 2100
 F 0 "D4" H 4050 2150 50  0000 C CNN
 F 1 "5V1" H 4250 2150 50  0000 C CNN
-F 2 "" H 4150 2100 50  0000 C CNN
+F 2 "Diodes_THT:D_DO-41_SOD81_P7.62mm_Horizontal" H 4150 2100 50  0001 C CNN
 F 3 "" H 4150 2100 50  0000 C CNN
 	1    4150 2100
 	1    0    0    -1  
@@ -992,12 +992,12 @@ F 3 "" H 4400 2100 50  0000 C CNN
 	0    -1   -1   0   
 $EndComp
 $Comp
-L Device:CP1_Small C9
+L device:CP1_Small C9
 U 1 1 5AD7650A
 P 4150 2250
 F 0 "C9" V 4200 2150 50  0000 C CNN
 F 1 "10u" V 4100 2100 50  0000 C CNN
-F 2 "" H 4150 2250 50  0001 C CNN
+F 2 "Capacitors_THT:CP_Radial_D5.0mm_P2.50mm" H 4150 2250 50  0001 C CNN
 F 3 "~" H 4150 2250 50  0001 C CNN
 	1    4150 2250
 	0    -1   -1   0   
@@ -1016,12 +1016,12 @@ Wire Wire Line
 Wire Wire Line
 	4000 1950 4050 1950
 $Comp
-L Device:R R22
+L device:R R22
 U 1 1 5AD8742C
 P 4200 2400
 F 0 "R22" V 4150 2550 50  0000 C CNN
 F 1 "820" V 4200 2400 50  0000 C CNN
-F 2 "" V 4130 2400 50  0001 C CNN
+F 2 "w_pth_resistors:RC03" V 4130 2400 50  0001 C CNN
 F 3 "~" H 4200 2400 50  0001 C CNN
 	1    4200 2400
 	0    -1   -1   0   
@@ -1038,12 +1038,12 @@ F 3 "" H 4350 2400 50  0001 C CNN
 	0    1    1    0   
 $EndComp
 $Comp
-L Device:C_Small C8
+L device:C_Small C8
 U 1 1 5AD8FA52
 P 4150 1950
 F 0 "C8" V 4100 1850 50  0000 C CNN
 F 1 "100n" V 4100 2100 50  0000 C CNN
-F 2 "" H 4150 1950 50  0001 C CNN
+F 2 "Capacitors_THT:C_Rect_L7.0mm_W2.5mm_P5.00mm" H 4150 1950 50  0001 C CNN
 F 3 "~" H 4150 1950 50  0001 C CNN
 	1    4150 1950
 	0    1    1    0   
@@ -1076,12 +1076,12 @@ Wire Wire Line
 	4000 1850 4000 1950
 Connection ~ 4000 1950
 $Comp
-L Device:C_Small C7
+L device:C_Small C7
 U 1 1 5ADB6193
 P 2750 2100
 F 0 "C7" V 2850 2000 50  0000 C CNN
 F 1 "100n" V 2650 2100 50  0000 C CNN
-F 2 "" H 2750 2100 50  0001 C CNN
+F 2 "Capacitors_THT:C_Rect_L7.0mm_W2.5mm_P5.00mm" H 2750 2100 50  0001 C CNN
 F 3 "~" H 2750 2100 50  0001 C CNN
 	1    2750 2100
 	0    1    1    0   
@@ -1118,12 +1118,12 @@ Wire Wire Line
 	1900 2350 1800 2350
 Connection ~ 1900 1900
 $Comp
-L Device:POT RV1
+L device:POT RV1
 U 1 1 5ADEF31B
 P 1900 2550
 F 0 "RV1" H 2100 2450 50  0000 R CNN
 F 1 "2k" V 1900 2600 50  0000 R CNN
-F 2 "" H 1900 2550 50  0001 C CNN
+F 2 "Potentiometers:Potentiometer_Trimmer_Bourns_3296X" H 1900 2550 50  0001 C CNN
 F 3 "~" H 1900 2550 50  0001 C CNN
 	1    1900 2550
 	1    0    0    1   
@@ -1318,7 +1318,7 @@ U 1 1 5AFA8CDB
 P 3250 2900
 F 0 "P3" H 3250 2600 50  0000 L CNN
 F 1 "CONTROL_IN" V 3400 2650 50  0000 L CNN
-F 2 "" H 3250 2900 50  0000 C CNN
+F 2 "w_conn_kk100:kk100_22-23-2051" H 3250 2900 50  0001 C CNN
 F 3 "" H 3250 2900 50  0000 C CNN
 	1    3250 2900
 	1    0    0    -1  
@@ -1356,12 +1356,12 @@ F 3 "" H 2200 1200 50  0000 C CNN
 	0    1    1    0   
 $EndComp
 $Comp
-L device:ZENERsmall D6
+L V_AMP-rescue:device_ZENERsmall-V_AMP-cache D6
 U 1 1 5AFB8EA2
 P 2450 1400
 F 0 "D6" H 2350 1450 50  0000 C CNN
 F 1 "5V1" H 2550 1450 50  0000 C CNN
-F 2 "" H 2450 1400 50  0000 C CNN
+F 2 "Diodes_THT:D_DO-41_SOD81_P7.62mm_Horizontal" H 2450 1400 50  0001 C CNN
 F 3 "" H 2450 1400 50  0000 C CNN
 	1    2450 1400
 	0    1    1    0   
@@ -1386,8 +1386,8 @@ L conn:BNC P2
 U 1 1 5AFC059F
 P 2650 1200
 F 0 "P2" H 2751 1176 50  0000 L CNN
-F 1 "BNC" H 2751 1085 50  0000 L CNN
-F 2 "" H 2650 1200 50  0000 C CNN
+F 1 "OUTPUT" H 2751 1085 50  0000 L CNN
+F 2 "Connect:bornier2" H 2650 1200 50  0001 C CNN
 F 3 "" H 2650 1200 50  0000 C CNN
 	1    2650 1200
 	1    0    0    -1  
