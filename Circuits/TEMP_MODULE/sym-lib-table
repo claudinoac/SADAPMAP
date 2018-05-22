@@ -1,0 +1,3 @@
+(sym_lib_table
+  (lib (name TEMP_MODULE-rescue)(type Legacy)(uri ${KIPRJMOD}/TEMP_MODULE-rescue.lib)(options "")(descr ""))
+)

@@ -1,94 +1,6 @@
-EESchema Schematic File Version 2
-LIBS:74xgxx
-LIBS:74xx
-LIBS:ac-dc
-LIBS:actel
-LIBS:adc-dac
-LIBS:Altera
-LIBS:analog_devices
-LIBS:analog_switches
-LIBS:atmel
-LIBS:audio
-LIBS:brooktre
-LIBS:cmos4000
-LIBS:cmos_ieee
-LIBS:conn
-LIBS:contrib
-LIBS:cypress
-LIBS:dc-dc
-LIBS:device
-LIBS:digital-audio
-LIBS:diode
-LIBS:display
-LIBS:dsp
-LIBS:elec-unifil
-LIBS:ESD_Protection
-LIBS:ftdi
-LIBS:gennum
-LIBS:graphic
-LIBS:hc11
-LIBS:intel
-LIBS:interface
-LIBS:ir
-LIBS:Lattice
-LIBS:linear
-LIBS:logo
-LIBS:maxim
-LIBS:memory
-LIBS:microchip
-LIBS:microchip_dspic33dsc
-LIBS:microchip_pic10mcu
-LIBS:microchip_pic12mcu
-LIBS:microchip_pic16mcu
-LIBS:microchip_pic18mcu
-LIBS:microchip_pic32mcu
-LIBS:microcontrollers
-LIBS:motor_drivers
-LIBS:motorola
-LIBS:msp430
-LIBS:nordicsemi
-LIBS:nxp_armmcu
-LIBS:onsemi
-LIBS:opto
-LIBS:Oscillators
-LIBS:philips
-LIBS:power
-LIBS:powerint
-LIBS:Power_Management
-LIBS:references
-LIBS:regul
-LIBS:relays
-LIBS:rfcom
-LIBS:sensors
-LIBS:silabs
-LIBS:siliconi
-LIBS:stm8
-LIBS:stm32
-LIBS:supertex
-LIBS:switches
-LIBS:texas
-LIBS:transf
-LIBS:transistors
-LIBS:ttl_ieee
-LIBS:valves
-LIBS:video
-LIBS:w_analog
-LIBS:w_connectors
-LIBS:w_device
-LIBS:w_logic
-LIBS:w_memory
-LIBS:w_microcontrollers
-LIBS:w_opto
-LIBS:Worldsemi
-LIBS:w_relay
-LIBS:w_rtx
-LIBS:w_transistor
-LIBS:w_vacuum
-LIBS:Xicor
-LIBS:xilinx
-LIBS:Zilog
+EESchema Schematic File Version 4
 LIBS:ADC_MCU_MODULE-cache
-EELAYER 25 0
+EELAYER 26 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
@@ -103,7 +15,7 @@ Comment3 ""
 Comment4 ""
 $EndDescr
 $Comp
-L CONN_01X02 P1
+L ADC_MCU_MODULE-rescue:CONN_01X02 P1
 U 1 1 5A96FC8A
 P 6650 4200
 F 0 "P1" H 6650 4350 50  0000 C CNN
@@ -114,7 +26,7 @@ F 3 "" H 6650 4200 50  0000 C CNN
 	-1   0    0    1   
 $EndComp
 $Comp
-L R R1
+L ADC_MCU_MODULE-rescue:R R1
 U 1 1 5A96FCFD
 P 7100 4150
 F 0 "R1" V 7180 4150 50  0000 C CNN
@@ -125,7 +37,7 @@ F 3 "" H 7100 4150 50  0000 C CNN
 	0    -1   1    0   
 $EndComp
 $Comp
-L CP_Small C1
+L ADC_MCU_MODULE-rescue:CP_Small C1
 U 1 1 5A96FD8E
 P 7300 4300
 F 0 "C1" H 7310 4370 50  0000 L CNN
@@ -136,14 +48,14 @@ F 3 "" H 7300 4300 50  0000 C CNN
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	7250 4150 7625 4150
+	7250 4150 7300 4150
 Wire Wire Line
-	7300 4100 7300 4200
+	7300 4100 7300 4150
 Wire Wire Line
-	7300 4400 7300 4500
+	7300 4400 7300 4450
 Connection ~ 7300 4150
 $Comp
-L +5V #PWR01
+L ADC_MCU_MODULE-rescue:+5V #PWR01
 U 1 1 5A96FE12
 P 7300 4100
 F 0 "#PWR01" H 7300 3950 50  0001 C CNN
@@ -154,11 +66,11 @@ F 3 "" H 7300 4100 50  0000 C CNN
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	6900 4450 7625 4450
+	6900 4450 7300 4450
 Wire Wire Line
 	6900 4250 6900 4450
 $Comp
-L GND #PWR02
+L ADC_MCU_MODULE-rescue:GND #PWR02
 U 1 1 5A96FE57
 P 7300 4500
 F 0 "#PWR02" H 7300 4250 50  0001 C CNN
@@ -170,7 +82,7 @@ F 3 "" H 7300 4500 50  0000 C CNN
 $EndComp
 Connection ~ 7300 4450
 $Comp
-L PWR_FLAG #FLG03
+L ADC_MCU_MODULE-rescue:PWR_FLAG #FLG03
 U 1 1 5A96FEA5
 P 7625 4100
 F 0 "#FLG03" H 7625 4195 50  0001 C CNN
@@ -185,7 +97,7 @@ Wire Wire Line
 Wire Wire Line
 	7625 4450 7625 4425
 $Comp
-L PWR_FLAG #FLG04
+L ADC_MCU_MODULE-rescue:PWR_FLAG #FLG04
 U 1 1 5A96FEE0
 P 7625 4425
 F 0 "#FLG04" H 7625 4520 50  0001 C CNN
@@ -200,7 +112,7 @@ Wire Wire Line
 Wire Wire Line
 	6850 4150 6950 4150
 $Comp
-L Arduino_Nano_Header J1
+L ADC_MCU_MODULE-rescue:Arduino_Nano_Header J1
 U 1 1 5A97015D
 P 8900 3700
 F 0 "J1" H 8900 4350 60  0000 C CNN
@@ -211,7 +123,7 @@ F 3 "" H 8900 3700 60  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L ADS1115 U1
+L ADC_MCU_MODULE-rescue:ADS1115 U1
 U 1 1 5A97024A
 P 4750 4300
 F 0 "U1" H 4700 4000 60  0000 C CNN
@@ -222,7 +134,7 @@ F 3 "" H 4750 4300 60  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L ADS1115 U2
+L ADC_MCU_MODULE-rescue:ADS1115 U2
 U 1 1 5A9702C2
 P 6200 4300
 F 0 "U2" H 6150 4000 60  0000 C CNN
@@ -241,7 +153,7 @@ SCL
 Text GLabel 4100 4300 0    47   BiDi ~ 0
 SDA
 $Comp
-L GND #PWR05
+L ADC_MCU_MODULE-rescue:GND #PWR05
 U 1 1 5A970696
 P 3800 4550
 F 0 "#PWR05" H 3800 4300 50  0001 C CNN
@@ -252,14 +164,14 @@ F 3 "" H 3800 4550 50  0000 C CNN
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	3800 4200 3800 4550
+	3800 4200 3800 4500
 Wire Wire Line
 	3800 4200 4100 4200
 Wire Wire Line
 	4100 4500 3800 4500
 Connection ~ 3800 4500
 $Comp
-L +5V #PWR06
+L ADC_MCU_MODULE-rescue:+5V #PWR06
 U 1 1 5A970705
 P 4100 4600
 F 0 "#PWR06" H 4100 4450 50  0001 C CNN
@@ -270,7 +182,7 @@ F 3 "" H 4100 4600 50  0000 C CNN
 	0    -1   -1   0   
 $EndComp
 $Comp
-L GND #PWR07
+L ADC_MCU_MODULE-rescue:GND #PWR07
 U 1 1 5A9707AA
 P 5175 4550
 F 0 "#PWR07" H 5175 4300 50  0001 C CNN
@@ -287,7 +199,7 @@ Wire Wire Line
 Wire Wire Line
 	5275 4600 5550 4600
 $Comp
-L +5V #PWR08
+L ADC_MCU_MODULE-rescue:+5V #PWR08
 U 1 1 5A970824
 P 5275 4150
 F 0 "#PWR08" H 5275 4000 50  0001 C CNN
@@ -298,7 +210,7 @@ F 3 "" H 5275 4150 50  0000 C CNN
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	5275 4150 5275 4600
+	5275 4150 5275 4200
 Wire Wire Line
 	5275 4200 5550 4200
 Connection ~ 5275 4200
@@ -323,7 +235,7 @@ ADC7
 Text GLabel 5550 3700 0    47   Input ~ 0
 ADC8
 $Comp
-L R R2
+L ADC_MCU_MODULE-rescue:R R2
 U 1 1 5A9712DB
 P 1975 2925
 F 0 "R2" V 2055 2925 50  0000 C CNN
@@ -334,7 +246,7 @@ F 3 "" H 1975 2925 50  0000 C CNN
 	0    1    1    0   
 $EndComp
 $Comp
-L C_Small C2
+L ADC_MCU_MODULE-rescue:C_Small C2
 U 1 1 5A971344
 P 2175 3075
 F 0 "C2" H 2185 3145 50  0000 L CNN
@@ -345,11 +257,11 @@ F 3 "" H 2175 3075 50  0000 C CNN
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	2125 2925 2225 2925
+	2125 2925 2175 2925
 Wire Wire Line
 	2175 2925 2175 2975
 $Comp
-L GND #PWR09
+L ADC_MCU_MODULE-rescue:GND #PWR09
 U 1 1 5A97144E
 P 2175 3225
 F 0 "#PWR09" H 2175 2975 50  0001 C CNN
@@ -360,9 +272,9 @@ F 3 "" H 2175 3225 50  0000 C CNN
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	2175 3175 2175 3225
+	2175 3175 2175 3200
 $Comp
-L R R5
+L ADC_MCU_MODULE-rescue:R R5
 U 1 1 5A97168B
 P 2000 3500
 F 0 "R5" V 2080 3500 50  0000 C CNN
@@ -373,7 +285,7 @@ F 3 "" H 2000 3500 50  0000 C CNN
 	0    1    1    0   
 $EndComp
 $Comp
-L C_Small C5
+L ADC_MCU_MODULE-rescue:C_Small C5
 U 1 1 5A971691
 P 2200 3650
 F 0 "C5" H 2210 3720 50  0000 L CNN
@@ -384,11 +296,11 @@ F 3 "" H 2200 3650 50  0000 C CNN
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	2150 3500 2250 3500
+	2150 3500 2200 3500
 Wire Wire Line
 	2200 3500 2200 3550
 $Comp
-L GND #PWR010
+L ADC_MCU_MODULE-rescue:GND #PWR010
 U 1 1 5A971699
 P 2200 3800
 F 0 "#PWR010" H 2200 3550 50  0001 C CNN
@@ -399,9 +311,9 @@ F 3 "" H 2200 3800 50  0000 C CNN
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	2200 3750 2200 3800
+	2200 3750 2200 3775
 $Comp
-L R R3
+L ADC_MCU_MODULE-rescue:R R3
 U 1 1 5A97174E
 P 1975 4075
 F 0 "R3" V 2055 4075 50  0000 C CNN
@@ -412,7 +324,7 @@ F 3 "" H 1975 4075 50  0000 C CNN
 	0    1    1    0   
 $EndComp
 $Comp
-L C_Small C3
+L ADC_MCU_MODULE-rescue:C_Small C3
 U 1 1 5A971754
 P 2175 4225
 F 0 "C3" H 2185 4295 50  0000 L CNN
@@ -423,11 +335,11 @@ F 3 "" H 2175 4225 50  0000 C CNN
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	2125 4075 2225 4075
+	2125 4075 2175 4075
 Wire Wire Line
 	2175 4075 2175 4125
 $Comp
-L GND #PWR011
+L ADC_MCU_MODULE-rescue:GND #PWR011
 U 1 1 5A97175C
 P 2175 4375
 F 0 "#PWR011" H 2175 4125 50  0001 C CNN
@@ -438,9 +350,9 @@ F 3 "" H 2175 4375 50  0000 C CNN
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	2175 4325 2175 4375
+	2175 4325 2175 4350
 $Comp
-L R R4
+L ADC_MCU_MODULE-rescue:R R4
 U 1 1 5A971893
 P 1975 4650
 F 0 "R4" V 2055 4650 50  0000 C CNN
@@ -451,7 +363,7 @@ F 3 "" H 1975 4650 50  0000 C CNN
 	0    1    1    0   
 $EndComp
 $Comp
-L C_Small C4
+L ADC_MCU_MODULE-rescue:C_Small C4
 U 1 1 5A971899
 P 2175 4800
 F 0 "C4" H 2185 4870 50  0000 L CNN
@@ -462,11 +374,11 @@ F 3 "" H 2175 4800 50  0000 C CNN
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	2125 4650 2225 4650
+	2125 4650 2175 4650
 Wire Wire Line
 	2175 4650 2175 4700
 $Comp
-L GND #PWR012
+L ADC_MCU_MODULE-rescue:GND #PWR012
 U 1 1 5A9718A1
 P 2175 4950
 F 0 "#PWR012" H 2175 4700 50  0001 C CNN
@@ -477,9 +389,9 @@ F 3 "" H 2175 4950 50  0000 C CNN
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	2175 4900 2175 4950
+	2175 4900 2175 4925
 $Comp
-L R R7
+L ADC_MCU_MODULE-rescue:R R7
 U 1 1 5A971960
 P 3000 3500
 F 0 "R7" V 3080 3500 50  0000 C CNN
@@ -490,7 +402,7 @@ F 3 "" H 3000 3500 50  0000 C CNN
 	0    1    1    0   
 $EndComp
 $Comp
-L C_Small C7
+L ADC_MCU_MODULE-rescue:C_Small C7
 U 1 1 5A971966
 P 3200 3650
 F 0 "C7" H 3210 3720 50  0000 L CNN
@@ -501,11 +413,11 @@ F 3 "" H 3200 3650 50  0000 C CNN
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	3150 3500 3250 3500
+	3150 3500 3200 3500
 Wire Wire Line
 	3200 3500 3200 3550
 $Comp
-L GND #PWR013
+L ADC_MCU_MODULE-rescue:GND #PWR013
 U 1 1 5A97196E
 P 3200 3800
 F 0 "#PWR013" H 3200 3550 50  0001 C CNN
@@ -516,9 +428,9 @@ F 3 "" H 3200 3800 50  0000 C CNN
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	3200 3750 3200 3800
+	3200 3750 3200 3775
 $Comp
-L R R6
+L ADC_MCU_MODULE-rescue:R R6
 U 1 1 5A971A45
 P 3000 2925
 F 0 "R6" V 3080 2925 50  0000 C CNN
@@ -529,7 +441,7 @@ F 3 "" H 3000 2925 50  0000 C CNN
 	0    1    1    0   
 $EndComp
 $Comp
-L C_Small C6
+L ADC_MCU_MODULE-rescue:C_Small C6
 U 1 1 5A971A4B
 P 3200 3075
 F 0 "C6" H 3210 3145 50  0000 L CNN
@@ -540,11 +452,11 @@ F 3 "" H 3200 3075 50  0000 C CNN
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	3150 2925 3250 2925
+	3150 2925 3200 2925
 Wire Wire Line
 	3200 2925 3200 2975
 $Comp
-L GND #PWR014
+L ADC_MCU_MODULE-rescue:GND #PWR014
 U 1 1 5A971A53
 P 3200 3225
 F 0 "#PWR014" H 3200 2975 50  0001 C CNN
@@ -555,9 +467,9 @@ F 3 "" H 3200 3225 50  0000 C CNN
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	3200 3175 3200 3225
+	3200 3175 3200 3200
 $Comp
-L R R8
+L ADC_MCU_MODULE-rescue:R R8
 U 1 1 5A971BB8
 P 3000 4075
 F 0 "R8" V 3080 4075 50  0000 C CNN
@@ -568,7 +480,7 @@ F 3 "" H 3000 4075 50  0000 C CNN
 	0    1    1    0   
 $EndComp
 $Comp
-L C_Small C8
+L ADC_MCU_MODULE-rescue:C_Small C8
 U 1 1 5A971BBE
 P 3200 4225
 F 0 "C8" H 3210 4295 50  0000 L CNN
@@ -579,11 +491,11 @@ F 3 "" H 3200 4225 50  0000 C CNN
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	3150 4075 3250 4075
+	3150 4075 3200 4075
 Wire Wire Line
 	3200 4075 3200 4125
 $Comp
-L GND #PWR015
+L ADC_MCU_MODULE-rescue:GND #PWR015
 U 1 1 5A971BC6
 P 3200 4375
 F 0 "#PWR015" H 3200 4125 50  0001 C CNN
@@ -594,9 +506,9 @@ F 3 "" H 3200 4375 50  0000 C CNN
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	3200 4325 3200 4375
+	3200 4325 3200 4350
 $Comp
-L R R9
+L ADC_MCU_MODULE-rescue:R R9
 U 1 1 5A971CBD
 P 3000 4650
 F 0 "R9" V 3080 4650 50  0000 C CNN
@@ -607,7 +519,7 @@ F 3 "" H 3000 4650 50  0000 C CNN
 	0    1    1    0   
 $EndComp
 $Comp
-L C_Small C9
+L ADC_MCU_MODULE-rescue:C_Small C9
 U 1 1 5A971CC3
 P 3200 4800
 F 0 "C9" H 3210 4870 50  0000 L CNN
@@ -618,11 +530,11 @@ F 3 "" H 3200 4800 50  0000 C CNN
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	3150 4650 3250 4650
+	3150 4650 3200 4650
 Wire Wire Line
 	3200 4650 3200 4700
 $Comp
-L GND #PWR016
+L ADC_MCU_MODULE-rescue:GND #PWR016
 U 1 1 5A971CCB
 P 3200 4950
 F 0 "#PWR016" H 3200 4700 50  0001 C CNN
@@ -633,9 +545,9 @@ F 3 "" H 3200 4950 50  0000 C CNN
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	3200 4900 3200 4950
+	3200 4900 3200 4925
 $Comp
-L BNC P2
+L ADC_MCU_MODULE-rescue:BNC P2
 U 1 1 5A972CAF
 P 1675 2925
 F 0 "P2" H 1685 3045 50  0000 C CNN
@@ -651,7 +563,7 @@ Wire Wire Line
 	1675 3200 2175 3200
 Connection ~ 2175 3200
 $Comp
-L BNC P5
+L ADC_MCU_MODULE-rescue:BNC P5
 U 1 1 5A972DFF
 P 1700 3500
 F 0 "P5" H 1710 3620 50  0000 C CNN
@@ -662,7 +574,7 @@ F 3 "" H 1700 3500 50  0000 C CNN
 	-1   0    0    -1  
 $EndComp
 $Comp
-L BNC P3
+L ADC_MCU_MODULE-rescue:BNC P3
 U 1 1 5A972F75
 P 1675 4075
 F 0 "P3" H 1685 4195 50  0000 C CNN
@@ -673,7 +585,7 @@ F 3 "" H 1675 4075 50  0000 C CNN
 	-1   0    0    -1  
 $EndComp
 $Comp
-L BNC P4
+L ADC_MCU_MODULE-rescue:BNC P4
 U 1 1 5A973006
 P 1675 4650
 F 0 "P4" H 1685 4770 50  0000 C CNN
@@ -684,7 +596,7 @@ F 3 "" H 1675 4650 50  0000 C CNN
 	-1   0    0    -1  
 $EndComp
 $Comp
-L BNC P6
+L ADC_MCU_MODULE-rescue:BNC P6
 U 1 1 5A97308C
 P 2700 2925
 F 0 "P6" H 2710 3045 50  0000 C CNN
@@ -695,7 +607,7 @@ F 3 "" H 2700 2925 50  0000 C CNN
 	-1   0    0    -1  
 $EndComp
 $Comp
-L BNC P7
+L ADC_MCU_MODULE-rescue:BNC P7
 U 1 1 5A973139
 P 2700 3500
 F 0 "P7" H 2710 3620 50  0000 C CNN
@@ -706,7 +618,7 @@ F 3 "" H 2700 3500 50  0000 C CNN
 	-1   0    0    -1  
 $EndComp
 $Comp
-L BNC P8
+L ADC_MCU_MODULE-rescue:BNC P8
 U 1 1 5A9731B9
 P 2700 4075
 F 0 "P8" H 2710 4195 50  0000 C CNN
@@ -717,7 +629,7 @@ F 3 "" H 2700 4075 50  0000 C CNN
 	-1   0    0    -1  
 $EndComp
 $Comp
-L BNC P9
+L ADC_MCU_MODULE-rescue:BNC P9
 U 1 1 5A97324E
 P 2700 4650
 F 0 "P9" H 2710 4770 50  0000 C CNN
@@ -787,7 +699,7 @@ ADC7
 Text GLabel 3250 4650 2    47   Output ~ 0
 ADC8
 $Comp
-L +5V #PWR017
+L ADC_MCU_MODULE-rescue:+5V #PWR017
 U 1 1 5A977F7C
 P 9250 3300
 F 0 "#PWR017" H 9250 3150 50  0001 C CNN
@@ -798,7 +710,7 @@ F 3 "" H 9250 3300 50  0000 C CNN
 	0    1    1    0   
 $EndComp
 $Comp
-L GND #PWR018
+L ADC_MCU_MODULE-rescue:GND #PWR018
 U 1 1 5A978062
 P 9250 3100
 F 0 "#PWR018" H 9250 2850 50  0001 C CNN
@@ -809,7 +721,7 @@ F 3 "" H 9250 3100 50  0000 C CNN
 	0    -1   -1   0   
 $EndComp
 $Comp
-L +5V #PWR019
+L ADC_MCU_MODULE-rescue:+5V #PWR019
 U 1 1 5A978146
 P 9250 3000
 F 0 "#PWR019" H 9250 2850 50  0001 C CNN
@@ -888,7 +800,7 @@ NoConn ~ 9250 4000
 NoConn ~ 9250 4100
 NoConn ~ 9250 4300
 $Comp
-L GND #PWR020
+L ADC_MCU_MODULE-rescue:GND #PWR020
 U 1 1 5A974874
 P 8425 3350
 F 0 "#PWR020" H 8425 3100 50  0001 C CNN
@@ -911,7 +823,7 @@ MOSI
 Text GLabel 8550 4000 0    47   Output ~ 0
 ~CS
 $Comp
-L CONN_01X06 P10
+L ADC_MCU_MODULE-rescue:CONN_01X06 P10
 U 1 1 5AA06AB3
 P 6975 3300
 F 0 "P10" H 6975 3650 50  0001 C CNN
@@ -922,7 +834,7 @@ F 3 "" H 6975 3300 50  0000 C CNN
 	-1   0    0    1   
 $EndComp
 $Comp
-L GND #PWR021
+L ADC_MCU_MODULE-rescue:GND #PWR021
 U 1 1 5AA06B80
 P 7175 3550
 F 0 "#PWR021" H 7175 3300 50  0001 C CNN
@@ -933,7 +845,7 @@ F 3 "" H 7175 3550 50  0000 C CNN
 	0    -1   -1   0   
 $EndComp
 $Comp
-L +5V #PWR022
+L ADC_MCU_MODULE-rescue:+5V #PWR022
 U 1 1 5AA06CD4
 P 7175 3450
 F 0 "#PWR022" H 7175 3300 50  0001 C CNN
@@ -961,4 +873,48 @@ Wire Notes Line
 	6475 3800 6475 2925
 Wire Notes Line
 	6475 2925 7950 2925
+Wire Wire Line
+	7300 4150 7625 4150
+Wire Wire Line
+	7300 4150 7300 4200
+Wire Wire Line
+	7300 4450 7300 4500
+Wire Wire Line
+	7300 4450 7625 4450
+Wire Wire Line
+	3800 4500 3800 4550
+Wire Wire Line
+	5275 4200 5275 4600
+Wire Wire Line
+	2175 3200 2175 3225
+Wire Wire Line
+	2200 3775 2200 3800
+Wire Wire Line
+	2175 4350 2175 4375
+Wire Wire Line
+	2175 4925 2175 4950
+Wire Wire Line
+	3200 3200 3200 3225
+Wire Wire Line
+	3200 3775 3200 3800
+Wire Wire Line
+	3200 4350 3200 4375
+Wire Wire Line
+	3200 4925 3200 4950
+Wire Wire Line
+	3200 4650 3250 4650
+Wire Wire Line
+	3200 3500 3250 3500
+Wire Wire Line
+	3200 4075 3250 4075
+Wire Wire Line
+	3200 2925 3250 2925
+Wire Wire Line
+	2175 4075 2225 4075
+Wire Wire Line
+	2175 4650 2225 4650
+Wire Wire Line
+	2200 3500 2250 3500
+Wire Wire Line
+	2175 2925 2225 2925
 $EndSCHEMATC
