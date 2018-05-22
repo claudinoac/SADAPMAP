@@ -1,94 +1,6 @@
-EESchema Schematic File Version 2
-LIBS:74xgxx
-LIBS:74xx
-LIBS:ac-dc
-LIBS:actel
-LIBS:adc-dac
-LIBS:Altera
-LIBS:analog_devices
-LIBS:analog_switches
-LIBS:atmel
-LIBS:audio
-LIBS:brooktre
-LIBS:cmos4000
-LIBS:cmos_ieee
-LIBS:conn
-LIBS:contrib
-LIBS:cypress
-LIBS:dc-dc
-LIBS:device
-LIBS:digital-audio
-LIBS:diode
-LIBS:display
-LIBS:dsp
-LIBS:elec-unifil
-LIBS:ESD_Protection
-LIBS:ftdi
-LIBS:gennum
-LIBS:graphic
-LIBS:hc11
-LIBS:intel
-LIBS:interface
-LIBS:ir
-LIBS:Lattice
-LIBS:linear
-LIBS:logo
-LIBS:maxim
-LIBS:memory
-LIBS:microchip
-LIBS:microchip_dspic33dsc
-LIBS:microchip_pic10mcu
-LIBS:microchip_pic12mcu
-LIBS:microchip_pic16mcu
-LIBS:microchip_pic18mcu
-LIBS:microchip_pic32mcu
-LIBS:microcontrollers
-LIBS:motor_drivers
-LIBS:motorola
-LIBS:msp430
-LIBS:nordicsemi
-LIBS:nxp_armmcu
-LIBS:onsemi
-LIBS:opto
-LIBS:Oscillators
-LIBS:philips
-LIBS:power
-LIBS:powerint
-LIBS:Power_Management
-LIBS:references
-LIBS:regul
-LIBS:relays
-LIBS:rfcom
-LIBS:sensors
-LIBS:silabs
-LIBS:siliconi
-LIBS:stm8
-LIBS:stm32
-LIBS:supertex
-LIBS:switches
-LIBS:texas
-LIBS:transf
-LIBS:transistors
-LIBS:ttl_ieee
-LIBS:valves
-LIBS:video
-LIBS:w_analog
-LIBS:w_connectors
-LIBS:w_device
-LIBS:w_logic
-LIBS:w_memory
-LIBS:w_microcontrollers
-LIBS:w_opto
-LIBS:Worldsemi
-LIBS:w_relay
-LIBS:w_rtx
-LIBS:w_transistor
-LIBS:w_vacuum
-LIBS:Xicor
-LIBS:xilinx
-LIBS:Zilog
+EESchema Schematic File Version 4
 LIBS:I_AMP-cache
-EELAYER 25 0
+EELAYER 26 0
 EELAYER END
 $Descr User 8908 6299
 encoding utf-8
@@ -103,7 +15,7 @@ Comment3 "The gain adjust must be set for a range in 0 to 5V output voltage"
 Comment4 "Designed by Alisson Claudino"
 $EndDescr
 $Comp
-L GND #PWR01
+L I_AMP-rescue:GND #PWR01
 U 1 1 5A26D72D
 P 1750 1950
 F 0 "#PWR01" H 1750 1700 50  0001 C CNN
@@ -120,7 +32,7 @@ Text Notes 1850 1650 0    60   ~ 0
 NoConn ~ 4150 3950
 NoConn ~ 4150 3350
 $Comp
-L R R1
+L I_AMP-rescue:R R1
 U 1 1 5A270FC5
 P 1750 1700
 F 0 "R1" V 1830 1700 50  0000 C CNN
@@ -131,7 +43,7 @@ F 3 "" H 1750 1700 50  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L R R2
+L I_AMP-rescue:R R2
 U 1 1 5A270FC6
 P 2050 1700
 F 0 "R2" V 2130 1700 50  0000 C CNN
@@ -142,7 +54,7 @@ F 3 "" H 2050 1700 50  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L R R5
+L I_AMP-rescue:R R5
 U 1 1 5A270FC7
 P 1600 3450
 F 0 "R5" V 1680 3450 50  0000 C CNN
@@ -153,7 +65,7 @@ F 3 "" H 1600 3450 50  0000 C CNN
 	0    1    1    0   
 $EndComp
 $Comp
-L GND #PWR02
+L I_AMP-rescue:GND #PWR02
 U 1 1 5A270FC9
 P 1750 1950
 F 0 "#PWR02" H 1750 1700 50  0001 C CNN
@@ -164,7 +76,7 @@ F 3 "" H 1750 1950 50  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L D_Small D1
+L I_AMP-rescue:D_Small D1
 U 1 1 5A270FCC
 P 2200 2800
 F 0 "D1" H 2150 2880 50  0000 L CNN
@@ -175,7 +87,7 @@ F 3 "" V 2200 2800 50  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L R R6
+L I_AMP-rescue:R R6
 U 1 1 5A270FCD
 P 2200 2600
 F 0 "R6" V 2280 2600 50  0000 C CNN
@@ -186,7 +98,7 @@ F 3 "" H 2200 2600 50  0000 C CNN
 	0    1    -1   0   
 $EndComp
 $Comp
-L GND #PWR03
+L I_AMP-rescue:GND #PWR03
 U 1 1 5A270FCE
 P 1800 3700
 F 0 "#PWR03" H 1800 3450 50  0001 C CNN
@@ -196,10 +108,8 @@ F 3 "" H 1800 3700 50  0000 C CNN
 	1    1800 3700
 	1    0    0    -1  
 $EndComp
-NoConn ~ 4150 3950
-NoConn ~ 4150 3350
 $Comp
-L R R14
+L I_AMP-rescue:R R14
 U 1 1 5A270FD6
 P 5400 1000
 F 0 "R14" V 5480 1000 50  0000 C CNN
@@ -210,7 +120,7 @@ F 3 "" H 5400 1000 50  0000 C CNN
 	0    1    1    0   
 $EndComp
 $Comp
-L C C8
+L I_AMP-rescue:C C8
 U 1 1 5A270FD7
 P 5600 1200
 F 0 "C8" H 5625 1300 50  0000 L CNN
@@ -221,7 +131,7 @@ F 3 "" H 5600 1200 50  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L R R15
+L I_AMP-rescue:R R15
 U 1 1 5A270FD8
 P 5800 1200
 F 0 "R15" V 5880 1200 50  0000 C CNN
@@ -232,7 +142,7 @@ F 3 "" H 5800 1200 50  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L GND #PWR04
+L I_AMP-rescue:GND #PWR04
 U 1 1 5A270FD9
 P 5700 1450
 F 0 "#PWR04" H 5700 1200 50  0001 C CNN
@@ -243,7 +153,7 @@ F 3 "" H 5700 1450 50  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L +8V #PWR05
+L I_AMP-rescue:+8V #PWR05
 U 1 1 5A270FDB
 P 6400 800
 F 0 "#PWR05" H 6400 650 50  0001 C CNN
@@ -254,7 +164,7 @@ F 3 "" H 6400 800 50  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L GND #PWR06
+L I_AMP-rescue:GND #PWR06
 U 1 1 5A270FDD
 P 3900 3800
 F 0 "#PWR06" H 3900 3550 50  0001 C CNN
@@ -265,7 +175,7 @@ F 3 "" H 3900 3800 50  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L ZENERsmall D5
+L I_AMP-rescue:ZENERsmall D5
 U 1 1 5A270FE1
 P 7250 1250
 F 0 "D5" H 7250 1350 50  0000 C CNN
@@ -276,7 +186,7 @@ F 3 "" H 7250 1250 50  0000 C CNN
 	0    1    1    0   
 $EndComp
 $Comp
-L OPA177 U3
+L I_AMP-rescue:OPA177 U3
 U 1 1 5A270FDA
 P 6500 1100
 F 0 "U3" H 6500 900 50  0000 C CNN
@@ -287,7 +197,7 @@ F 3 "" H 6500 1100 50  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L CP C5
+L I_AMP-rescue:CP C5
 U 1 1 5A270FD3
 P 3950 2900
 F 0 "C5" V 4000 3000 50  0000 L CNN
@@ -298,7 +208,7 @@ F 3 "" H 3950 2900 50  0000 C CNN
 	0    1    1    0   
 $EndComp
 $Comp
-L R R12
+L I_AMP-rescue:R R12
 U 1 1 5A270FD4
 P 3950 3100
 F 0 "R12" V 4030 3100 50  0000 C CNN
@@ -309,7 +219,7 @@ F 3 "" H 3950 3100 50  0000 C CNN
 	0    1    1    0   
 $EndComp
 $Comp
-L POT RV1
+L I_AMP-rescue:POT RV1
 U 1 1 5A270FD5
 P 4350 3100
 F 0 "RV1" H 4350 3020 50  0000 C CNN
@@ -320,7 +230,7 @@ F 3 "" H 4350 3100 50  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L D_Small D2
+L I_AMP-rescue:D_Small D2
 U 1 1 5A270FCA
 P 2650 3550
 F 0 "D2" H 2600 3630 50  0000 L CNN
@@ -331,7 +241,7 @@ F 3 "" V 2650 3550 50  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L R R8
+L I_AMP-rescue:R R8
 U 1 1 5A270FCB
 P 3150 3550
 F 0 "R8" V 3230 3550 50  0000 C CNN
@@ -342,7 +252,7 @@ F 3 "" H 3150 3550 50  0000 C CNN
 	0    1    1    0   
 $EndComp
 $Comp
-L GND #PWR07
+L I_AMP-rescue:GND #PWR07
 U 1 1 5A270FD1
 P 2300 3200
 F 0 "#PWR07" H 2300 2950 50  0001 C CNN
@@ -353,7 +263,7 @@ F 3 "" H 2300 3200 50  0000 C CNN
 	0    -1   -1   0   
 $EndComp
 $Comp
-L -8V #PWR18
+L I_AMP-rescue:-8V #PWR18
 U 1 1 5A270FDC
 P 6400 1400
 F 0 "#PWR18" H 6400 1500 50  0001 C CNN
@@ -364,7 +274,7 @@ F 3 "" H 6400 1400 50  0000 C CNN
 	1    0    0    1   
 $EndComp
 $Comp
-L R R18
+L I_AMP-rescue:R R18
 U 1 1 5A270FDE
 P 6450 1750
 F 0 "R18" V 6530 1750 50  0000 C CNN
@@ -375,7 +285,7 @@ F 3 "" H 6450 1750 50  0000 C CNN
 	0    1    1    0   
 $EndComp
 $Comp
-L C C9
+L I_AMP-rescue:C C9
 U 1 1 5A270FDF
 P 6450 2050
 F 0 "C9" H 6475 2150 50  0000 L CNN
@@ -386,7 +296,7 @@ F 3 "" H 6450 2050 50  0000 C CNN
 	0    1    1    0   
 $EndComp
 $Comp
-L GND #PWR08
+L I_AMP-rescue:GND #PWR08
 U 1 1 5A270FE2
 P 7250 1450
 F 0 "#PWR08" H 7250 1200 50  0001 C CNN
@@ -397,7 +307,7 @@ F 3 "" H 7250 1450 50  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L R R19
+L I_AMP-rescue:R R19
 U 1 1 5A270FE0
 P 7050 1100
 F 0 "R19" V 6950 1100 50  0000 C CNN
@@ -408,7 +318,7 @@ F 3 "" H 7050 1100 50  0000 C CNN
 	0    1    1    0   
 $EndComp
 $Comp
-L TL062 U1
+L I_AMP-rescue:TL062 U1
 U 2 1 5A270FD2
 P 4250 3650
 F 0 "U1" H 4200 3650 50  0000 L CNN
@@ -419,7 +329,7 @@ F 3 "" H 4250 3650 50  0000 C CNN
 	1    0    0    1   
 $EndComp
 $Comp
-L C_Small C2
+L I_AMP-rescue:C_Small C2
 U 1 1 5A270FCF
 P 2200 3200
 F 0 "C2" V 2300 3300 50  0000 L CNN
@@ -430,7 +340,7 @@ F 3 "" H 2200 3200 50  0000 C CNN
 	0    1    1    0   
 $EndComp
 $Comp
-L -8V #PWR5
+L I_AMP-rescue:-8V #PWR5
 U 1 1 5A270FD0
 P 2050 3150
 F 0 "#PWR5" H 2050 3250 50  0001 C CNN
@@ -441,7 +351,7 @@ F 3 "" H 2050 3150 50  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L BNC P1
+L I_AMP-rescue:BNC P1
 U 1 1 5A270FC4
 P 1100 1500
 F 0 "P1" H 1250 1400 50  0000 C CNN
@@ -452,7 +362,7 @@ F 3 "" H 1100 1500 50  0000 C CNN
 	-1   0    0    -1  
 $EndComp
 $Comp
-L BNC P6
+L I_AMP-rescue:BNC P6
 U 1 1 5A270FE3
 P 7800 1100
 F 0 "P6" H 7950 1000 50  0000 C CNN
@@ -463,7 +373,7 @@ F 3 "" H 7800 1100 50  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L GND #PWR09
+L I_AMP-rescue:GND #PWR09
 U 1 1 5A2738F2
 P 2300 3900
 F 0 "#PWR09" H 2300 3650 50  0001 C CNN
@@ -474,7 +384,7 @@ F 3 "" H 2300 3900 50  0000 C CNN
 	0    -1   -1   0   
 $EndComp
 $Comp
-L C_Small C3
+L I_AMP-rescue:C_Small C3
 U 1 1 5A2738F8
 P 2200 3900
 F 0 "C3" V 2300 4000 50  0000 L CNN
@@ -485,7 +395,7 @@ F 3 "" H 2200 3900 50  0000 C CNN
 	0    1    1    0   
 $EndComp
 $Comp
-L TL062 U1
+L I_AMP-rescue:TL062 U1
 U 1 1 5A270FC8
 P 2150 3550
 F 0 "U1" H 2100 3550 50  0000 L CNN
@@ -496,7 +406,7 @@ F 3 "" H 2150 3550 50  0000 C CNN
 	1    0    0    1   
 $EndComp
 $Comp
-L +8V #PWR010
+L I_AMP-rescue:+8V #PWR010
 U 1 1 5A273BD0
 P 2050 3950
 F 0 "#PWR010" H 2050 3800 50  0001 C CNN
@@ -507,7 +417,7 @@ F 3 "" H 2050 3950 50  0000 C CNN
 	-1   0    0    1   
 $EndComp
 $Comp
-L LM393 U2
+L I_AMP-rescue:LM393 U2
 U 1 1 5A27494E
 P 6600 3200
 F 0 "U2" H 6650 3200 50  0000 C CNN
@@ -518,7 +428,7 @@ F 3 "" H 6600 3200 50  0000 C CNN
 	1    0    0    1   
 $EndComp
 $Comp
-L LM393 U2
+L I_AMP-rescue:LM393 U2
 U 2 1 5A27494F
 P 2350 5100
 F 0 "U2" H 2500 5250 50  0000 C CNN
@@ -529,7 +439,7 @@ F 3 "" H 2350 5100 50  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L R R11
+L I_AMP-rescue:R R11
 U 1 1 5A274950
 P 6200 2900
 F 0 "R11" V 6280 2900 50  0000 C CNN
@@ -540,7 +450,7 @@ F 3 "" H 6200 2900 50  0000 C CNN
 	-1   0    0    1   
 $EndComp
 $Comp
-L C_Small C6
+L I_AMP-rescue:C_Small C6
 U 1 1 5A274951
 P 6650 2800
 F 0 "C6" V 6750 2800 50  0000 L CNN
@@ -551,7 +461,7 @@ F 3 "" H 6650 2800 50  0000 C CNN
 	0    1    1    0   
 $EndComp
 $Comp
-L GND #PWR011
+L I_AMP-rescue:GND #PWR011
 U 1 1 5A274952
 P 6750 2800
 F 0 "#PWR011" H 6750 2550 50  0001 C CNN
@@ -562,7 +472,7 @@ F 3 "" H 6750 2800 50  0000 C CNN
 	0    -1   -1   0   
 $EndComp
 $Comp
-L -8V #PWR19
+L I_AMP-rescue:-8V #PWR19
 U 1 1 5A274953
 P 6500 2700
 F 0 "#PWR19" H 6500 2800 50  0001 C CNN
@@ -573,7 +483,7 @@ F 3 "" H 6500 2700 50  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L R R9
+L I_AMP-rescue:R R9
 U 1 1 5A274956
 P 5900 3100
 F 0 "R9" V 5980 3100 50  0000 C CNN
@@ -584,7 +494,7 @@ F 3 "" H 5900 3100 50  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L R R10
+L I_AMP-rescue:R R10
 U 1 1 5A274957
 P 5900 3500
 F 0 "R10" V 5980 3500 50  0000 C CNN
@@ -595,7 +505,7 @@ F 3 "" H 5900 3500 50  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L +8V #PWR012
+L I_AMP-rescue:+8V #PWR012
 U 1 1 5A274958
 P 6500 3600
 F 0 "#PWR012" H 6500 3450 50  0001 C CNN
@@ -606,7 +516,7 @@ F 3 "" H 6500 3600 50  0000 C CNN
 	1    0    0    1   
 $EndComp
 $Comp
-L C_Small C7
+L I_AMP-rescue:C_Small C7
 U 1 1 5A274959
 P 6650 3550
 F 0 "C7" V 6700 3600 50  0000 L CNN
@@ -617,7 +527,7 @@ F 3 "" H 6650 3550 50  0000 C CNN
 	0    1    -1   0   
 $EndComp
 $Comp
-L GND #PWR013
+L I_AMP-rescue:GND #PWR013
 U 1 1 5A27495A
 P 6750 3550
 F 0 "#PWR013" H 6750 3300 50  0001 C CNN
@@ -628,7 +538,7 @@ F 3 "" H 6750 3550 50  0000 C CNN
 	0    -1   1    0   
 $EndComp
 $Comp
-L +8V #PWR014
+L I_AMP-rescue:+8V #PWR014
 U 1 1 5A27495B
 P 5900 2950
 F 0 "#PWR014" H 5900 2800 50  0001 C CNN
@@ -639,7 +549,7 @@ F 3 "" H 5900 2950 50  0000 C CNN
 	-1   0    0    -1  
 $EndComp
 $Comp
-L GND #PWR015
+L I_AMP-rescue:GND #PWR015
 U 1 1 5A27495C
 P 5900 3650
 F 0 "#PWR015" H 5900 3400 50  0001 C CNN
@@ -650,7 +560,7 @@ F 3 "" H 5900 3650 50  0000 C CNN
 	-1   0    0    -1  
 $EndComp
 $Comp
-L R R13
+L I_AMP-rescue:R R13
 U 1 1 5A27495D
 P 6350 3950
 F 0 "R13" V 6430 3950 50  0000 C CNN
@@ -661,7 +571,7 @@ F 3 "" H 6350 3950 50  0000 C CNN
 	0    1    1    0   
 $EndComp
 $Comp
-L D_Small D3
+L I_AMP-rescue:D_Small D3
 U 1 1 5A27495E
 P 6700 3950
 F 0 "D3" H 6650 4030 50  0000 L CNN
@@ -672,7 +582,7 @@ F 3 "" V 6700 3950 50  0000 C CNN
 	-1   0    0    -1  
 $EndComp
 $Comp
-L LED D4
+L I_AMP-rescue:LED D4
 U 1 1 5A27495F
 P 7550 3000
 F 0 "D4" H 7550 2900 50  0000 C CNN
@@ -683,7 +593,7 @@ F 3 "" H 7550 3000 50  0000 C CNN
 	0    1    -1   0   
 $EndComp
 $Comp
-L R R17
+L I_AMP-rescue:R R17
 U 1 1 5A274960
 P 7350 2750
 F 0 "R17" V 7430 2750 50  0000 C CNN
@@ -694,7 +604,7 @@ F 3 "" H 7350 2750 50  0000 C CNN
 	0    -1   -1   0   
 $EndComp
 $Comp
-L +8V #PWR016
+L I_AMP-rescue:+8V #PWR016
 U 1 1 5A274961
 P 7150 2700
 F 0 "#PWR016" H 7150 2550 50  0001 C CNN
@@ -705,7 +615,7 @@ F 3 "" H 7150 2700 50  0000 C CNN
 	-1   0    0    -1  
 $EndComp
 $Comp
-L GND #PWR017
+L I_AMP-rescue:GND #PWR017
 U 1 1 5A274962
 P 1950 5250
 F 0 "#PWR017" H 1950 5000 50  0001 C CNN
@@ -719,7 +629,7 @@ NoConn ~ 2250 4800
 NoConn ~ 2250 5400
 NoConn ~ 2650 5100
 $Comp
-L R R3
+L I_AMP-rescue:R R3
 U 1 1 5A274966
 P 3400 1200
 F 0 "R3" V 3480 1200 50  0000 C CNN
@@ -730,7 +640,7 @@ F 3 "" H 3400 1200 50  0000 C CNN
 	0    1    1    0   
 $EndComp
 $Comp
-L R R4
+L I_AMP-rescue:R R4
 U 1 1 5A274967
 P 3400 1500
 F 0 "R4" V 3480 1500 50  0000 C CNN
@@ -741,7 +651,7 @@ F 3 "" H 3400 1500 50  0000 C CNN
 	0    1    1    0   
 $EndComp
 $Comp
-L CP_Small C1
+L I_AMP-rescue:CP_Small C1
 U 1 1 5A274968
 P 3700 1650
 F 0 "C1" H 3710 1720 50  0000 L CNN
@@ -752,7 +662,7 @@ F 3 "" H 3700 1650 50  0000 C CNN
 	1    0    0    1   
 $EndComp
 $Comp
-L CP_Small C4
+L I_AMP-rescue:CP_Small C4
 U 1 1 5A274969
 P 4300 1650
 F 0 "C4" H 4310 1720 50  0000 L CNN
@@ -763,7 +673,7 @@ F 3 "" H 4300 1650 50  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L GND #PWR018
+L I_AMP-rescue:GND #PWR018
 U 1 1 5A27496A
 P 3700 1850
 F 0 "#PWR018" H 3700 1600 50  0001 C CNN
@@ -774,7 +684,7 @@ F 3 "" H 3700 1850 50  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L +8V #PWR019
+L I_AMP-rescue:+8V #PWR019
 U 1 1 5A27496B
 P 4300 1150
 F 0 "#PWR019" H 4300 1000 50  0001 C CNN
@@ -785,7 +695,7 @@ F 3 "" H 4300 1150 50  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L -8V #PWR9
+L I_AMP-rescue:-8V #PWR9
 U 1 1 5A27496C
 P 3700 1450
 F 0 "#PWR9" H 3700 1550 50  0001 C CNN
@@ -796,7 +706,7 @@ F 3 "" H 3700 1450 50  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L PWR_FLAG #FLG020
+L I_AMP-rescue:PWR_FLAG #FLG020
 U 1 1 5A27496D
 P 3700 1100
 F 0 "#FLG020" H 3700 1195 50  0001 C CNN
@@ -807,7 +717,7 @@ F 3 "" H 3700 1100 50  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L PWR_FLAG #FLG021
+L I_AMP-rescue:PWR_FLAG #FLG021
 U 1 1 5A27496E
 P 4000 1450
 F 0 "#FLG021" H 4000 1545 50  0001 C CNN
@@ -818,7 +728,7 @@ F 3 "" H 4000 1450 50  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L PWR_FLAG #FLG022
+L I_AMP-rescue:PWR_FLAG #FLG022
 U 1 1 5A27496F
 P 4000 1850
 F 0 "#FLG022" H 4000 1945 50  0001 C CNN
@@ -835,9 +745,9 @@ Saturation Indicator
 Text Notes 1350 2300 0    60   ~ 0
 I to V Converter\n
 Wire Wire Line
-	1250 1500 2200 1500
+	1250 1500 1750 1500
 Wire Wire Line
-	1250 3450 1450 3450
+	1250 3450 1350 3450
 Wire Wire Line
 	2050 1500 2050 1550
 Wire Wire Line
@@ -847,18 +757,18 @@ Connection ~ 1750 1500
 Wire Wire Line
 	1100 1700 1100 1900
 Wire Wire Line
-	1100 1900 2050 1900
+	1100 1900 1750 1900
 Wire Wire Line
 	2050 1900 2050 1850
 Wire Wire Line
-	1750 1850 1750 1950
+	1750 1850 1750 1900
 Connection ~ 1750 1900
 Wire Wire Line
-	1750 3450 1850 3450
+	1750 3450 1800 3450
 Wire Wire Line
-	2450 3550 2550 3550
+	2450 3550 2500 3550
 Wire Wire Line
-	2750 3550 3000 3550
+	2750 3550 2800 3550
 Wire Wire Line
 	2300 2800 2500 2800
 Wire Wire Line
@@ -867,12 +777,12 @@ Connection ~ 2500 3550
 Wire Wire Line
 	2100 2800 1800 2800
 Wire Wire Line
-	1800 2600 1800 3450
+	1800 2600 1800 2800
 Connection ~ 1800 3450
 Wire Wire Line
-	3300 3550 3950 3550
+	3300 3550 3500 3550
 Wire Wire Line
-	3500 2900 3500 4200
+	3500 2900 3500 3100
 Wire Wire Line
 	1350 4200 1350 3450
 Connection ~ 1350 3450
@@ -889,7 +799,7 @@ Wire Wire Line
 Wire Wire Line
 	1800 3650 1850 3650
 Wire Wire Line
-	2050 3150 2050 3250
+	2050 3150 2050 3200
 Wire Wire Line
 	2050 3200 2100 3200
 Connection ~ 2050 3200
@@ -902,20 +812,20 @@ Connection ~ 3500 3100
 Wire Wire Line
 	4100 3100 4200 3100
 Wire Wire Line
-	4100 2900 4650 2900
+	4100 2900 4350 2900
 Wire Wire Line
 	4350 2900 4350 2950
 Wire Wire Line
-	4650 2900 4650 3650
+	4650 2900 4650 3100
 Wire Wire Line
-	4550 3650 4750 3650
+	4550 3650 4650 3650
 Connection ~ 4350 2900
 Wire Wire Line
 	4500 3100 4650 3100
 Connection ~ 4650 3100
 Connection ~ 4650 3650
 Wire Wire Line
-	5550 1000 6200 1000
+	5550 1000 5600 1000
 Wire Wire Line
 	5600 1000 5600 1050
 Wire Wire Line
@@ -924,7 +834,7 @@ Connection ~ 5600 1000
 Wire Wire Line
 	5600 1350 5600 1400
 Wire Wire Line
-	5600 1400 5800 1400
+	5600 1400 5700 1400
 Wire Wire Line
 	5800 1400 5800 1350
 Wire Wire Line
@@ -938,11 +848,11 @@ Wire Wire Line
 Wire Wire Line
 	6250 2050 6300 2050
 Wire Wire Line
-	6250 1750 6250 2050
+	6250 1750 6250 1900
 Wire Wire Line
 	6250 1750 6300 1750
 Wire Wire Line
-	6050 1900 6250 1900
+	6050 1900 6100 1900
 Wire Wire Line
 	6100 1200 6100 1900
 Wire Wire Line
@@ -951,17 +861,17 @@ Connection ~ 6250 1900
 Wire Wire Line
 	6600 1750 6650 1750
 Wire Wire Line
-	6650 1750 6650 2050
+	6650 1750 6650 1900
 Wire Wire Line
 	6650 2050 6600 2050
 Connection ~ 6650 1900
 Wire Wire Line
-	7200 1100 7650 1100
+	7200 1100 7250 1100
 Wire Wire Line
 	7250 1100 7250 1150
 Connection ~ 7250 1100
 Wire Wire Line
-	7250 1350 7250 1450
+	7250 1350 7250 1400
 Wire Wire Line
 	7250 1400 7800 1400
 Wire Wire Line
@@ -971,7 +881,7 @@ Wire Wire Line
 	2050 3900 2100 3900
 Connection ~ 2050 3900
 Wire Wire Line
-	2050 3850 2050 3950
+	2050 3850 2050 3900
 Wire Wire Line
 	6200 3050 6200 3100
 Wire Wire Line
@@ -980,18 +890,18 @@ Wire Wire Line
 	6500 2800 6550 2800
 Connection ~ 6500 2800
 Wire Wire Line
-	6500 2700 6500 2900
+	6500 2700 6500 2800
 Wire Wire Line
 	6200 2750 6200 2600
 Wire Wire Line
 	6550 3550 6500 3550
 Wire Wire Line
-	6500 3500 6500 3600
+	6500 3500 6500 3550
 Connection ~ 6500 3550
 Wire Wire Line
-	5900 3250 5900 3350
+	5900 3250 5900 3300
 Wire Wire Line
-	5900 3300 6300 3300
+	5900 3300 6150 3300
 Connection ~ 5900 3300
 Wire Wire Line
 	6800 3950 7000 3950
@@ -1013,22 +923,22 @@ Wire Wire Line
 Wire Wire Line
 	2050 5000 1950 5000
 Wire Wire Line
-	1950 5000 1950 5250
+	1950 5000 1950 5200
 Wire Wire Line
 	1950 5200 2050 5200
 Connection ~ 1950 5200
 Wire Wire Line
-	3700 1450 3700 1550
+	3700 1450 3700 1500
 Wire Wire Line
-	3550 1500 4000 1500
+	3550 1500 3700 1500
 Wire Wire Line
-	4300 1150 4300 1550
+	4300 1150 4300 1200
 Wire Wire Line
-	3550 1200 4300 1200
+	3550 1200 3700 1200
 Wire Wire Line
-	3700 1750 3700 1850
+	3700 1750 3700 1800
 Wire Wire Line
-	3225 1800 4300 1800
+	3225 1800 3700 1800
 Wire Wire Line
 	4300 1800 4300 1750
 Connection ~ 3700 1800
@@ -1053,7 +963,7 @@ Wire Notes Line
 Wire Notes Line
 	850  2400 5350 2400
 $Comp
-L R R16
+L I_AMP-rescue:R R16
 U 1 1 5A278213
 P 5900 1900
 F 0 "R16" V 5980 1900 50  0000 C CNN
@@ -1064,7 +974,7 @@ F 3 "" H 5900 1900 50  0000 C CNN
 	0    1    1    0   
 $EndComp
 $Comp
-L POT RV2
+L I_AMP-rescue:POT RV2
 U 1 1 5A278290
 P 5600 1900
 F 0 "RV2" H 5600 1820 50  0000 C CNN
@@ -1078,7 +988,7 @@ Wire Wire Line
 	5600 1750 5600 1700
 Connection ~ 6100 1900
 $Comp
-L CONN_01X02 P5
+L I_AMP-rescue:CONN_01X02 P5
 U 1 1 5A278F5F
 P 5250 1600
 F 0 "P5" H 5250 1750 50  0000 C CNN
@@ -1089,7 +999,7 @@ F 3 "" H 5250 1600 50  0000 C CNN
 	0    1    -1   0   
 $EndComp
 $Comp
-L GND #PWR023
+L I_AMP-rescue:GND #PWR023
 U 1 1 5A279C98
 P 5150 1900
 F 0 "#PWR023" H 5150 1650 50  0001 C CNN
@@ -1102,7 +1012,7 @@ $EndComp
 Wire Wire Line
 	5300 1800 5300 1900
 Wire Wire Line
-	5300 1900 5450 1900
+	5300 1900 5400 1900
 Wire Wire Line
 	5150 1900 5200 1900
 Wire Wire Line
@@ -1113,10 +1023,10 @@ NoConn ~ 6800 900
 NoConn ~ 6800 1000
 NoConn ~ 6800 1200
 Wire Wire Line
-	6800 1100 6900 1100
+	6800 1100 6850 1100
 Connection ~ 6850 1100
 $Comp
-L R R7
+L I_AMP-rescue:R R7
 U 1 1 5A2EF897
 P 2450 4200
 F 0 "R7" V 2530 4200 50  0000 C CNN
@@ -1139,7 +1049,7 @@ Connection ~ 7000 3200
 Wire Wire Line
 	7000 3950 7000 3200
 Wire Wire Line
-	6900 3200 7550 3200
+	6900 3200 7000 3200
 Wire Notes Line
 	5400 2400 8150 2400
 Wire Notes Line
@@ -1167,7 +1077,7 @@ I_RECTF
 Wire Wire Line
 	6850 1900 6650 1900
 Wire Wire Line
-	6850 800  6850 1900
+	6850 800  6850 1100
 Text GLabel 6950 800  2    60   Output ~ 0
 I_RECTF_AMP
 Wire Wire Line
@@ -1199,7 +1109,7 @@ Text Notes 1850 1650 0    60   ~ 0
 Text Notes 1550 1650 0    60   ~ 0
 5W
 $Comp
-L CONN_01X03 P2
+L I_AMP-rescue:CONN_01X03 P2
 U 1 1 5A942F49
 P 2975 1500
 F 0 "P2" H 2975 1700 50  0000 C CNN
@@ -1227,4 +1137,86 @@ Text Notes 2775 1550 0    60   ~ 0
 -8
 Text Notes 2725 1650 0    60   ~ 0
 GND
+Wire Wire Line
+	2050 1500 2200 1500
+Wire Wire Line
+	1750 1500 2050 1500
+Wire Wire Line
+	1750 1900 2050 1900
+Wire Wire Line
+	1750 1900 1750 1950
+Wire Wire Line
+	2500 3550 2550 3550
+Wire Wire Line
+	1800 3450 1850 3450
+Wire Wire Line
+	1350 3450 1450 3450
+Wire Wire Line
+	2800 3550 3000 3550
+Wire Wire Line
+	1800 2800 1800 3450
+Wire Wire Line
+	2050 3200 2050 3250
+Wire Wire Line
+	3500 3550 3950 3550
+Wire Wire Line
+	3500 3550 3500 4200
+Wire Wire Line
+	3500 3100 3500 3550
+Wire Wire Line
+	4350 2900 4650 2900
+Wire Wire Line
+	4650 3100 4650 3650
+Wire Wire Line
+	4650 3650 4750 3650
+Wire Wire Line
+	5600 1000 5800 1000
+Wire Wire Line
+	5700 1400 5800 1400
+Wire Wire Line
+	5800 1000 6200 1000
+Wire Wire Line
+	6250 1900 6250 2050
+Wire Wire Line
+	6650 1900 6650 2050
+Wire Wire Line
+	7250 1100 7650 1100
+Wire Wire Line
+	7250 1400 7250 1450
+Wire Wire Line
+	2050 3900 2050 3950
+Wire Wire Line
+	6500 2800 6500 2900
+Wire Wire Line
+	6500 3550 6500 3600
+Wire Wire Line
+	5900 3300 5900 3350
+Wire Wire Line
+	6150 3300 6300 3300
+Wire Wire Line
+	1950 5200 1950 5250
+Wire Wire Line
+	3700 1800 3700 1850
+Wire Wire Line
+	3700 1800 4000 1800
+Wire Wire Line
+	4300 1200 4300 1550
+Wire Wire Line
+	3700 1200 4300 1200
+Wire Wire Line
+	3700 1500 3700 1550
+Wire Wire Line
+	3700 1500 4000 1500
+Wire Wire Line
+	4000 1800 4300 1800
+Wire Wire Line
+	6100 1900 6250 1900
+Wire Wire Line
+	6850 1100 6900 1100
+Wire Wire Line
+	6850 1100 6850 1900
+Wire Wire Line
+	5400 1900 5450 1900
+Wire Wire Line
+	7000 3200 7550 3200
 $EndSCHEMATC

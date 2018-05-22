@@ -1,94 +1,6 @@
-EESchema Schematic File Version 2
-LIBS:74xgxx
-LIBS:74xx
-LIBS:ac-dc
-LIBS:actel
-LIBS:adc-dac
-LIBS:Altera
-LIBS:analog_devices
-LIBS:analog_switches
-LIBS:atmel
-LIBS:audio
-LIBS:brooktre
-LIBS:cmos4000
-LIBS:cmos_ieee
-LIBS:conn
-LIBS:contrib
-LIBS:cypress
-LIBS:dc-dc
-LIBS:device
-LIBS:digital-audio
-LIBS:diode
-LIBS:display
-LIBS:dsp
-LIBS:elec-unifil
-LIBS:ESD_Protection
-LIBS:ftdi
-LIBS:gennum
-LIBS:graphic
-LIBS:hc11
-LIBS:intel
-LIBS:interface
-LIBS:ir
-LIBS:Lattice
-LIBS:linear
-LIBS:logo
-LIBS:maxim
-LIBS:memory
-LIBS:microchip
-LIBS:microchip_dspic33dsc
-LIBS:microchip_pic10mcu
-LIBS:microchip_pic12mcu
-LIBS:microchip_pic16mcu
-LIBS:microchip_pic18mcu
-LIBS:microchip_pic32mcu
-LIBS:microcontrollers
-LIBS:motor_drivers
-LIBS:motorola
-LIBS:msp430
-LIBS:nordicsemi
-LIBS:nxp_armmcu
-LIBS:onsemi
-LIBS:opto
-LIBS:Oscillators
-LIBS:philips
-LIBS:power
-LIBS:powerint
-LIBS:Power_Management
-LIBS:references
-LIBS:regul
-LIBS:relays
-LIBS:rfcom
-LIBS:sensors
-LIBS:silabs
-LIBS:siliconi
-LIBS:stm8
-LIBS:stm32
-LIBS:supertex
-LIBS:switches
-LIBS:texas
-LIBS:transf
-LIBS:transistors
-LIBS:ttl_ieee
-LIBS:valves
-LIBS:video
-LIBS:w_analog
-LIBS:w_connectors
-LIBS:w_device
-LIBS:w_logic
-LIBS:w_memory
-LIBS:w_microcontrollers
-LIBS:w_opto
-LIBS:Worldsemi
-LIBS:w_relay
-LIBS:w_rtx
-LIBS:w_transistor
-LIBS:w_vacuum
-LIBS:Xicor
-LIBS:xilinx
-LIBS:Zilog
+EESchema Schematic File Version 4
 LIBS:P_SUPPLY-cache
-EELAYER 25 0
+EELAYER 26 0
 EELAYER END
 $Descr User 5846 8268
 encoding utf-8
@@ -103,7 +15,7 @@ Comment3 "Designed by: Alisson Claudino"
 Comment4 ""
 $EndDescr
 $Comp
-L CONN_01X02 P1
+L P_SUPPLY-rescue:CONN_01X02 P1
 U 1 1 5A4B779A
 P 1500 1250
 F 0 "P1" H 1650 1250 50  0000 C CNN
@@ -114,7 +26,7 @@ F 3 "" H 1500 1250 50  0000 C CNN
 	-1   0    0    1   
 $EndComp
 $Comp
-L F_Small F2
+L P_SUPPLY-rescue:F_Small F2
 U 1 1 5A4B77B2
 P 3450 1000
 F 0 "F2" H 3410 1060 50  0000 L CNN
@@ -125,7 +37,7 @@ F 3 "" H 3450 1000 50  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L GND #PWR01
+L P_SUPPLY-rescue:GND #PWR01
 U 1 1 5A4B77B3
 P 3200 1500
 F 0 "#PWR01" H 3200 1250 50  0001 C CNN
@@ -136,7 +48,7 @@ F 3 "" H 3200 1500 50  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L CP C2
+L P_SUPPLY-rescue:CP C2
 U 1 1 5A4B77BA
 P 1700 4250
 F 0 "C2" H 1725 4350 50  0000 L CNN
@@ -147,7 +59,7 @@ F 3 "" H 1700 4250 50  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L GND #PWR02
+L P_SUPPLY-rescue:GND #PWR02
 U 1 1 5A4B77BB
 P 2550 4500
 F 0 "#PWR02" H 2550 4250 50  0001 C CNN
@@ -158,7 +70,7 @@ F 3 "" H 2550 4500 50  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L CP C4
+L P_SUPPLY-rescue:CP C4
 U 1 1 5A4B77BC
 P 2050 4250
 F 0 "C4" H 2075 4350 50  0000 L CNN
@@ -169,7 +81,7 @@ F 3 "" H 2050 4250 50  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L CP C5
+L P_SUPPLY-rescue:CP C5
 U 1 1 5A4B77BD
 P 3050 4250
 F 0 "C5" H 3075 4350 50  0000 L CNN
@@ -180,7 +92,7 @@ F 3 "" H 3050 4250 50  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L +5V #PWR03
+L P_SUPPLY-rescue:+5V #PWR03
 U 1 1 5A4B77BE
 P 3050 4000
 F 0 "#PWR03" H 3050 3850 50  0001 C CNN
@@ -191,7 +103,7 @@ F 3 "" H 3050 4000 50  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L PWR_FLAG #FLG04
+L P_SUPPLY-rescue:PWR_FLAG #FLG04
 U 1 1 5A4B77BF
 P 2050 4000
 F 0 "#FLG04" H 2050 4095 50  0001 C CNN
@@ -202,7 +114,7 @@ F 3 "" H 2050 4000 50  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L PWR_FLAG #FLG05
+L P_SUPPLY-rescue:PWR_FLAG #FLG05
 U 1 1 5A4B77C0
 P 3800 4350
 F 0 "#FLG05" H 3800 4445 50  0001 C CNN
@@ -213,7 +125,7 @@ F 3 "" H 3800 4350 50  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L Led_Small D2
+L P_SUPPLY-rescue:Led_Small D2
 U 1 1 5A4B77D3
 P 3450 4250
 F 0 "D2" H 3300 4200 50  0000 L CNN
@@ -224,7 +136,7 @@ F 3 "" V 3450 4250 50  0000 C CNN
 	0    1    -1   0   
 $EndComp
 $Comp
-L R R2
+L P_SUPPLY-rescue:R R2
 U 1 1 5A4B77D4
 P 3250 4050
 F 0 "R2" V 3330 4050 50  0000 C CNN
@@ -235,7 +147,7 @@ F 3 "" H 3250 4050 50  0000 C CNN
 	0    -1   1    0   
 $EndComp
 $Comp
-L F_Small F1
+L P_SUPPLY-rescue:F_Small F1
 U 1 1 5A4B77D9
 P 1950 1200
 F 0 "F1" H 1910 1260 50  0000 L CNN
@@ -246,7 +158,7 @@ F 3 "" H 1950 1200 50  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L CONN_01X02 P2
+L P_SUPPLY-rescue:CONN_01X02 P2
 U 1 1 5A4B77DA
 P 1500 1650
 F 0 "P2" H 1650 1650 50  0000 C CNN
@@ -257,7 +169,7 @@ F 3 "" H 1500 1650 50  0000 C CNN
 	-1   0    0    1   
 $EndComp
 $Comp
-L D_Small D3
+L P_SUPPLY-rescue:D_Small D3
 U 1 1 5A4B77E4
 P 3700 1300
 F 0 "D3" H 3850 1300 50  0000 L CNN
@@ -268,7 +180,7 @@ F 3 "" V 3700 1300 50  0000 C CNN
 	-1   0    0    -1  
 $EndComp
 $Comp
-L D_Small D5
+L P_SUPPLY-rescue:D_Small D5
 U 1 1 5A4B77E5
 P 4000 1300
 F 0 "D5" H 3750 1300 50  0000 L CNN
@@ -279,7 +191,7 @@ F 3 "" V 4000 1300 50  0000 C CNN
 	-1   0    0    -1  
 $EndComp
 $Comp
-L D_Small D4
+L P_SUPPLY-rescue:D_Small D4
 U 1 1 5A4B77E6
 P 3700 1600
 F 0 "D4" H 3850 1600 50  0000 L CNN
@@ -290,7 +202,7 @@ F 3 "" V 3700 1600 50  0000 C CNN
 	-1   0    0    -1  
 $EndComp
 $Comp
-L D_Small D6
+L P_SUPPLY-rescue:D_Small D6
 U 1 1 5A4B77E7
 P 4000 1600
 F 0 "D6" H 3750 1600 50  0000 L CNN
@@ -303,7 +215,7 @@ $EndComp
 Text Notes 3700 1500 0    47   ~ 0
 BRIDGE\n
 $Comp
-L LM7805CT U2
+L P_SUPPLY-rescue:LM7805CT U2
 U 1 1 5A4B77E8
 P 2550 4100
 F 0 "U2" H 2350 4300 50  0000 C CNN
@@ -314,7 +226,7 @@ F 3 "" H 2550 4100 50  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L +12V #PWR06
+L P_SUPPLY-rescue:+12V #PWR06
 U 1 1 5A4B7FC7
 P 4200 1450
 F 0 "#PWR06" H 4200 1300 50  0001 C CNN
@@ -325,7 +237,7 @@ F 3 "" H 4200 1450 50  0000 C CNN
 	0    1    1    0   
 $EndComp
 $Comp
-L +12V #PWR07
+L P_SUPPLY-rescue:+12V #PWR07
 U 1 1 5A4B8325
 P 1700 4000
 F 0 "#PWR07" H 1700 3850 50  0001 C CNN
@@ -336,7 +248,7 @@ F 3 "" H 1700 4000 50  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L LM7808CT U1
+L P_SUPPLY-rescue:LM7808CT U1
 U 1 1 5A4B869C
 P 1550 2700
 F 0 "U1" H 1350 2900 50  0000 C CNN
@@ -347,7 +259,7 @@ F 3 "" H 1550 2700 50  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L +12V #PWR08
+L P_SUPPLY-rescue:+12V #PWR08
 U 1 1 5A4B8AE8
 P 1100 2600
 F 0 "#PWR08" H 1100 2450 50  0001 C CNN
@@ -358,7 +270,7 @@ F 3 "" H 1100 2600 50  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L GND #PWR09
+L P_SUPPLY-rescue:GND #PWR09
 U 1 1 5A4B8BB8
 P 1550 3100
 F 0 "#PWR09" H 1550 2850 50  0001 C CNN
@@ -369,7 +281,7 @@ F 3 "" H 1550 3100 50  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L CP C3
+L P_SUPPLY-rescue:CP C3
 U 1 1 5A4B8CA8
 P 2050 2850
 F 0 "C3" H 2075 2950 50  0000 L CNN
@@ -380,7 +292,7 @@ F 3 "" H 2050 2850 50  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L +8V #PWR010
+L P_SUPPLY-rescue:+8V #PWR010
 U 1 1 5A4B8F03
 P 2050 2600
 F 0 "#PWR010" H 2050 2450 50  0001 C CNN
@@ -391,7 +303,7 @@ F 3 "" H 2050 2600 50  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L TRANSFO4 T1
+L P_SUPPLY-rescue:TRANSFO4 T1
 U 1 1 5A4B9023
 P 2600 1450
 F 0 "T1" H 2600 1150 50  0000 C CNN
@@ -402,7 +314,7 @@ F 3 "" H 2600 1450 50  0000 C CNN
 	-1   0    0    1   
 $EndComp
 $Comp
-L -12V #PWR14
+L P_SUPPLY-rescue:-12V #PWR14
 U 1 1 5A4BA189
 P 3500 1450
 F 0 "#PWR14" H 3500 1550 50  0001 C CNN
@@ -413,7 +325,7 @@ F 3 "" H 3500 1450 50  0000 C CNN
 	0    -1   -1   0   
 $EndComp
 $Comp
-L CP C1
+L P_SUPPLY-rescue:CP C1
 U 1 1 5A4BB159
 P 1100 2850
 F 0 "C1" H 1125 2950 50  0000 L CNN
@@ -424,7 +336,7 @@ F 3 "" H 1100 2850 50  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L GND #PWR011
+L P_SUPPLY-rescue:GND #PWR011
 U 1 1 5A4BB415
 P 3550 3100
 F 0 "#PWR011" H 3550 2850 50  0001 C CNN
@@ -435,7 +347,7 @@ F 3 "" H 3550 3100 50  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L CP C7
+L P_SUPPLY-rescue:CP C7
 U 1 1 5A4BB41B
 P 4050 2850
 F 0 "C7" H 4100 2750 50  0000 L CNN
@@ -446,7 +358,7 @@ F 3 "" H 4050 2850 50  0000 C CNN
 	1    0    0    1   
 $EndComp
 $Comp
-L CP C6
+L P_SUPPLY-rescue:CP C6
 U 1 1 5A4BB431
 P 3100 2850
 F 0 "C6" H 3100 2750 50  0000 L CNN
@@ -457,7 +369,7 @@ F 3 "" H 3100 2850 50  0000 C CNN
 	1    0    0    1   
 $EndComp
 $Comp
-L LM7908CT U3
+L P_SUPPLY-rescue:LM7908CT U3
 U 1 1 5A4BB509
 P 3550 2700
 F 0 "U3" H 3350 2500 50  0000 C CNN
@@ -468,7 +380,7 @@ F 3 "" H 3550 2700 50  0000 C CNN
 	-1   0    0    1   
 $EndComp
 $Comp
-L -12V #PWR10
+L P_SUPPLY-rescue:-12V #PWR10
 U 1 1 5A4BB582
 P 3100 2600
 F 0 "#PWR10" H 3100 2700 50  0001 C CNN
@@ -479,7 +391,7 @@ F 3 "" H 3100 2600 50  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L -8V #PWR16
+L P_SUPPLY-rescue:-8V #PWR16
 U 1 1 5A4BB5C0
 P 4050 2600
 F 0 "#PWR16" H 4050 2700 50  0001 C CNN
@@ -490,7 +402,7 @@ F 3 "" H 4050 2600 50  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L F_Small F3
+L P_SUPPLY-rescue:F_Small F3
 U 1 1 5A4BB7E0
 P 3450 1850
 F 0 "F3" H 3410 1910 50  0000 L CNN
@@ -501,7 +413,7 @@ F 3 "" H 3450 1850 50  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L Led_Small D7
+L P_SUPPLY-rescue:Led_Small D7
 U 1 1 5A4BBCC1
 P 4550 2850
 F 0 "D7" H 4400 2800 50  0000 L CNN
@@ -512,7 +424,7 @@ F 3 "" V 4550 2850 50  0000 C CNN
 	0    1    1    0   
 $EndComp
 $Comp
-L R R3
+L P_SUPPLY-rescue:R R3
 U 1 1 5A4BBCC7
 P 4350 2650
 F 0 "R3" V 4430 2650 50  0000 C CNN
@@ -523,7 +435,7 @@ F 3 "" H 4350 2650 50  0000 C CNN
 	0    -1   1    0   
 $EndComp
 $Comp
-L Led_Small D1
+L P_SUPPLY-rescue:Led_Small D1
 U 1 1 5A4BD57D
 P 2550 2850
 F 0 "D1" H 2400 2800 50  0000 L CNN
@@ -534,7 +446,7 @@ F 3 "" V 2550 2850 50  0000 C CNN
 	0    1    -1   0   
 $EndComp
 $Comp
-L R R1
+L P_SUPPLY-rescue:R R1
 U 1 1 5A4BD583
 P 2350 2650
 F 0 "R1" V 2430 2650 50  0000 C CNN
@@ -553,19 +465,19 @@ Wire Wire Line
 Wire Wire Line
 	3050 1000 3050 1250
 Wire Wire Line
-	1700 4050 2150 4050
+	1700 4050 2050 4050
 Wire Wire Line
-	2550 4350 2550 4500
+	2550 4350 2550 4450
 Wire Wire Line
-	2050 4000 2050 4100
+	2050 4000 2050 4050
 Connection ~ 2050 4050
 Wire Wire Line
 	2050 4400 2050 4450
 Connection ~ 2050 4450
 Wire Wire Line
-	3050 4000 3050 4100
+	3050 4000 3050 4050
 Wire Wire Line
-	2950 4050 3100 4050
+	2950 4050 3050 4050
 Wire Wire Line
 	3050 4450 3050 4400
 Connection ~ 2550 4450
@@ -579,26 +491,25 @@ Wire Wire Line
 	3450 4050 3400 4050
 Wire Wire Line
 	3450 4450 3450 4350
-Connection ~ 1700 4450
 Wire Wire Line
 	2100 1650 2200 1650
 Wire Wire Line
 	1800 1600 1700 1600
 Wire Wire Line
-	3800 1300 3900 1300
+	3800 1300 3850 1300
 Connection ~ 3850 1300
 Wire Wire Line
 	3600 1300 3550 1300
 Wire Wire Line
-	3550 1300 3550 1600
+	3550 1300 3550 1450
 Wire Wire Line
 	3550 1600 3600 1600
 Wire Wire Line
-	3800 1600 3900 1600
+	3800 1600 3850 1600
 Wire Wire Line
 	4150 1600 4100 1600
 Wire Wire Line
-	4150 1300 4150 1600
+	4150 1300 4150 1450
 Wire Wire Line
 	4150 1300 4100 1300
 Wire Wire Line
@@ -619,20 +530,20 @@ Wire Wire Line
 Wire Wire Line
 	2100 1700 2100 1650
 Wire Wire Line
-	1100 2600 1100 2700
+	1100 2600 1100 2650
 Wire Wire Line
 	1100 2650 1150 2650
 Wire Wire Line
-	1550 2950 1550 3100
+	1550 2950 1550 3050
 Wire Wire Line
-	1100 3050 2550 3050
+	1100 3050 1550 3050
 Wire Wire Line
 	2050 3050 2050 3000
 Connection ~ 1550 3050
 Wire Wire Line
-	2050 2600 2050 2700
+	2050 2600 2050 2650
 Wire Wire Line
-	1950 2650 2200 2650
+	1950 2650 2050 2650
 Connection ~ 2050 2650
 Wire Wire Line
 	3200 1500 3200 1450
@@ -644,18 +555,18 @@ Connection ~ 1100 2650
 Wire Wire Line
 	1100 3000 1100 3050
 Wire Wire Line
-	3100 2600 3100 2700
+	3100 2600 3100 2650
 Wire Wire Line
 	3100 2650 3150 2650
 Wire Wire Line
-	3550 2950 3550 3100
+	3550 2950 3550 3050
 Wire Wire Line
 	4050 3050 4050 3000
 Connection ~ 3550 3050
 Wire Wire Line
-	4050 2600 4050 2700
+	4050 2600 4050 2650
 Wire Wire Line
-	3950 2650 4200 2650
+	3950 2650 4050 2650
 Connection ~ 4050 2650
 Connection ~ 3100 2650
 Wire Wire Line
@@ -669,12 +580,12 @@ Wire Wire Line
 Wire Wire Line
 	4550 3050 4550 2950
 Wire Wire Line
-	1700 4450 3800 4450
+	1700 4450 2050 4450
 Wire Wire Line
 	3800 4450 3800 4350
 Connection ~ 3450 4450
 Wire Wire Line
-	3100 3050 4550 3050
+	3100 3050 3550 3050
 Connection ~ 4050 3050
 Wire Wire Line
 	3100 3000 3100 3050
@@ -686,7 +597,7 @@ Wire Wire Line
 	2550 3050 2550 2950
 Connection ~ 2050 3050
 Wire Wire Line
-	1700 4000 1700 4100
+	1700 4000 1700 4050
 Connection ~ 1700 4050
 Wire Wire Line
 	1700 1200 1850 1200
@@ -737,7 +648,7 @@ Wire Notes Line
 Wire Notes Line
 	4750 2350 2850 2350
 $Comp
-L CONN_01X02 P4
+L P_SUPPLY-rescue:CONN_01X02 P4
 U 1 1 5A4C0021
 P 3700 5400
 F 0 "P4" H 3700 5550 50  0000 C CNN
@@ -748,7 +659,7 @@ F 3 "" H 3700 5400 50  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L +5V #PWR012
+L P_SUPPLY-rescue:+5V #PWR012
 U 1 1 5A4C00F6
 P 3350 5300
 F 0 "#PWR012" H 3350 5150 50  0001 C CNN
@@ -763,7 +674,7 @@ Wire Wire Line
 Wire Wire Line
 	3350 5350 3500 5350
 $Comp
-L GND #PWR013
+L P_SUPPLY-rescue:GND #PWR013
 U 1 1 5A4C020F
 P 3350 5500
 F 0 "#PWR013" H 3350 5250 50  0001 C CNN
@@ -778,7 +689,7 @@ Wire Wire Line
 Wire Wire Line
 	3350 5450 3500 5450
 $Comp
-L CONN_01X03 P3
+L P_SUPPLY-rescue:CONN_01X03 P3
 U 1 1 5A4C0356
 P 2900 5450
 F 0 "P3" H 2900 5650 50  0000 C CNN
@@ -791,9 +702,9 @@ $EndComp
 Wire Wire Line
 	2600 5600 2600 5550
 Wire Wire Line
-	2250 5550 2700 5550
+	2250 5550 2600 5550
 $Comp
-L GND #PWR014
+L P_SUPPLY-rescue:GND #PWR014
 U 1 1 5A4C062F
 P 2550 5450
 F 0 "#PWR014" H 2550 5200 50  0001 C CNN
@@ -806,7 +717,7 @@ $EndComp
 Wire Wire Line
 	2550 5450 2700 5450
 $Comp
-L -8V #PWR8
+L P_SUPPLY-rescue:-8V #PWR8
 U 1 1 5A4C080C
 P 2600 5600
 F 0 "#PWR8" H 2600 5700 50  0001 C CNN
@@ -817,7 +728,7 @@ F 3 "" H 2600 5600 50  0000 C CNN
 	-1   0    0    1   
 $EndComp
 $Comp
-L +8V #PWR015
+L P_SUPPLY-rescue:+8V #PWR015
 U 1 1 5A4C0858
 P 2600 5300
 F 0 "#PWR015" H 2600 5150 50  0001 C CNN
@@ -832,13 +743,11 @@ POWER SUPPLY OUTPUTS
 Wire Notes Line
 	1950 5050 1950 6150
 Wire Notes Line
-	1950 5050 3550 5050
-Wire Notes Line
 	900  3600 2750 3600
 Wire Notes Line
 	4750 3600 2850 3600
 $Comp
-L PWR_FLAG #FLG016
+L P_SUPPLY-rescue:PWR_FLAG #FLG016
 U 1 1 5A4C6095
 P 2250 5600
 F 0 "#FLG016" H 2250 5695 50  0001 C CNN
@@ -859,6 +768,60 @@ Wire Notes Line
 	1950 6150 3950 6150
 Wire Notes Line
 	3950 6150 3950 5050
+Wire Wire Line
+	2050 4050 2150 4050
+Wire Wire Line
+	2050 4050 2050 4100
+Wire Wire Line
+	2050 4450 2550 4450
+Wire Wire Line
+	2550 4450 2550 4500
+Wire Wire Line
+	2550 4450 3050 4450
+Wire Wire Line
+	3050 4050 3050 4100
+Wire Wire Line
+	3050 4050 3100 4050
+Wire Wire Line
+	3050 4450 3450 4450
+Wire Wire Line
+	3850 1300 3900 1300
+Wire Wire Line
+	4150 1450 4150 1600
+Wire Wire Line
+	3550 1450 3550 1600
+Wire Wire Line
+	3850 1600 3900 1600
+Wire Wire Line
+	1550 3050 1550 3100
+Wire Wire Line
+	1550 3050 2050 3050
+Wire Wire Line
+	2050 2650 2050 2700
+Wire Wire Line
+	2050 2650 2200 2650
+Wire Wire Line
+	1100 2650 1100 2700
+Wire Wire Line
+	3550 3050 3550 3100
+Wire Wire Line
+	3550 3050 4050 3050
+Wire Wire Line
+	4050 2650 4050 2700
+Wire Wire Line
+	4050 2650 4200 2650
+Wire Wire Line
+	3100 2650 3100 2700
+Wire Wire Line
+	3450 4450 3800 4450
+Wire Wire Line
+	4050 3050 4550 3050
+Wire Wire Line
+	2050 3050 2550 3050
+Wire Wire Line
+	1700 4050 1700 4100
+Wire Wire Line
+	2600 5550 2700 5550
 Wire Notes Line
-	3950 5050 3500 5050
+	1950 5050 3950 5050
 $EndSCHEMATC

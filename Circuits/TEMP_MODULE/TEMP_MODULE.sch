@@ -1,94 +1,6 @@
-EESchema Schematic File Version 2
-LIBS:74xgxx
-LIBS:74xx
-LIBS:ac-dc
-LIBS:actel
-LIBS:adc-dac
-LIBS:Altera
-LIBS:analog_devices
-LIBS:analog_switches
-LIBS:atmel
-LIBS:audio
-LIBS:brooktre
-LIBS:cmos4000
-LIBS:cmos_ieee
-LIBS:conn
-LIBS:contrib
-LIBS:cypress
-LIBS:dc-dc
-LIBS:device
-LIBS:digital-audio
-LIBS:diode
-LIBS:display
-LIBS:dsp
-LIBS:elec-unifil
-LIBS:ESD_Protection
-LIBS:ftdi
-LIBS:gennum
-LIBS:graphic
-LIBS:hc11
-LIBS:intel
-LIBS:interface
-LIBS:ir
-LIBS:Lattice
-LIBS:linear
-LIBS:logo
-LIBS:maxim
-LIBS:memory
-LIBS:microchip
-LIBS:microchip_dspic33dsc
-LIBS:microchip_pic10mcu
-LIBS:microchip_pic12mcu
-LIBS:microchip_pic16mcu
-LIBS:microchip_pic18mcu
-LIBS:microchip_pic32mcu
-LIBS:microcontrollers
-LIBS:motor_drivers
-LIBS:motorola
-LIBS:msp430
-LIBS:nordicsemi
-LIBS:nxp_armmcu
-LIBS:onsemi
-LIBS:opto
-LIBS:Oscillators
-LIBS:philips
-LIBS:power
-LIBS:powerint
-LIBS:Power_Management
-LIBS:references
-LIBS:regul
-LIBS:relays
-LIBS:rfcom
-LIBS:sensors
-LIBS:silabs
-LIBS:siliconi
-LIBS:stm8
-LIBS:stm32
-LIBS:supertex
-LIBS:switches
-LIBS:texas
-LIBS:transf
-LIBS:transistors
-LIBS:ttl_ieee
-LIBS:valves
-LIBS:video
-LIBS:w_analog
-LIBS:w_connectors
-LIBS:w_device
-LIBS:w_logic
-LIBS:w_memory
-LIBS:w_microcontrollers
-LIBS:w_opto
-LIBS:Worldsemi
-LIBS:w_relay
-LIBS:w_rtx
-LIBS:w_transistor
-LIBS:w_vacuum
-LIBS:Xicor
-LIBS:xilinx
-LIBS:Zilog
+EESchema Schematic File Version 4
 LIBS:TEMP_MODULE-cache
-EELAYER 25 0
+EELAYER 26 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
@@ -103,7 +15,7 @@ Comment3 "This shield has connections for the SADAMAP ADC/MCU Module"
 Comment4 "This is a shield for the MAX31856 ThermoCoupler Reader Module."
 $EndDescr
 $Comp
-L MAX31856_ThermoCouple_Module J1
+L TEMP_MODULE-rescue:MAX31856_ThermoCouple_Module J1
 U 1 1 5A9D6132
 P 6350 4125
 F 0 "J1" H 6350 4925 60  0000 C CNN
@@ -120,7 +32,7 @@ MISO
 Text GLabel 6000 4425 0    47   Input ~ 0
 ~CS
 $Comp
-L +5V #PWR01
+L TEMP_MODULE-rescue:+5V #PWR01
 U 1 1 5A9EE8DA
 P 6700 3725
 F 0 "#PWR01" H 6700 3575 50  0001 C CNN
@@ -131,7 +43,7 @@ F 3 "" H 6700 3725 50  0000 C CNN
 	0    1    1    0   
 $EndComp
 $Comp
-L GND #PWR02
+L TEMP_MODULE-rescue:GND #PWR02
 U 1 1 5A9EE90A
 P 6700 3525
 F 0 "#PWR02" H 6700 3275 50  0001 C CNN
@@ -142,7 +54,7 @@ F 3 "" H 6700 3525 50  0000 C CNN
 	0    -1   -1   0   
 $EndComp
 $Comp
-L GND #PWR03
+L TEMP_MODULE-rescue:GND #PWR03
 U 1 1 5A9EE97C
 P 6000 3725
 F 0 "#PWR03" H 6000 3475 50  0001 C CNN
@@ -155,7 +67,7 @@ $EndComp
 Text GLabel 6700 4825 2    47   BiDi ~ 0
 SCK
 $Comp
-L CONN_01X06 P1
+L TEMP_MODULE-rescue:CONN_01X06 P1
 U 1 1 5A9EE9E7
 P 5175 4025
 F 0 "P1" H 5175 4375 50  0000 C CNN
@@ -166,7 +78,7 @@ F 3 "" H 5175 4025 50  0000 C CNN
 	-1   0    0    1   
 $EndComp
 $Comp
-L GND #PWR04
+L TEMP_MODULE-rescue:GND #PWR04
 U 1 1 5A9EEA44
 P 5375 4275
 F 0 "#PWR04" H 5375 4025 50  0001 C CNN
@@ -177,7 +89,7 @@ F 3 "" H 5375 4275 50  0000 C CNN
 	0    -1   -1   0   
 $EndComp
 $Comp
-L +5V #PWR05
+L TEMP_MODULE-rescue:+5V #PWR05
 U 1 1 5A9EEA6F
 P 5375 4175
 F 0 "#PWR05" H 5375 4025 50  0001 C CNN
@@ -227,7 +139,7 @@ NoConn ~ 6700 3825
 NoConn ~ 6700 3625
 NoConn ~ 6700 3425
 $Comp
-L GND #PWR06
+L TEMP_MODULE-rescue:GND #PWR06
 U 1 1 5AA07283
 P 5350 4750
 F 0 "#PWR06" H 5350 4500 50  0001 C CNN
@@ -238,7 +150,7 @@ F 3 "" H 5350 4750 50  0000 C CNN
 	0    -1   -1   0   
 $EndComp
 $Comp
-L +5V #PWR07
+L TEMP_MODULE-rescue:+5V #PWR07
 U 1 1 5AA07289
 P 5350 4650
 F 0 "#PWR07" H 5350 4500 50  0001 C CNN
@@ -249,7 +161,7 @@ F 3 "" H 5350 4650 50  0000 C CNN
 	0    1    -1   0   
 $EndComp
 $Comp
-L PWR_FLAG #FLG08
+L TEMP_MODULE-rescue:PWR_FLAG #FLG08
 U 1 1 5AA0729B
 P 5300 4625
 F 0 "#FLG08" H 5300 4720 50  0001 C CNN
@@ -260,7 +172,7 @@ F 3 "" H 5300 4625 50  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L PWR_FLAG #FLG09
+L TEMP_MODULE-rescue:PWR_FLAG #FLG09
 U 1 1 5AA072B3
 P 5300 4800
 F 0 "#FLG09" H 5300 4895 50  0001 C CNN
