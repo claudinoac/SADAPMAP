@@ -1,4 +1,18 @@
-  # importação de classes
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
+#      Classe SystemEngine                                                                                  #
+#      Autor: Alisson Claudino (alisson.claudino@ufrgs.br) -> https://lief.if.ufrgs.br/~itsalissom          #
+#      Licença: GNU GPLv2                                                                                   #
+#      Propósito: Gerenciar o funcionamento geral do programa, realizando as conexões entre todas as        #
+#      classes do sistema.                                                                                  #
+#                                                                                                           #                                                                                                          #
+# Observações:                                                                                              #
+#                                                                                                           #
+#                                                                                                           #
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
+
+
+
+# importação de classes
 import time
 import sys
 from PyQt5 import QtCore,QtGui,QtWidgets
@@ -11,7 +25,8 @@ from math import sin,log
 
 class SystemEngine(object):
 
-    def __init__(self):
+    def __init__(self): #Construtor da classe
+
         self.timer=QtCore.QTimer()
         self.app = QtWidgets.QApplication(sys.argv)
         self.dialog = QtWidgets.QMainWindow()

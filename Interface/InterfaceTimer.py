@@ -1,6 +1,6 @@
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
 #      Classe InterfaceTimer                                                                                #
-#      Autor: Alisson Claudino (alisson.claudino@ufrgs.br)                                                  #
+#      Autor: Alisson Claudino (alisson.claudino@ufrgs.br) -> https://lief.if.ufrgs.br/~itsalissom          #
 #      Licença: GNU GPLv2                                                                                   #
 #      Propósito: Controlar os timers das interfaces gráficas do sistema (Contadores, relógicos e           #
 #      marcadores)                                                                                          #
@@ -15,13 +15,14 @@
 #                                                                                                           #
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
 
+#Importação de bibliotecas
 from datetime import datetime
 from PyQt5 import QtWidgets,QtCore,QtGui
 
 class InterfaceTimer(object):
 
     def __init__(self):
-        self.startTimerButton = QtWidgets.QPushButton()
+        self.startTimerButton = QtWidgets.QPushButton()   #Inicialização de botões e labels da interface
         self.stopTimerButton = QtWidgets.QPushButton()
         self.startRegTimerButton = QtWidgets.QPushButton()
         self.stopRegTimerButton = QtWidgets.QPushButton()
@@ -67,7 +68,7 @@ class InterfaceTimer(object):
             error.exec()
             self.regTimerValue = 1000
 
-        print(self.regTimerValue)       
+        print(self.regTimerValue)
         self.regTimerValue = float(self.regTimerValue)
 
 

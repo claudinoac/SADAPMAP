@@ -5,7 +5,7 @@ import numpy as np
 
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
 #      Classe Graph baseada em pyqtgraph                                                                    #
-#      Autor: Alisson Claudino (alisson.claudino@ufrgs.br)                                                  #
+#      Autor: Alisson Claudino (alisson.claudino@ufrgs.br)  -> https://lief.if.ufrgs.br/~itsalissom         #
 #      Licença: GNU GPLv2                                                                                   #
 #      Propósito: Gerar gráficos de tempo real com diversas curvas                                          #
 #                                                                                                           #
@@ -87,7 +87,7 @@ class Graph(PlotItem):      #Herança de pyqtgraph.PlotItem
     def updateGraph(self, y):
 
         y_dim=len(y)
-        
+
         if(y_dim<self.n_axis and self.warningFlag==False):    #Emissão de aviso caso hajam menos dados que curvas
             error = QtWidgets.QMessageBox()
             error.setText("Array enviado possui %(a)d valores, necessário no mínimo %(b)d valores. Os %(c)dº primeiros gráficos "
