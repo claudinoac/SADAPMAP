@@ -786,41 +786,14 @@ NoConn ~ 9250 3200
 NoConn ~ 8550 3200
 NoConn ~ 8550 3100
 NoConn ~ 8550 3000
-NoConn ~ 8550 3400
-NoConn ~ 8550 3500
-NoConn ~ 8550 3600
-NoConn ~ 8550 3700
-NoConn ~ 8550 3800
-NoConn ~ 8550 3900
-NoConn ~ 8550 4100
-NoConn ~ 8550 4200
-NoConn ~ 9250 3800
-NoConn ~ 9250 3900
-NoConn ~ 9250 4000
-NoConn ~ 9250 4100
 NoConn ~ 9250 4300
-$Comp
-L ADC_MCU_MODULE-rescue:GND #PWR020
-U 1 1 5A974874
-P 8425 3350
-F 0 "#PWR020" H 8425 3100 50  0001 C CNN
-F 1 "GND" H 8425 3200 50  0000 C CNN
-F 2 "" H 8425 3350 50  0000 C CNN
-F 3 "" H 8425 3350 50  0000 C CNN
-	1    8425 3350
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	8425 3350 8425 3300
-Wire Wire Line
-	8425 3300 8550 3300
 Text GLabel 9250 4400 2    47   BiDi ~ 0
 SCK
 Text GLabel 8550 4400 0    47   Input ~ 0
 MISO
 Text GLabel 8550 4300 0    47   Output ~ 0
 MOSI
-Text GLabel 8550 4000 0    47   Output ~ 0
+Text GLabel 8550 4000 0    39   Output ~ 0
 ~CS
 $Comp
 L ADC_MCU_MODULE-rescue:CONN_01X06 P10
@@ -917,4 +890,139 @@ Wire Wire Line
 	2200 3500 2250 3500
 Wire Wire Line
 	2175 2925 2225 2925
+Text GLabel 9250 4100 2    50   Input ~ 0
+V1_b0
+Text GLabel 9250 4000 2    50   Input ~ 0
+V1_b1
+Text GLabel 9250 3900 2    50   Input ~ 0
+V1_b2
+Text GLabel 9250 3800 2    50   Input ~ 0
+V1_b3
+Text GLabel 8550 4200 0    47   Input ~ 0
+V2_b0
+Text GLabel 8550 4100 0    47   Input ~ 0
+V2_b1
+Text GLabel 8550 3900 0    47   Input ~ 0
+V2_b2
+Text GLabel 8550 3800 0    47   Input ~ 0
+V2_b3
+Text GLabel 8550 3700 0    47   Input ~ 0
+V3_b0
+Text GLabel 8550 3600 0    47   Input ~ 0
+V3_b1
+$Comp
+L ADC_MCU_MODULE-rescue:GND #PWR020
+U 1 1 5A974874
+P 8550 3300
+F 0 "#PWR020" H 8550 3050 50  0001 C CNN
+F 1 "GND" V 8550 3100 50  0000 C CNN
+F 2 "" H 8550 3300 50  0000 C CNN
+F 3 "" H 8550 3300 50  0000 C CNN
+	1    8550 3300
+	0    1    1    0   
+$EndComp
+Text GLabel 8550 3500 0    47   Input ~ 0
+V3_b2
+Text GLabel 8550 3400 0    47   Input ~ 0
+V3_b3
+$Comp
+L conn:CONN_01X05 P13
+U 1 1 5B2A908C
+P 5800 2850
+F 0 "P13" V 5765 2562 50  0000 R CNN
+F 1 "V_AMP_3" V 5900 3000 50  0000 R CNN
+F 2 "w_conn_kk156:kk156_26-64-4050" H 5800 2850 50  0001 C CNN
+F 3 "" H 5800 2850 50  0000 C CNN
+	1    5800 2850
+	0    -1   -1   0   
+$EndComp
+Text GLabel 5700 3050 3    47   Input ~ 0
+V3_b3
+$Comp
+L ADC_MCU_MODULE-rescue:GND #PWR0101
+U 1 1 5B2A93F4
+P 5600 3050
+F 0 "#PWR0101" H 5600 2800 50  0001 C CNN
+F 1 "GND" V 5605 2877 50  0000 C CNN
+F 2 "" H 5600 3050 50  0000 C CNN
+F 3 "" H 5600 3050 50  0000 C CNN
+	1    5600 3050
+	1    0    0    -1  
+$EndComp
+Text GLabel 5800 3050 3    47   Input ~ 0
+V3_b2
+Text GLabel 5900 3050 3    47   Input ~ 0
+V3_b1
+Text GLabel 6000 3050 3    47   Input ~ 0
+V3_b0
+$Comp
+L conn:CONN_01X05 P12
+U 1 1 5B2AB538
+P 5050 2850
+F 0 "P12" V 5015 2562 50  0000 R CNN
+F 1 "V_AMP_2" V 5150 3000 50  0000 R CNN
+F 2 "w_conn_kk156:kk156_26-64-4050" H 5050 2850 50  0001 C CNN
+F 3 "" H 5050 2850 50  0000 C CNN
+	1    5050 2850
+	0    -1   -1   0   
+$EndComp
+Text GLabel 4950 3050 3    47   Input ~ 0
+V2_b3
+$Comp
+L ADC_MCU_MODULE-rescue:GND #PWR0102
+U 1 1 5B2AB540
+P 4850 3050
+F 0 "#PWR0102" H 4850 2800 50  0001 C CNN
+F 1 "GND" V 4855 2877 50  0000 C CNN
+F 2 "" H 4850 3050 50  0000 C CNN
+F 3 "" H 4850 3050 50  0000 C CNN
+	1    4850 3050
+	1    0    0    -1  
+$EndComp
+Text GLabel 5050 3050 3    47   Input ~ 0
+V2_b2
+Text GLabel 5150 3050 3    47   Input ~ 0
+V2_b1
+Text GLabel 5250 3050 3    47   Input ~ 0
+V2_b0
+$Comp
+L conn:CONN_01X05 P11
+U 1 1 5B2AD87C
+P 4300 2850
+F 0 "P11" V 4265 2562 50  0000 R CNN
+F 1 "V_AMP_1" V 4400 3000 50  0000 R CNN
+F 2 "w_conn_kk156:kk156_26-64-4050" H 4300 2850 50  0001 C CNN
+F 3 "" H 4300 2850 50  0000 C CNN
+	1    4300 2850
+	0    -1   -1   0   
+$EndComp
+Text GLabel 4200 3050 3    47   Input ~ 0
+V1_b3
+$Comp
+L ADC_MCU_MODULE-rescue:GND #PWR0103
+U 1 1 5B2AD884
+P 4100 3050
+F 0 "#PWR0103" H 4100 2800 50  0001 C CNN
+F 1 "GND" V 4105 2877 50  0000 C CNN
+F 2 "" H 4100 3050 50  0000 C CNN
+F 3 "" H 4100 3050 50  0000 C CNN
+	1    4100 3050
+	1    0    0    -1  
+$EndComp
+Text GLabel 4300 3050 3    47   Input ~ 0
+V1_b2
+Text GLabel 4400 3050 3    47   Input ~ 0
+V1_b1
+Text GLabel 4500 3050 3    47   Input ~ 0
+V1_b0
+Text Notes 4250 3450 0    50   ~ 0
+Voltage Amplifier Gain Control - 1 to 3
+Wire Notes Line
+	3950 2650 6200 2650
+Wire Notes Line
+	6200 2650 6200 3500
+Wire Notes Line
+	6200 3500 3950 3500
+Wire Notes Line
+	3950 2650 3950 3500
 $EndSCHEMATC
