@@ -31,7 +31,7 @@ class SystemEngine(object):
         self.app = QtWidgets.QApplication(sys.argv)
         self.dialog = QtWidgets.QMainWindow()
         self.ser1 = SerialManager()
-        self.ser1.startPort(str(self.ser1.portList[0].device), 115200)
+        self.ser1.startPort(str(self.ser1.portList[1].device), 115200)
         self.uiCalibra1 = Ui_MainWindow()
         self.uiCalibra1.setupUi(self.dialog)
         self.ser1.serialListPanel(self.uiCalibra1)
@@ -121,21 +121,21 @@ class SystemEngine(object):
             readData = self.ser1.read()  # Lê o dado da serial
             readData = readData.decode('utf8')
             dado = readData.split(' ', self.nCurves+1)
+
             dado[len(dado)-1]=dado[len(dado)-1].split('\n',2)[0]
             try:
-                #self.uiCalibra1.forceLabel.setText(str(dado[0])+" Tonf")
-                #self.uiCalibra1.calibratorLabel.setText(str(dado[1].split()[0])+" mV")
+                self.uiCalibra1.forceLabel.setText(str(dado[0])+" Tonf")
+                self.uiCalibra1.calibratorLabel.setText(str(dado[1].split()[0])+" mV")
                 pass
             except IndexError:
                 print("Erro no Indice do Array Enviado pela Serial")
-            dado.pop(0)
             try:
-                #print(dado)
                 self.graph.updateGraph(dado)
 
             except IndexError:
                 print("Erro: Array inválido")
                 print(dado)
+
 
         else:
             pass
