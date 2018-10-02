@@ -10,7 +10,7 @@
 from PyQt5 import QtCore, QtGui, QtWidgets
 from InterfaceTimer import InterfaceTimer
 
-class Ui_MainWindow(InterfaceTimer):
+class PressCalib(InterfaceTimer):
     def setupUi(self, MainWindow):
         self.MainWindow=MainWindow
         MainWindow.setObjectName("MainWindow")

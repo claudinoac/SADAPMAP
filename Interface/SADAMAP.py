@@ -6,8 +6,9 @@
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
 
 import sys
-from SystemEngine import SystemEngine
+from MainWindow import Ui_MainWindow
 
 if __name__ == '__main__':
-    engine=SystemEngine()
-    sys.exit(engine.app.exec_())
+    mainWindow = Ui_MainWindow()
+    #engine=SystemEngine()
+    sys.exit(mainWindow.app.exec_())

@@ -11,10 +11,10 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>MainWindow</string>
+   <string>SADAPMAP</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">background-color:rgb(53, 53, 53);
+   <string notr="true">background-color:rgb(0, 0, 0);
 color: rgb(255,255,255);</string>
   </property>
   <widget class="QWidget" name="centralwidget">
@@ -28,7 +28,7 @@ color: rgb(255,255,255);</string>
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color:rgb(53, 53, 53);
+     <string notr="true">background-color:rgb(0,0,0);
 font: 15pt &quot;Noto Serif&quot;;</string>
     </property>
     <property name="text">
@@ -45,7 +45,7 @@ font: 15pt &quot;Noto Serif&quot;;</string>
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color:rgb(53, 53, 53);
+     <string notr="true">background-color:rgb(0,0,0);
 font: 22pt &quot;Noto Serif&quot;;</string>
     </property>
     <property name="text">
@@ -55,11 +55,15 @@ font: 22pt &quot;Noto Serif&quot;;</string>
    <widget class="QToolButton" name="pressButton">
     <property name="geometry">
      <rect>
-      <x>40</x>
-      <y>340</y>
+      <x>50</x>
+      <y>300</y>
       <width>171</width>
       <height>51</height>
      </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color:rgb(53, 53, 53);
+</string>
     </property>
     <property name="text">
      <string>Calibração de Pressão</string>
@@ -69,10 +73,14 @@ font: 22pt &quot;Noto Serif&quot;;</string>
     <property name="geometry">
      <rect>
       <x>310</x>
-      <y>340</y>
+      <y>300</y>
       <width>181</width>
       <height>51</height>
      </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color:rgb(53, 53, 53);
+</string>
     </property>
     <property name="text">
      <string>Calibração de Temperatura</string>
@@ -81,14 +89,85 @@ font: 22pt &quot;Noto Serif&quot;;</string>
    <widget class="QToolButton" name="procButton">
     <property name="geometry">
      <rect>
-      <x>580</x>
-      <y>340</y>
+      <x>570</x>
+      <y>300</y>
       <width>181</width>
       <height>51</height>
      </rect>
     </property>
+    <property name="styleSheet">
+     <string notr="true">background-color:rgb(53, 53, 53);</string>
+    </property>
     <property name="text">
      <string>Processamento</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_3">
+    <property name="geometry">
+     <rect>
+      <x>40</x>
+      <y>420</y>
+      <width>151</width>
+      <height>141</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color:rgb(53, 53, 53);
+font: 15pt &quot;Noto Serif&quot;;</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="pixmap">
+     <pixmap>logo_pt.jpg</pixmap>
+    </property>
+    <property name="scaledContents">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_4">
+    <property name="geometry">
+     <rect>
+      <x>590</x>
+      <y>420</y>
+      <width>171</width>
+      <height>141</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color:rgb(0,0,0);
+font: 15pt &quot;Noto Serif&quot;;</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="pixmap">
+     <pixmap>750px-Ufrgs.svg.png</pixmap>
+    </property>
+    <property name="scaledContents">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_5">
+    <property name="geometry">
+     <rect>
+      <x>260</x>
+      <y>420</y>
+      <width>281</width>
+      <height>151</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true"/>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="pixmap">
+     <pixmap>LogoCTA_2015_vetorial_cor.png</pixmap>
+    </property>
+    <property name="scaledContents">
+     <bool>true</bool>
     </property>
    </widget>
   </widget>
