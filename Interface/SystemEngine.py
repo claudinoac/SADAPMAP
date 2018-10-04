@@ -27,41 +27,42 @@ from Graph import Graph
 class SystemEngine(object):
 
     def __init__(self, interType,ui): #Construtor da classe
+        self.ui = ui
+        self.interType = interType
+
         self.timer=QtCore.QTimer()
-        self.ui=ui
+
         self.ser1 = SerialManager()
         self.ser1.startPort(str(self.ser1.portList[1].device), 115200)
-
-
-
-
         self.ser1.serialListPanel(self.ui)
 
 
+        if self.interType==0:
+            self.x_scale=10
+            self.nCurves = 2
+            self.y_min=[0,0]
+            self.y_max=[32700,10000]
 
-        self.x_scale=10
-        self.nCurves = 2
-        self.y_min=[0,0]
-        self.y_max=[32700,10000]
 
+            self.color = ['r','g']
+            self.name = ["Força","Tensão no Calibrante"]
+            self.unit = ["Tonf","mV"]
 
-        self.color = ['r','g']
-        self.name = ["Força","Tensão no Calibrante"]
-        self.unit = ["Tonf","mV"]
+        elif self.interType==1:
+            self.x_scale = 10
+            self.nCurves = 3
+            self.y_min = [0, 0, 0]
+            self.y_max = [32700, 10000, 5000]
+
+            self.color = ['r', 'g','w']
+            self.name = ["Temperatura", "Força","Potência"]
+            self.unit = ["ºC","N","W"]
+
 
         self.layout=GraphicsLayout()
 
         self.updateTimer()
-        self.graph = Graph(self.time[0]/1000,self.x_scale,self.nCurves, self.y_min, self.y_max, 800, 500, self.color,self.name,self.unit)
 
-        self.layout.addItem(self.graph.axis[0],row=1,col=1,rowspan=1,colspan=1)
-        for n in range(1,self.nCurves):
-            self.layout.addItem(self.graph.axis[n],row=1,col=n+2,rowspan=1,colspan=1)
-
-        self.layout.addItem(self.graph,row=1,col=2,rowspan=1,colspan=1)
-        self.layout.addItem(self.graph.axisTime,row=2,col=2,rowspan=1,colspan=1)
-        self.layout.setMinimumSize(500, 600)
-        self.layout.setMaximumSize(500,600)
 
 
 
@@ -70,7 +71,7 @@ class SystemEngine(object):
         self.scene = QtGui.QGraphicsScene()
 
         self.scene.addItem(self.layout)
-
+        self.updateScale()
 
 
         #self.layout.setMaximumSize(770,550)
@@ -99,6 +100,10 @@ class SystemEngine(object):
         self.ui.p_max.returnPressed.connect(self.updateScale)
         self.ui.p_min.returnPressed.connect(self.updateScale)
 
+        if self.interType==1:
+            self.ui.temp_max.returnPressed.connect(self.updateScale)
+            self.ui.temp_min.returnPressed.connect(self.updateScale)
+
         self.ui.samplingCBox.currentIndexChanged.connect(self.updateTimer)
         self.timeant=time.time()
         self.timer.timeout.connect(self.updateData)
@@ -125,13 +130,21 @@ class SystemEngine(object):
         if(self.ui.menuPlay_Pause.isChecked()==True):
             readData = self.ser1.read()  # Lê o dado da serial
             readData = readData.decode('utf8')
+            #print(readData)
             dado = readData.split(' ', self.nCurves+1)
 
             dado[len(dado)-1]=dado[len(dado)-1].split('\n',2)[0]
             try:
-                self.ui.forceLabel.setText(str(dado[0])+" Tonf")
-                self.ui.calibratorLabel.setText(str(dado[1].split()[0])+" mV")
-                pass
+                if self.interType==0:
+                    self.ui.forceLabel.setText(str(dado[0])+" Tonf")
+                    self.ui.calibratorLabel.setText(str(dado[1].split()[0])+" mV")
+
+                elif self.interType==1:
+                    self.ui.tempLabel.setText(str(dado[0])+"ºC")
+                    self.ui.forceLabel.setText(str(dado[1].split()[0]) + " kN")
+                    self.ui.powLabel.setText(str(dado[2].split()[0]) + " kW")
+
+
             except IndexError:
                 print("Erro no Indice do Array Enviado pela Serial")
             try:
@@ -149,33 +162,56 @@ class SystemEngine(object):
     def updateScale(self):
         try:
             self.x_scale = int(self.ui.t_max.text())
-            self.y_min[0] = int(self.ui.f_min.text())
-            self.y_max[0]   = int(self.ui.f_max.text())
-            self.y_min[1] = int(self.ui.p_min.text())
-            self.y_max[1] = int(self.ui.p_max.text())
+
+            if self.interType==0:
+                self.y_min[0] = int(self.ui.f_min.text())
+                self.y_max[0]   = int(self.ui.f_max.text())
+                self.y_min[1] = int(self.ui.p_min.text())
+                self.y_max[1] = int(self.ui.p_max.text())
+
+            elif self.interType==1:
+                self.y_min[0] = int(self.ui.temp_min.text())
+                self.y_max[0]   = int(self.ui.temp_max.text())
+                self.y_min[1] = int(self.ui.f_min.text())
+                self.y_max[1] = int(self.ui.f_max.text())
+                self.y_max[2] = int(self.ui.p_max.text())
+                self.y_min[2] = int(self.ui.p_min.text())
+
         except ValueError:
             self.x_scale = 100
             self.y_min[0] = 0
             self.y_max[0] = 32700
-            self.y_min[0] = 0
-            self.y_max[0] = 10000
+            self.y_min[1] = 0
+            self.y_max[1] = 10000
+
+            if self.interType==1:
+                self.y_min[2] = 0
+                self.y_max[2] = 5000
+
             print("Erro!: Campos de Escala Vazios")
 
         if(self.x_scale=="0"):
             self.x_scale="1"
 
         self.layout.clear()
-        self.graph = Graph(self.time[0] / 1000, self.x_scale, self.nCurves, self.y_min, self.y_max, 800, 500,self.color, self.name, self.unit)
-        self.layout.addItem(self.graph.axis[1],row=1,col=3,rowspan=1,colspan=1)
-        self.layout.addItem(self.graph.axis[0],row=1,col=1,rowspan=1,colspan=1)
-        self.layout.addItem(self.graph.axisTime,row=2,col=2,rowspan=1,colspan=1)
-        self.layout.addItem(self.graph,row=1,col=2,rowspan=1,colspan=1)
+        self.layout.setMinimumSize(500, 600)
+        self.layout.setMaximumSize(500, 600)
+        self.graph = Graph(self.time[0] / 1000, self.x_scale, self.nCurves, self.y_min, self.y_max, 700, 500,
+                           self.color, self.name, self.unit)
+
+        self.layout.addItem(self.graph.axis[0], row=1, col=1, rowspan=1, colspan=1)
+        for n in range(1, self.nCurves):
+            self.layout.addItem(self.graph.axis[n], row=1, col=n + 2, rowspan=1, colspan=1)
+
+        self.layout.addItem(self.graph, row=1, col=2, rowspan=1, colspan=1)
+        self.layout.addItem(self.graph.axisTime, row=2, col=2, rowspan=1, colspan=1)
+
         self.scene.focusItem()
 
     def updateTimer(self):
         self.time=self.ui.samplingCBox.currentText().split(" ")
         self.time[0]=int(self.time[0])
-        print(self.time[0])
+        #print(self.time[0])
         if(self.time[0]<100):
             self.time[0]=1000*self.time[0]
 
