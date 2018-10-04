@@ -11,6 +11,7 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 from InterfaceTimer import InterfaceTimer
 
 class TempCalib(InterfaceTimer):
+
     def setupUi(self, MainWindow):
         self.MainWindow = MainWindow
         MainWindow.setObjectName("MainWindow")
