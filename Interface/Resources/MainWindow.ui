@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>800</width>
+    <width>979</width>
     <height>600</height>
    </rect>
   </property>
@@ -23,7 +23,7 @@ color: rgb(255,255,255);</string>
      <rect>
       <x>30</x>
       <y>130</y>
-      <width>741</width>
+      <width>921</width>
       <height>71</height>
      </rect>
     </property>
@@ -32,15 +32,15 @@ color: rgb(255,255,255);</string>
 font: 15pt &quot;Noto Serif&quot;;</string>
     </property>
     <property name="text">
-     <string>   Sistema de Aquisição de Dados para Análise de Materiais em Altas Pressões</string>
+     <string>   Sistema de Aquisição de Dados para Análise e Processamento de Materiais em Altas Pressões</string>
     </property>
    </widget>
    <widget class="QLabel" name="label_2">
     <property name="geometry">
      <rect>
-      <x>310</x>
-      <y>30</y>
-      <width>141</width>
+      <x>400</x>
+      <y>20</y>
+      <width>171</width>
       <height>81</height>
      </rect>
     </property>
@@ -49,7 +49,7 @@ font: 15pt &quot;Noto Serif&quot;;</string>
 font: 22pt &quot;Noto Serif&quot;;</string>
     </property>
     <property name="text">
-     <string>SADAMAP</string>
+     <string>SADAPMAP</string>
     </property>
    </widget>
    <widget class="QToolButton" name="pressButton">
@@ -72,7 +72,7 @@ font: 22pt &quot;Noto Serif&quot;;</string>
    <widget class="QToolButton" name="tempButton">
     <property name="geometry">
      <rect>
-      <x>310</x>
+      <x>390</x>
       <y>300</y>
       <width>181</width>
       <height>51</height>
@@ -89,7 +89,7 @@ font: 22pt &quot;Noto Serif&quot;;</string>
    <widget class="QToolButton" name="procButton">
     <property name="geometry">
      <rect>
-      <x>570</x>
+      <x>740</x>
       <y>300</y>
       <width>181</width>
       <height>51</height>
@@ -105,7 +105,7 @@ font: 22pt &quot;Noto Serif&quot;;</string>
    <widget class="QLabel" name="label_3">
     <property name="geometry">
      <rect>
-      <x>40</x>
+      <x>60</x>
       <y>420</y>
       <width>151</width>
       <height>141</height>
@@ -128,7 +128,7 @@ font: 15pt &quot;Noto Serif&quot;;</string>
    <widget class="QLabel" name="label_4">
     <property name="geometry">
      <rect>
-      <x>590</x>
+      <x>730</x>
       <y>420</y>
       <width>171</width>
       <height>141</height>
@@ -151,9 +151,9 @@ font: 15pt &quot;Noto Serif&quot;;</string>
    <widget class="QLabel" name="label_5">
     <property name="geometry">
      <rect>
-      <x>260</x>
+      <x>310</x>
       <y>420</y>
-      <width>281</width>
+      <width>361</width>
       <height>151</height>
      </rect>
     </property>
