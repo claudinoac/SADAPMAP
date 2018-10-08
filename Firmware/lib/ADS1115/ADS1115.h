@@ -1,20 +1,10 @@
 /**************************************************************************/
 /*!
-    @file     Adafruit_ADS1015.h
-    @author   K. Townsend (Adafruit Industries)
-    @license  BSD (see license.txt)
+    @file     ADS1115.h
+    @author   Alisson Claudino
+    @based on Adafruit_ADS1015 library   K. Townsend (Adafruit Industries)
+    @license  GPLv3
 
-    This is a library for the Adafruit ADS1015 breakout board
-    ----> https://www.adafruit.com/products/???
-
-    Adafruit invests time and resources providing this open source code,
-    please support Adafruit and open-source hardware by purchasing
-    products from Adafruit!
-
-    @section  HISTORY
-
-    v1.0  - First release
-    v1.1  - Added ADS1115 support - W. Earl
 */
 /**************************************************************************/
 
@@ -79,7 +69,7 @@
     #define ADS1015_REG_CONFIG_MODE_CONTIN  (0x0000)  // Continuous conversion mode
     #define ADS1015_REG_CONFIG_MODE_SINGLE  (0x0100)  // Power-down single-shot mode (default)
 
-    #define ADS1015_REG_CONFIG_DR_MASK      (0x00E0)  
+    #define ADS1015_REG_CONFIG_DR_MASK      (0x00E0)
     #define ADS1015_REG_CONFIG_DR_128SPS    (0x0000)  // 128 samples per second
     #define ADS1015_REG_CONFIG_DR_250SPS    (0x0020)  // 250 samples per second
     #define ADS1015_REG_CONFIG_DR_490SPS    (0x0040)  // 490 samples per second
@@ -117,7 +107,7 @@ typedef enum
   GAIN_SIXTEEN      = ADS1015_REG_CONFIG_PGA_0_256V
 } adsGain_t;
 
-class Adafruit_ADS1015
+class ADS1015
 {
 protected:
    // Instance-specific properties
@@ -127,7 +117,7 @@ protected:
    adsGain_t m_gain;
 
  public:
-  Adafruit_ADS1015(uint8_t i2cAddress = ADS1015_ADDRESS);
+  ADS1015(uint8_t i2cAddress = ADS1015_ADDRESS);
   void begin(void);
   uint16_t  readADC_SingleEnded(uint8_t channel);
   int16_t   readADC_Differential_0_1(void);
@@ -141,10 +131,10 @@ protected:
 };
 
 // Derive from ADS1105 & override construction to set properties
-class Adafruit_ADS1115 : public Adafruit_ADS1015
+class ADS1115 : public ADS1015
 {
  public:
-  Adafruit_ADS1115(uint8_t i2cAddress = ADS1015_ADDRESS);
+  ADS1115(uint8_t i2cAddress = ADS1015_ADDRESS);
 
  private:
 };

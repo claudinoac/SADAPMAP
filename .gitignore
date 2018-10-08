@@ -6,3 +6,5 @@ Circuits/*/.kicad_pcb-bak
 Circuits/*/rescue-backup
 INTFP(I)
 Interface/__pycache__
+Firmware/.*
+.idea
