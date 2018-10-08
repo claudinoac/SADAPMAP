@@ -24,7 +24,9 @@ from PyQt5 import QtWidgets
 
 class SerialManager(object):
 
-    def __init__(self): #Construtor da classe
+    def __init__(self, type): #Construtor da classe
+
+        self.type = type
         self.portList = serial.tools.list_ports.comports() #Armazena a lista de portas em um array
 
         self.portNum=len(self.portList) #Imprime no stdout a lista de portas disponíveis
@@ -36,7 +38,18 @@ class SerialManager(object):
         self.ser.setDTR(False)  # Reset do arduino para reinicio da leitura
         time.sleep(0.022)
         self.ser.setDTR(True)
-        self.ser.readline()  # Primeiro valor da serial sai com lixo
+
+        print(self.ser.readline())
+
+        if(self.type == 0):
+            #while(self.ser.inWaiting()==0):
+            self.ser.write(bytes("press",'utf-8'))
+        elif(self.type == 1):
+            self.ser.write(bytes("temp",'utf-8'))
+        elif(self.type==2):
+            self.ser.write(bytes("proc",'utf-8'))
+        if(self.ser.inWaiting() > 0):
+            print(self.ser.readline())  # Primeiro valor da serial sai com lixo
 
     def read(self): #Função para realizar a leitura do valor atual na serial.
         if(self.ser.inWaiting()==0):

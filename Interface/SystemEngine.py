@@ -32,16 +32,17 @@ class SystemEngine(object):
 
         self.timer=QtCore.QTimer()
 
-        self.ser1 = SerialManager()
-        self.ser1.startPort(str(self.ser1.portList[1].device), 115200)
-        self.ser1.serialListPanel(self.ui)
+        self.ser1 = SerialManager(interType)
 
+
+        self.ySize = 500
 
         if self.interType==0:
             self.x_scale=10
             self.nCurves = 2
             self.y_min=[0,0]
             self.y_max=[32700,10000]
+            self.xSize = 780
 
 
             self.color = ['r','g']
@@ -54,10 +55,13 @@ class SystemEngine(object):
             self.y_min = [0, 0, 0]
             self.y_max = [32700, 10000, 5000]
 
-            self.color = ['r', 'g','w']
+            self.color = ['r', 'g','y']
             self.name = ["Temperatura", "Força","Potência"]
             self.unit = ["ºC","N","W"]
+            self.xSize = 735
 
+        self.ser1.startPort(str(self.ser1.portList[1].device), 115200)
+        self.ser1.serialListPanel(self.ui)
 
         self.layout=GraphicsLayout()
 
@@ -121,7 +125,9 @@ class SystemEngine(object):
             self.ui.menuPlay_Pause.setText("Play")
 
     def sceneSelector(self, scene):
+        scene.setSceneRect(0, 0, 1000, 600)
         self.ui.CentralGraph.setScene(scene)
+        self.ui.CentralGraph.setSceneRect(scene.sceneRect())
         self.ui.CentralGraph.setBackgroundBrush(QtCore.Qt.black)
         self.ui.CentralGraph.setInteractive(False)
 
@@ -196,7 +202,7 @@ class SystemEngine(object):
         self.layout.clear()
         self.layout.setMinimumSize(500, 600)
         self.layout.setMaximumSize(500, 600)
-        self.graph = Graph(self.time[0] / 1000, self.x_scale, self.nCurves, self.y_min, self.y_max, 700, 500,
+        self.graph = Graph(self.time[0] / 1000, self.x_scale, self.nCurves, self.y_min, self.y_max, self.xSize, self.ySize,
                            self.color, self.name, self.unit)
 
         self.layout.addItem(self.graph.axis[0], row=1, col=1, rowspan=1, colspan=1)
